@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-  root 'main#index'
-
+  root "main#landing"
+  
+  get "index" => 'main#index'
   get "login" => "sessions#new"
   post "login" => "sessions#create"
   delete "logout" => "sessions#destroy"
