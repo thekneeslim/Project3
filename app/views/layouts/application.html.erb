@@ -15,8 +15,8 @@
     <%= render "partials/flash" %>
 
   <div class="container">
-    <% if @current_student %>
-    <h1>Welcome, <%=@current_student.first_name%>!</h1>
+    <% if current_student %>
+    <h1>Welcome, <%=current_student.first_name%>!</h1>
     <%end%>
   </div>
 

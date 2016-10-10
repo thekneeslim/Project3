@@ -21,12 +21,35 @@ a {
   }
 }
 
+th {
+  vertical-align: text-top;
+}
+
+.selectForm {
+  width: 67%;
+}
+
 .pinkColour {
   background-color: #ff5f5f;
+  color: white;
+}
+
+.tableHeaderWidth {
+  width: 200px;
+}
+
+.editButton {
+  margin: 10px auto;
 }
 
 #titleHeader {
   margin-bottom: 20px;
+}
+
+.smallText {
+  float: right;
+  font-size: 10px;
+  margin-right: 7%;
 }
 
 .card-header {
