@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    
-    <title>GaProfileRevamp</title>
-    
+
+    <title>GA Profile Revamp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
@@ -11,8 +15,8 @@
     <%= render "partials/navbar" %>
     <%= render "partials/flash" %>
 
-    <% if @current_user %>
-    <h1>LOGGED IN!</h1>
+    <% if @current_student %>
+    <h1>Welcome, <%=@current_student.first_name%>!</h1>
     <%end%>
 
     <%= yield %>

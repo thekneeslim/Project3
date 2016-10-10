@@ -1,8 +1,9 @@
 class Student < ApplicationRecord
-  belongs_to :user
   has_and_belongs_to_many :courses
   has_and_belongs_to_many :projects
+  # has_many :projects, through: :projects_students
   has_and_belongs_to_many :languages
+  has_many :works
 
   validates :email,
   presence: true,
