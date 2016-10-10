@@ -3,7 +3,7 @@
 <a href="/languages">Languages</a>
 <a href="/projects">Projects</a>
 
-<% if @current_user %>
+<% if @current_student %>
   <%= link_to 'Logout', logout_url, method: :delete, data: {confirm: 'Are you sure?'}%>
 <% else%>
   <a href="/login">Login</a>

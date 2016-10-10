@@ -1,5 +1,4 @@
 class Student < ApplicationRecord
-  belongs_to :user
   has_and_belongs_to_many :courses
   has_and_belongs_to_many :projects
   has_and_belongs_to_many :languages

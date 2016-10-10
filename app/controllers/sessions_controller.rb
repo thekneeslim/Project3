@@ -1,10 +1,11 @@
 class SessionsController < ApplicationController
 
   def create
-  user = Student.authenticate(user_params)
-    if user
-      session[:user_id] = user.id
-      flash[:success] = "User logged in!!"
+  student = Student.authenticate(student_params)
+
+    if student
+      session[:student_id] = student.id
+      flash[:success] = "Student logged in!!"
       redirect_to root_path
     else
       flash[:danger] = "Credentials Invalid!!"
@@ -13,14 +14,14 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
-    flash[:success] = "User logged out!!"
+    session[:student_id] = nil
+    flash[:success] = "Student logged out!!"
     redirect_to root_path
   end
 
   private
 
-  def user_params
+  def student_params
     params.require(:student).permit(:email, :password)
   end
 end
