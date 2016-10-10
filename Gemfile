@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
+
 gem 'bootstrap', '~> 4.0.0.alpha4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
