@@ -3,7 +3,7 @@
 <h1>Student LOGIN</h1>
 
 
-<!-- <table>
+<table>
   <thead>
     <tr>
       <th>First name</th>
@@ -34,14 +34,16 @@
         <td><%= student.contact %></td>
         <td><%= student.description %></td>
         <td><%= student.user %></td>
-        <td><%= student.course %></td>
+        <% student.courses.each do |course| %>
+        <td><%= course.name %></td>
+        <%end%>
         <td><%= link_to 'Show', student %></td>
         <td><%= link_to 'Edit', edit_student_path(student) %></td>
         <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
-</table> -->
+</table>
 
 <br>
 
