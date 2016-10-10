@@ -5,7 +5,12 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    if current_student.admin == true
+      @projects = Project.all
+    else
+      @student = Student.find(@current_student.id)
+    end
+
   end
 
   # GET /projects/1
@@ -26,6 +31,7 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(project_params)
+    @project.student_ids = @current_student.id
 
     respond_to do |format|
       if @project.save

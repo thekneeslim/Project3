@@ -22,5 +22,6 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :current_student
+  helper_method :is_admin
 
 end

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :events
+  resources :works
   root 'main#index'
 
   get "login" => "sessions#new"
