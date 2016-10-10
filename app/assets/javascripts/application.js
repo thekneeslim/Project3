@@ -15,6 +15,7 @@
 //= require tether
 //= require turbolinks
 //= require bootstrap
+
 //= require_tree .
 
 document.addEventListener('DOMContentLoaded', function () {
