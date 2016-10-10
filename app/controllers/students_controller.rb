@@ -1,5 +1,7 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
+  before_action :current_student, except: [:index, :show, :new, :create]
+  # before_action :is_admin, except: [:index, :show, :edit, :update, :create]
 
   # GET /students
   # GET /students.json
@@ -38,14 +40,10 @@ class StudentsController < ApplicationController
   # PATCH/PUT /students/1
   # PATCH/PUT /students/1.json
   def update
-    respond_to do |format|
-      if @student.update(student_params)
-        format.html { redirect_to @student, notice: 'Student was successfully updated.' }
-        format.json { render :show, status: :ok, location: @student }
-      else
-        format.html { render :edit }
-        format.json { render json: @student.errors, status: :unprocessable_entity }
-      end
+    if @student.update(student_params)
+      redirect_to @student, notice: 'Student was successfully updated.'
+    else
+      render :edit
     end
   end
 
@@ -53,10 +51,7 @@ class StudentsController < ApplicationController
   # DELETE /students/1.json
   def destroy
     @student.destroy
-    respond_to do |format|
-      format.html { redirect_to students_url, notice: 'Student was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to students_url, notice: 'Student was successfully destroyed.'
   end
 
   private
@@ -67,6 +62,6 @@ class StudentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-      params.require(:student).permit(:first_name, :last_name, :email, :password, :linkedin, :github, :website, :contact, :description, :course_ids)
+      params.require(:student).permit(:first_name, :last_name, :email, :password, :linkedin, :github, :website, :contact, :description, :course_ids, :project_ids)
     end
 end

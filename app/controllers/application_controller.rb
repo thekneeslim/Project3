@@ -21,4 +21,6 @@ class ApplicationController < ActionController::Base
     @current_student ||= Student.find_by_id(session[:student_id])
   end
 
+  helper_method :current_student
+
 end
