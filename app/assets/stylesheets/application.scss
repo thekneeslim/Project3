@@ -12,7 +12,28 @@
  *
 //= require_tree .
  */
+ @import "bootstrap";
 
+.card-header {
+  width: 100%;
+  background-color: #ff5f5f;
+  color: white;
+}
+
+// .borderVerticleColumn {
+//   margin-top: 10%;
+//   margin-bottom: 10%;
+// }
+.pink {
+  color: black;
+  // background-color: #f6201d;
+  &:hover {
+    // background-color: #ff5f5f;
+    // color: white;
+    box-shadow: 0 3px 0 0 #ff5f5f;
+    // box-shadow: 0 3px 0 0 #a20101;
+  }
+}
 
  body {
   /*background: #333;*/
@@ -202,4 +223,3 @@ h2 {
 
 // *= require_self
 // @import "bootstrap-sprockets";
-@import "bootstrap";
