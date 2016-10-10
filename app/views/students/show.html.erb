@@ -16,7 +16,7 @@
 </p>
 
 <p>
-  <strong>Password digest:</strong>
+  <strong>Password:</strong>
   <%= @student.password_digest %>
 </p>
 
@@ -47,7 +47,7 @@
 
 <p>
   <strong>Course:</strong>
-  <%= @student.course_id.inspect%>
+  <%= @student.course_id.name%>
 </p>
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
