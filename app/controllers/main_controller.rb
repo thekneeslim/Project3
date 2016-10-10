@@ -1,8 +1,16 @@
 class MainController < ApplicationController
 
-def index
+  def index
 
-end
+  end
+
+  def browse
+    render :browse
+  end
+
+  def profile
+    render :profile
+  end
 
 def landing
   render layout: false

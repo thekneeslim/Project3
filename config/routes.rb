@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
 
   root 'main#index'
+  get "browse" => "main#browse"
+  get "profile" => "main#profile"
+
 
   get "login" => "sessions#new"
   post "login" => "sessions#create"
