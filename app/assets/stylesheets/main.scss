@@ -24,7 +24,7 @@
   // line-height: 1.35;
   min-width: 13.5rem;
   padding: 1rem 0;
-  margin-top: 20px;
+  margin-top: 5%;
   color: white;
 }
 
@@ -32,6 +32,8 @@
   background: #383838;
   color: white;
   padding: 2.25rem 0;
+  margin-top: 5%;
+  // margin-bottom: 0;
 }
 
 #footer li {
@@ -39,10 +41,18 @@
   font-size: 20px;
 }
 
-a {
+.anchor {
+  color: white;
   text-decoration: none;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+    &:visited {
+      color: white;
+    }
 }
 
-a:hover{
-  text-decoration: none;
-}
+// a:hover{
+//   text-decoration: none;
+// }
