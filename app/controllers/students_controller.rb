@@ -5,6 +5,8 @@ class StudentsController < ApplicationController
   # GET /students.json
   def index
     @students = Student.all
+    puts "HIIIIIIIIIIII"
+    puts @students
   end
 
   # GET /students/1
@@ -25,11 +27,14 @@ class StudentsController < ApplicationController
   # POST /students.json
   def create
     @user = User.create()
-    puts "USER: #{@user}"
-    @user.inspect
+    # puts "USER: #{@user}"
+    # @user.inspect
     @student = Student.new(student_params)
-    puts "STUDENT: #{@student}"
+    # puts "STUDENT: #{@student}"
     @student.user_id = @user.id
+    puts "LOOK HEREEEEEEEEEE"
+    puts @student.user_id
+    puts @student.save
 
     if @student.save
       redirect_to @student, notice: 'Student was successfully created.'
@@ -70,6 +75,6 @@ class StudentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-      params.require(:student).permit(:first_name, :last_name, :email, :password, :linkedin, :github, :website, :contact, :description, :user_id, :course_id)
+      params.require(:student).permit(:first_name, :last_name, :email, :password, :linkedin, :github, :website, :contact, :description, :user_id, :course_ids)
     end
 end

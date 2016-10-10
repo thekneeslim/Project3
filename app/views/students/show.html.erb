@@ -47,8 +47,16 @@
 
 <p>
   <strong>Course:</strong>
-  <%= @student.course_id.inspect%>
+  <%= @student.courses.name %>
 </p>
+
+<p>
+  <strong>Course:</strong>
+  <% @student.courses.each do |course| %>
+  <td><%= course.name %></td>
+  <%end%>
+</p>
+
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>
