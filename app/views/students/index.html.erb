@@ -16,6 +16,7 @@
       <th>Contact</th>
       <th>Description</th>
       <th>Course</th>
+      <th>Event</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -34,6 +35,7 @@
         <% student.courses.each do |course| %>
         <td><%= course.name %></td>
         <%end%>
+        <td><%= student.event.name %></td>
         <td><%= link_to 'Show', student %></td>
         <td><%= link_to 'Edit', edit_student_path(student) %></td>
         <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>

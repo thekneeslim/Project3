@@ -29,6 +29,7 @@ class StudentsController < ApplicationController
   # POST /students.json
   def create
     @student = Student.new(student_params)
+    @student.admin = false;
 
     if @student.save
       redirect_to @student, notice: 'Student was successfully created.'
@@ -62,6 +63,6 @@ class StudentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-      params.require(:student).permit(:first_name, :last_name, :email, :password, :linkedin, :github, :website, :contact, :description, :course_ids, :project_ids)
+      params.require(:student).permit(:first_name, :last_name, :email, :password, :linkedin, :github, :website, :contact, :description, :course_ids, :event_id, :project_ids)
     end
 end

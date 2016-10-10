@@ -47,14 +47,14 @@
 
 <p>
   <strong>Course:</strong>
-  <%= @student.courses.name %>
-</p>
-
-<p>
-  <strong>Course:</strong>
   <% @student.courses.each do |course| %>
   <td><%= course.name %></td>
   <%end%>
+</p>
+
+<p>
+  <strong>Event:</strong>
+  <% @student.event.name %>
 </p>
 
 
