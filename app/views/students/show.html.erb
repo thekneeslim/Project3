@@ -3,75 +3,95 @@
 <div class="container-fluid">
   <%= render "partials/verticleColumn" %>
 
-  <!-- <div class="col-md-3">
-    <div class="card">
-      <div class="card-header">
-        Manage Profile
-      </div> -->
-
   <div class="offset-md-1 col-md-8">
+    <h3 id="titleHeader">General Information</h3>
     <div class="card">
       <div class="card-header">
         General Information
       </div>
+      <div class="card-block">
+        <table>
+            <tr>
+              <th>First Name:</th>
+              <td><%= @student.first_name %></td>
+            </tr>
+            <tr>
+              <th>Last Name:</th>
+              <td><%= @student.last_name %></td>
+            </tr>
+            <tr>
+              <th>Contact:</th>
+              <td><%= @student.contact %></td>
+            </tr>
+            <tr>
+              <th>Email:</th>
+              <td><%= @student.email %></td>
+            </tr>
+            <tr>
+              <th>Password:</th>
+              <td>********</td>
+            </tr>
+            <tr>
+              <th>Description:</th>
+              <td><%= @student.description %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- <a href="#" class="btn pinkColour">Edit</a> -->
+      <button type="button" class="btn pinkColour" data-toggle="modal" data-target="#generalInfoEdit">
+        Edit
+      </button>
+      <!-- <%= link_to 'Edit', edit_student_path(@student), :class => "btn pinkColour" %> -->
+      <!-- <button type="button" class="btn pinkColour">Primary</button> -->
 
+      <!-- Modal -->
+      <div class="modal fade" id="generalInfoEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="borderVerticleColumn">
-      <table>
-          <tr>
-            <th>First Name:</th>
-            <td><%= @student.first_name %></td>
-          </tr>
-          <tr>
-            <th>Last Name:</th>
-            <td><%= @student.last_name %></td>
-          </tr>
-          <tr>
-            <th>Email:</th>
-            <td><%= @student.email %></td>
-          </tr>
-          <tr>
-            <th>Password:</th>
-            <td><%= @student.password_digest %></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <div class="card">
+      <div class="card-header">
+        Website Links
+      </div>
+      <div class="card-block">
+        <table>
+            <tr>
+              <th>Linkedin:</th>
+              <td><%= @student.linkedin %></td>
+            </tr>
+            <tr>
+              <th>Github:</th>
+              <td><%= @student.github %></td>
+            </tr>
+            <tr>
+              <th>Personal Website:</th>
+              <td><%= @student.website %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
   </div>
 </div>
 
 
-<p>
-  <strong>Password:</strong>
-  <%= @student.password_digest %>
-</p>
-
-<p>
-  <strong>Linkedin:</strong>
-  <%= @student.linkedin %>
-</p>
-
-<p>
-  <strong>Github:</strong>
-  <%= @student.github %>
-</p>
-
-<p>
-  <strong>Website:</strong>
-  <%= @student.website %>
-</p>
-
-<p>
-  <strong>Contact:</strong>
-  <%= @student.contact %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @student.description %>
-</p>
-
-<p>
+<!-- <p>
   <strong>Course:</strong>
   <% @student.courses.each do |course| %>
   <td><%= course.name %></td>
@@ -81,7 +101,7 @@
 <p>
   <strong>Event:</strong>
   <% @student.event.name %>
-</p>
+</p> -->
 
 
 <%= link_to 'Edit', edit_student_path(@student) %> |

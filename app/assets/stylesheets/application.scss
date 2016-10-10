@@ -14,6 +14,21 @@
  */
  @import "bootstrap";
 
+a {
+  color: black;
+  &:hover {
+    color:black;
+  }
+}
+
+.pinkColour {
+  background-color: #ff5f5f;
+}
+
+#titleHeader {
+  margin-bottom: 20px;
+}
+
 .card-header {
   width: 100%;
   background-color: #ff5f5f;
