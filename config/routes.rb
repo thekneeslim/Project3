@@ -1,15 +1,19 @@
 Rails.application.routes.draw do
 
-  resources :events
-  resources :works
   root 'main#index'
   get "browse" => "main#browse"
   get "profile" => "main#profile"
 
-
   get "login" => "sessions#new"
   post "login" => "sessions#create"
   delete "logout" => "sessions#destroy"
+
+
+  resources :events
+  resources :works
+
+  get "students/:id/education" => "students#education"
+
 
   resources :students
   resources :languages

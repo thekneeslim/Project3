@@ -31,33 +31,7 @@
     <%= f.password_field :password %>
   </div>
 
-  <div class="field">
-    <%= f.label :linkedin %>
-    <%= f.text_field :linkedin %>
-  </div>
-
-  <div class="field">
-    <%= f.label :github %>
-    <%= f.text_field :github %>
-  </div>
-
-  <div class="field">
-    <%= f.label :website %>
-    <%= f.text_field :website %>
-  </div>
-
-  <div class="field">
-    <%= f.label :contact %>
-    <%= f.number_field :contact %>
-  </div>
-
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
-
-
-  <div class="field">
+  <!-- <div class="field">
     <%= f.label :course %>
     <%= f.select :course_ids, Course.all.collect {|x| [x.name, x.id]}, {} %>
   </div>
@@ -65,7 +39,7 @@
   <div class="field">
     <%= f.label :event %>
     <%= f.select :event_id, Event.all.collect {|x| [x.name, x.id]}, {} %>
-  </div>
+  </div> -->
 
   <div class="actions">
     <%= f.submit %>

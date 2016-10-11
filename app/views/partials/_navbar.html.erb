@@ -1,19 +1,36 @@
-<a href="/">Home</a>
+<nav class="navbar navbar-fixed-top navbar-light" style="background-color: #ffffff;">
+  <div class="nav navbar-nav">
+    <a class="navbar-brand" href="#"><img src="http://i.imgur.com/4006cp5.png"></a>
 
-<% if @current_student %>
-  <% if @current_student.admin %>
-    <a href="/courses">Courses</a>
-    <a href="/languages">Languages</a>
-    <a href="/events">Events</a>
-  <%end%>
-<%end%>
+    <a class="nav-item nav-link pull-xs-right" href=""><button id="login-button">Graduate Log In</button></a>
+  </div>
+</nav>
 
-<% if current_student.present? %>
-  <a href="/students/<%=current_student.id%>">Profile</a>
-  <a href="/projects">Projects</a>
-  <a href="/works">Job History</a>
-  <%= link_to 'Logout', logout_url, method: :delete, data: {confirm: 'Are you sure?'}%>
-<% else%>
-  <a href="/login">Login</a>
-  <a href="/students/new">Sign Up</a>
-<%end%>
+<!--<a href="/">Home</a>-->
+
+
+<!--<% if @current_student %>-->
+<!--  <% if @current_student.admin %>-->
+<!--    <a href="/courses">Courses</a>-->
+<!--    <a href="/languages">Languages</a>-->
+<!--    <a href="/events">Events</a>-->
+<!--  <%end%>-->
+<!--<%end%>-->
+
+<!--<% if current_student.present? %>-->
+<!--  <a href="/students/<%=current_student.id%>">Profile</a>-->
+<!--  <a href="/projects">Projects</a>-->
+<!--  <a href="/works">Job History</a>-->
+<!--  <%= link_to 'Logout', logout_url, method: :delete, data: {confirm: 'Are you sure?'}%>-->
+<!--<% else%>-->
+<!--  <a href="/login">Login</a>-->
+<!--  <a href="/students/new">Sign Up</a>-->
+<!--<%end%>-->
+
+<!--<% if current_student.present? %>-->
+<!--  <a href="/students/<%=current_student.id%>">Profile</a>-->
+<!--  <%= link_to 'Logout', logout_url, method: :delete, data: {confirm: 'Are you sure?'}%>-->
+<!--<% else%>-->
+<!--  <a href="/login">Login</a>-->
+<!--  <a href="/students/new">Sign Up</a>-->
+<!--<%end%>-->

@@ -1,60 +1,141 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Works</h1>
-
-<div class="container-fluid">
+<div class="container">
   <%= render "partials/verticleColumn" %>
 
-    <div class="card offset-md-1 col-md-8">
-      Happy land
-    </div>
-</div>
+  <div class="offset-md-1 col-md-8">
 
-<table>
-  <thead>
-    <tr>
-      <th>Company</th>
-      <th>Title</th>
-      <th>Start</th>
-      <th>End</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <h3 id="titleHeader">Past Job Experiences</h3>
 
-  <tbody>
+    <% if current_student%>
+      <% @student.works.each do |work| %>
+        <div class="card">
+          <div class="card-header">
+            <%= work.company %>
+          </div>
+          <div class="card-block">
+            <table>
+              <tr>
+                <th class="tableHeaderWidth">Position:</th>
+                <td><%= work.title %></td>
+              </tr>
+              <tr>
+                <th class="tableHeaderWidth">Duration:</th>
+                <td><%= work.start %> to <%=work.end%></td>
+              </tr>
+              <tr>
+                <th class="tableHeaderWidth">Description:</th>
+                <td><%= work.description %></td>
+              </tr>
+            </table>
 
-    <% if current_student.admin%>
-      <% @works.each do |work| %>
-        <tr>
-          <td><%= work.company %></td>
-          <td><%= work.title %></td>
-          <td><%= work.start %></td>
-          <td><%= work.end %></td>
-          <td><%= work.description %></td>
-          <td><%= link_to 'Show', work %></td>
-          <td><%= link_to 'Edit', edit_work_path(work) %></td>
-          <td><%= link_to 'Destroy', work, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
+            <%= button_to "Delete", work, :method => :delete, class: "btn pinkColour editButton" %>
+
+            <button type="button" class="btn pinkColour editButton" data-toggle="modal" data-target="#work<%=work.id%>">
+              Edit
+            </button>
+          </div>
+        </div>
+
+    <!-- MODAL -->
+        <div class="modal fade" id="work<%=work.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel"><%=work.company%></h4>
+              </div>
+              <!-- ============ FORM ============ -->
+
+              <%= form_for(work) do |f| %>
+
+              <div class="modal-body">
+                <div class="form-group row field">
+                  <%= f.label :company, class: "col-xs-3 col-form-label" %>
+                  <%= f.text_field :company, value: work.company, class: 'col-xs-8'%>
+                </div>
+                <div class="form-group row field">
+                  <%= f.label :title, class: "col-xs-3 col-form-label" %>
+                  <%= f.text_field :title, value: work.title, class: 'col-xs-8'%>
+                </div>
+                <div class="form-group row field">
+                  <%= f.label :start, class: "col-xs-3 col-form-label" %>
+                  <%= f.date_field :start, value: work.start, class: 'col-xs-8'%>
+                </div>
+                <div class="form-group row field">
+                  <%= f.label :end, class: "col-xs-3 col-form-label" %>
+                  <%= f.date_field :end, value: work.end, class: 'col-xs-8'%>
+                </div>
+                <div class="form-group row field">
+                  <%= f.label :description, class: "col-xs-3 col-form-label" %>
+                  <%= f.text_area :description, value: work.description, class: 'col-xs-8'%>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn pinkColour">Save changes</button>
+              </div>
+              <!-- ============ FORM END ============ -->
+              <%end%>
+            </div>
+          </div>
+        </div>
+    <!-- ============ MODAL END ============ -->
       <% end %>
-      <% elsif current_student%>
-        <% @student.works.each do |work| %>
-        <td><%= work.company %></td>
-        <td><%= work.title %></td>
-        <td><%= work.start %></td>
-        <td><%= work.end %></td>
-        <td><%= work.description %></td>
-        <td><%= link_to 'Show', work %></td>
-        <td><%= link_to 'Edit', edit_work_path(work) %></td>
-        <td><%= link_to 'Destroy', work, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
-        <% end %>
-
     <% end %>
 
-  </tbody>
-</table>
 
-<br>
+    <!-- ============ CREATE NEW ============ -->
+    <div class="container">
+      <button type="button" class="btn pinkColour editButton createNew" data-toggle="modal" data-target="#createNewEntry">
+        Create New Entry
+      </button>
+    </div>
+    <!-- MODAL -->
+    <div class="modal fade" id="createNewEntry" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">New Entry</h4>
+          </div>
+          <!-- ============ FORM ============ -->
 
-<%= link_to 'New Work', new_work_path %>
+          <% work = @work %>
+          <%= form_for(work) do |f| %>
+          <div class="modal-body">
+            <div class="form-group row field">
+              <%= f.label :company, class: "col-xs-3 col-form-label" %>
+              <%= f.text_field :company, class: 'col-xs-8'%>
+            </div>
+            <div class="form-group row field">
+              <%= f.label :title, class: "col-xs-3 col-form-label" %>
+              <%= f.text_field :title, class: 'col-xs-8'%>
+            </div>
+            <div class="form-group row field">
+              <%= f.label :start, class: "col-xs-3 col-form-label" %>
+              <%= f.date_field :start, class: 'col-xs-8'%>
+            </div>
+            <div class="form-group row field">
+              <%= f.label :end, class: "col-xs-3 col-form-label" %>
+              <%= f.date_field :end, class: 'col-xs-8'%>
+            </div>
+            <div class="form-group row field">
+              <%= f.label :description, class: "col-xs-3 col-form-label" %>
+              <%= f.text_area :description, class: 'col-xs-8'%>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <%= button_to "Create", work, :method => :create, class: "btn pinkColour editButton" %>
+          </div>
+          <% end %>
+          <!-- ============ FORM END ============ -->
+        </div>
+      </div>
+      <!-- ============ MODAL END ============ -->
+    </div>
+  </div>
+</div>
