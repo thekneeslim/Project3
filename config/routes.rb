@@ -8,13 +8,11 @@ Rails.application.routes.draw do
   post "login" => "sessions#create"
   delete "logout" => "sessions#destroy"
 
+  get "students/:id/education" => "students#education"
+  get "events/search" => "events#search"
 
   resources :events
   resources :works
-
-  get "students/:id/education" => "students#education"
-  post "events/:id" => "events#search"
-
   resources :students
   resources :languages
   resources :courses

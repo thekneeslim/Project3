@@ -7,42 +7,28 @@ console.log("HELLO WORLD");
 $(document).on('turbolinks:load', function() {
 
   $('#selectMeetGreet').submit(function(e) {
-  e.preventDefault();
+    e.preventDefault();
 
-  var greetID = $('#selectedMeetGreet').val()
-  console.log("Greet ID:", greetID)
+    var greetID = $('#selectedMeetGreet').val()
+    console.log("Greet ID:", greetID)
 
-  getSessionInfo(greetID)
-
-  function getSessionInfo(apple) {
     $.ajax({
-      url: '/events/'+ apple,
-      type: 'POST',
-      data: {id: apple}
+      url: '/events/search',
+      method: 'GET',
+      data: {id: greetID}
+      // data: {id: this.value},
+      // data: {data}
+      // dataType: 'json'
     }).done(function (data) {
       console.log("Returned Data:", data)
+      $("#sessionDetails").empty()
+      $("#sessionDetails").append(
+        "<h4>" + data.name + "</h4> <br>" +
+        "<p><b>Date:</b> </br>" + data.date + "</p>" +
+        "<p><b>Time:</b> </br> " + data.start + "</p> </br>" +
+        "<p><b>Venue:</b> </br>" + data.location + "</p>" +
+        "<p><b>Description:</b> </br>" + data.description + "</p>"
+      )
     })
-  }
-})
-
-  // $('#countrySearch').submit(function(e) {
-  //   e.preventDefault();
-  //
-  //   var countryID = $('#countrySelected').val()
-  //   console.log(countryID)
-  //
-  //   getCountrySelectedInfo(countryID)
-  //
-  //   function getCountrySelectedInfo(apple) {
-  //     $.ajax({
-  //       url: '/login/home/idinfo',
-  //       type: 'POST',
-  //       data: {id: apple}
-  //     }).done(function (data) {
-  //       coordinates = [data.latitude, data.longitude];
-  //       mymap.setView(coordinates, 7);
-  //       drawMap(mapType)
-  //     })
-  //   }
-  // })
+  })
 })
