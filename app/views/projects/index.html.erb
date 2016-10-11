@@ -1,53 +1,135 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Projects</h1>
-
 <div class="container">
+  <p id="notice"><%= notice %></p>
+
   <%= render "partials/verticleColumn" %>
 
-    <div class="card offset-md-1 col-md-8">
-      Happy land
-    </div>
-</div>
+  <div class="offset-md-1 col-md-8">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Github Repo Link</th>
-      <th>Live Site</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <h3 id="titleHeader">Past Projects</h3>
 
-  <tbody>
+    <% if current_student%>
+      <% @student.projects.each do |project| %>
+        <div class="card">
+          <div class="card-header">
+            <%= project.name %>
+          </div>
+          <div class="card-block">
+            <table>
+              <tr>
+                <th class="tableHeaderWidth">Github Repo:</th>
+                <td><%= project.github %></td>
+              </tr>
+              <tr>
+                <th class="tableHeaderWidth">Live Site:</th>
+                <td><%= project.site %></td>
+              </tr>
+              <tr>
+                <th class="tableHeaderWidth">Description:</th>
+                <td><%= project.description %></td>
+              </tr>
+            </table>
 
-    <% if current_student.admin%>
-      <% @projects.each do |project| %>
-        <tr>
-          <td><%= project.name %></td>
-          <td><%= project.github %></td>
-          <td><%= project.site %></td>
-          <td><%= project.description %></td>
-          <td><%= link_to 'Show', project %></td>
-          <td><%= link_to 'Edit', edit_project_path(project) %></td>
-          <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
+            <%= button_to "Delete", project, :method => :delete, class: "btn pinkColour editButton" %>
+
+            <button type="button" class="btn pinkColour editButton" data-toggle="modal" data-target="#project<%=project.id%>">
+              Edit
+            </button>
+          </div>
+        </div>
+
+    <!-- MODAL -->
+        <div class="modal fade" id="project<%=project.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel"><%=project.name%></h4>
+              </div>
+              <!-- ============ FORM ============ -->
+
+              <%= form_for(project) do |f| %>
+
+              <div class="modal-body">
+                <div class="form-group row field">
+                  <%= f.label :name, class: "col-xs-3 col-form-label" %>
+                  <%= f.text_field :name, value: project.name, class: 'col-xs-8'%>
+                </div>
+                <div class="form-group row field">
+                  <%= f.label :github, class: "col-xs-3 col-form-label" %>
+                  <%= f.text_field :github, value: project.github, class: 'col-xs-8'%>
+                </div>
+                <div class="form-group row field">
+                  <%= f.label :site, class: "col-xs-3 col-form-label" %>
+                  <%= f.text_field :site, value: project.site, class: 'col-xs-8'%>
+                </div>
+                <div class="form-group row field">
+                  <%= f.label :description, class: "col-xs-3 col-form-label" %>
+                  <%= f.text_area :description, value: project.description, class: 'col-xs-8'%>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn pinkColour">Save changes</button>
+              </div>
+              <!-- ============ FORM END ============ -->
+              <%end%>
+            </div>
+          </div>
+        </div>
+    <!-- ============ MODAL END ============ -->
       <% end %>
-      <% elsif current_student%>
-        <% @student.projects.each do |project| %>
-          <td><%= project.name %></td>
-          <td><%= project.github %></td>
-          <td><%= project.site %></td>
-          <td><%= project.description %></td>
-
-        <% end %>
-
     <% end %>
-  </tbody>
-</table>
 
-<br>
 
-<%= link_to 'New Project', new_project_path %>
+    <!-- ============ CREATE NEW ============ -->
+    <div class="container">
+      <button type="button" class="btn pinkColour editButton createNew" data-toggle="modal" data-target="#createNewEntry">
+        Create New Entry
+      </button>
+    </div>
+    <!-- MODAL -->
+    <div class="modal fade" id="createNewEntry" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">New Entry</h4>
+          </div>
+          <!-- ============ FORM ============ -->
+
+          <% project = @project %>
+          <%= form_for(project) do |f| %>
+          <div class="modal-body">
+            <div class="form-group row field">
+              <%= f.label :name, class: "col-xs-3 col-form-label" %>
+              <%= f.text_field :name, class: 'col-xs-8'%>
+            </div>
+            <div class="form-group row field">
+              <%= f.label :github, class: "col-xs-3 col-form-label" %>
+              <%= f.text_field :github, class: 'col-xs-8'%>
+            </div>
+            <div class="form-group row field">
+              <%= f.label :site, class: "col-xs-3 col-form-label" %>
+              <%= f.text_field :site, class: 'col-xs-8'%>
+            </div>
+            <div class="form-group row field">
+              <%= f.label :description, class: "col-xs-3 col-form-label" %>
+              <%= f.text_area :description, class: 'col-xs-8'%>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <%= button_to "Create", project, :method => :create, class: "btn pinkColour editButton" %>
+          </div>
+          <% end %>
+          <!-- ============ FORM END ============ -->
+        </div>
+      </div>
+      <!-- ============ MODAL END ============ -->
+    </div>
+  </div>
+</div>

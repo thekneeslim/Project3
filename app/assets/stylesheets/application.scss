@@ -13,6 +13,7 @@
 //= require_tree .
  */
  @import "bootstrap";
+ @import "compass/css3";
 
 a {
   color: black;
@@ -75,10 +76,6 @@ th {
 }
 
 
-// .borderVerticleColumn {
-//   margin-top: 10%;
-//   margin-bottom: 10%;
-// }
 .pink {
   color: black;
   // background-color: #f6201d;
@@ -89,9 +86,6 @@ th {
     // box-shadow: 0 3px 0 0 #a20101;
   }
 }
-
-@import "bootstrap";
-@import "compass/css3";
 
  body {
   /*background: #333;*/
@@ -287,10 +281,59 @@ h2 {
   text-align: center;
 }
 
-#dropdown {
-  /*margin: 0 auto;*/
-  text-align: center;
+#box {
+  width: 90%;
+  margin: 0 auto;
+  border: 1px solid black;
 }
+
+#left {
+  border: 1px solid red;
+  width: 30%;
+  display: inline-block;
+  margin-left: 2%;
+}
+
+#right {
+  border: 1px solid blue;
+  width: 60%;
+  display: inline-block;
+  margin-left: 2%;
+
+}
+
+.card {
+  width: 90%;
+  // border: 1px solid grey;
+}
+
+.card-profile-name {
+  color: black;
+  text-align: left;
+}
+
+.card-profile-skill-tag {
+  display: inline;
+  border: 1px solid green;
+  background: green;
+  color: white;
+  padding: 2px;
+  // text-decoration: none;
+}
+
+
+
+h1 {
+  text-align: center;
+  font-family: Tahoma, Arial, sans-serif;
+  color: #06D85F;
+  margin: 80px 0;
+}
+
+
+
+// *= require_self
+// @import "bootstrap-sprockets";
 
 
 #login-button {
@@ -298,7 +341,7 @@ h2 {
   margin-right: 50px;
   margin-top: 4px;
   outline:none;
-  
+
   @mixin font-color {
     @if lightness($color) > 50 {
       color: white;
@@ -308,7 +351,7 @@ h2 {
       // text-shadow: 0 -0.08em 0 darken($color, 20%);
 		}
   }
-  
+
   font-size: 11px;
   font-weight: 800;
   font-family: "Circular", Helvetica, sans-serif;
@@ -327,11 +370,11 @@ h2 {
   @include background-image(linear-gradient($color, darken($color, 10%)));
   @include box-shadow(0 0.1em 0.5em rgba(black,0.10), 0 0.1em 0.2em rgba(black,0.3), 0 -0.1em 0.07em rgba(black,0.3) inset, 0 0.1em 0.07em rgba(white,0.2) inset);
   @include transition(all 100ms);
-  
+
   &:hover {
     @include box-shadow(0 0.1em 0.5em rgba(black,0.4), 0 0.1em 0.2em rgba(black,0.4), 0 -0.1em 0.07em rgba(black,0.3) inset, 0 0.1em 0.07em rgba(white,0.2) inset);
   }
-  
+
   &:active {
     outline:none;
     padding: 0.8em 1.5em 0.8em;
@@ -345,5 +388,7 @@ h2 {
 
 
 
+
  }
+
 }

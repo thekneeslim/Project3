@@ -5,12 +5,13 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    if current_student.admin == true
-      @projects = Project.all
-    else
-      @student = Student.find(@current_student.id)
-    end
+    # if current_student.admin == true
+    #   @projects = Project.all
+    # else
 
+    @student = Student.find(current_student.id)
+    # end
+    @project = Project.new
   end
 
   # GET /projects/1
@@ -33,14 +34,10 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     @project.student_ids = @current_student.id
 
-    respond_to do |format|
-      if @project.save
-        format.html { redirect_to @project, notice: 'Project was successfully created.' }
-        format.json { render :show, status: :created, location: @project }
-      else
-        format.html { render :new }
-        format.json { render json: @project.errors, status: :unprocessable_entity }
-      end
+    if @project.save
+      redirect_to projects_url, notice: 'Project was successfully created.'
+    else
+      render :new
     end
   end
 
@@ -48,7 +45,7 @@ class ProjectsController < ApplicationController
   # PATCH/PUT /projects/1.json
   def update
     if @project.update(project_params)
-      redirect_to @project, notice: 'Project was successfully updated.'
+      redirect_to projects_url, notice: 'Project was successfully updated.'
     else
       render :edit
     end
@@ -58,10 +55,7 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1.json
   def destroy
     @project.destroy
-    respond_to do |format|
-      format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to projects_url, notice: 'Project was successfully destroyed.'
   end
 
   private
