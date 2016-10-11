@@ -1,15 +1,21 @@
 <nav class="navbar navbar-fixed-top navbar-light" style="background-color: #000000;">
   <div class="nav navbar-nav">
-    <a class="navbar-brand" href="#"><img src="http://i.imgur.com/ecuOXRi.png"></a>
-   
-    <a class="nav-item nav-link pull-xs-right" href=""><button id="login-button">Graduate Log In</button></a>
+    <img id="logo" src="http://i.imgur.com/JtGZKB3.png">
+    <a id="GAprofile" class="navbar-brand" href="/">Profiles</a>
+
+    <% if current_student.present? %>
+     <%= link_to 'Logout', logout_url, class:"nav-item nav-link pull-xs-right", id: "login-button", method: :delete, data: {confirm: 'Are you sure?'}%>
+     <a class="nav-item nav-link pull-xs-right" id="login-button" href="/students/<%=current_student.id%>">Profile</a>
+      <% else%>
+      <a class="nav-item nav-link pull-xs-right" href="/login"><button id="login-button">Graduate Log In</button></a>
+      <a class="nav-item nav-link pull-xs-right" href="/students/new"><button id="login-button">Sign Up</button></a>
+    <%end%>
   </div>
 </nav>
 
 <!--<a href="/">Home</a>-->
 
 
-     <a class="nav-item nav-link pull-xs-right" id="login-button" href="/students/<%=current_student.id%>">Profile</a>
 <!--<% if @current_student %>-->
 <!--  <% if @current_student.admin %>-->
 <!--    <a href="/courses">Courses</a>-->
@@ -27,15 +33,6 @@
 <!--  <a href="/login">Login</a>-->
 <!--  <a href="/students/new">Sign Up</a>-->
 <!--<%end%>-->
-
-<!--<% if current_student.present? %>-->
-<!--  <a href="/students/<%=current_student.id%>">Profile</a>-->
-<!--  <%= link_to 'Logout', logout_url, method: :delete, data: {confirm: 'Are you sure?'}%>-->
-<!--<% else%>-->
-<!--  <a href="/login">Login</a>-->
-<!--  <a href="/students/new">Sign Up</a>-->
-<!--<%end%>-->
-
 
 <!--<% if current_student.present? %>-->
 <!--  <a href="/students/<%=current_student.id%>">Profile</a>-->
