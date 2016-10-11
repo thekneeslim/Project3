@@ -29,6 +29,8 @@ $(document).on('turbolinks:load', function() {
         "<p><b>Venue:</b> </br>" + data.location + "</p>" +
         "<p><b>Description:</b> </br>" + data.description + "</p>"
       )
+
+      $("#studentDetails").append("<p>" + data+ "</p>")
     })
   })
 })

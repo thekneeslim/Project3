@@ -36,9 +36,7 @@
         <td><%= student.website %></td>
         <td><%= student.contact %></td>
         <td><%= student.description %></td>
-        <% student.courses.each do |course| %>
-        <td><%= course.name %></td>
-        <%end%>
+        <td><%= student.course.name %></td>
         <td><%= student.event.name %></td>
         <td><%= link_to 'Show', student %></td>
         <td><%= link_to 'Edit', edit_student_path(student) %></td>
