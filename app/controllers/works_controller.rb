@@ -4,11 +4,12 @@ class WorksController < ApplicationController
   # GET /works
   # GET /works.json
   def index
-    if current_student.admin == true
-      @works = Work.all
-    else
+    # if current_student.admin == true
+    #   @works = Work.all
+    # else
       @student = Student.find(@current_student.id)
-    end
+    # end
+    @work = Work.new
   end
 
   # GET /works/1
@@ -31,39 +32,29 @@ class WorksController < ApplicationController
     @work = Work.new(work_params)
     @work.student_id = @current_student.id
 
-    respond_to do |format|
-      if @work.save
-        format.html { redirect_to @work, notice: 'Work was successfully created.' }
-        format.json { render :show, status: :created, location: @work }
-      else
-        format.html { render :new }
-        format.json { render json: @work.errors, status: :unprocessable_entity }
-      end
+    if @work.save
+      redirect_to works_url, notice: 'Work was successfully created.'
+    else
+      format.html { render :new }
     end
+
   end
 
   # PATCH/PUT /works/1
   # PATCH/PUT /works/1.json
   def update
-    respond_to do |format|
       if @work.update(work_params)
-        format.html { redirect_to @work, notice: 'Work was successfully updated.' }
-        format.json { render :show, status: :ok, location: @work }
+        redirect_to works_url, notice: 'Work was successfully updated.'
       else
         format.html { render :edit }
-        format.json { render json: @work.errors, status: :unprocessable_entity }
       end
-    end
   end
 
   # DELETE /works/1
   # DELETE /works/1.json
   def destroy
     @work.destroy
-    respond_to do |format|
-      format.html { redirect_to works_url, notice: 'Work was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to works_url, notice: 'Work was successfully destroyed.'
   end
 
   private

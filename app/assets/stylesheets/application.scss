@@ -43,13 +43,25 @@ th {
 }
 
 .editButton {
-  margin: 10px auto;
+  margin: 10px 0;
+  width: 100px;
+  display: inline-block;
+}
+
+.createNew {
+  width: 300px;
+}
+
+
+.button_to {
+  width: 100px;
+  display: inline-block;
+  margin-right: 10px;
 }
 
 #titleHeader {
   margin-bottom: 20px;
 }
-
 .smallText {
   float: right;
   font-size: 10px;
