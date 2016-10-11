@@ -13,7 +13,8 @@
 //= require_tree .
  */
  @import "bootstrap";
-
+ @import "compass/css3";
+ 
 a {
   color: black;
   &:hover {
@@ -75,10 +76,6 @@ th {
 }
 
 
-// .borderVerticleColumn {
-//   margin-top: 10%;
-//   margin-bottom: 10%;
-// }
 .pink {
   color: black;
   // background-color: #f6201d;
@@ -89,9 +86,6 @@ th {
     // box-shadow: 0 3px 0 0 #a20101;
   }
 }
-
-@import "bootstrap";
-@import "compass/css3";
 
  body {
   /*background: #333;*/
@@ -294,7 +288,7 @@ h2 {
   margin-right: 20px;
   margin-top: 2px;
   outline:none;
-  
+
   @mixin font-color {
     @if lightness($color) > 50 {
       color: white;
@@ -304,7 +298,7 @@ h2 {
       // text-shadow: 0 -0.08em 0 darken($color, 20%);
 		}
   }
-  
+
   font-size: 11px;
   font-weight: 800;
   font-family: "Circular", Helvetica, sans-serif;
@@ -323,11 +317,11 @@ h2 {
   @include background-image(linear-gradient($color, darken($color, 10%)));
   @include box-shadow(0 0.1em 0.5em rgba(black,0.10), 0 0.1em 0.2em rgba(black,0.3), 0 -0.1em 0.07em rgba(black,0.3) inset, 0 0.1em 0.07em rgba(white,0.2) inset);
   @include transition(all 100ms);
-  
+
   &:hover {
     @include box-shadow(0 0.1em 0.5em rgba(black,0.4), 0 0.1em 0.2em rgba(black,0.4), 0 -0.1em 0.07em rgba(black,0.3) inset, 0 0.1em 0.07em rgba(white,0.2) inset);
   }
-  
+
   &:active {
     outline:none;
     padding: 0.8em 1.5em 0.8em;
@@ -337,8 +331,4 @@ h2 {
     @include box-shadow(0 0.1em 0.2em rgba(black,0.1) inset, 0 0.1em 0.1em rgba(black,0.2) inset, 0.05em 0 0.07em rgba(black,0.2) inset, -0.05em 0 0.07em rgba(black,0.2) inset);
     @include transition(all 10ms);
   }
-
-
-
-
 }
