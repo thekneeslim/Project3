@@ -13,9 +13,23 @@
         <a class="nav-item nav-link pull-xs-right" id="login-button" href="/students/<%=current_student.id%>">Profile</a>
       <% end %>
     <% else %>
+      <a class="nav-item nav-link pull-xs-right" href="/login">Graduate Log In</a>
+      <a class="nav-item nav-link pull-xs-right" href="/students/new">Sign Up</a>
+    <% end %>
+
+    <!-- <% if current_student %>
+      <% if current_student.admin %>
+        <%= link_to 'Logout', logout_url, class:"nav-item nav-link pull-xs-right", id: "login-button", method: :delete, data: {confirm: 'Are you sure?'}%>
+        <a class="nav-item nav-link pull-xs-right" id="login-button" href="/students/<%=current_student.id%>">Profile</a>
+        <a class="nav-item nav-link pull-xs-right" id="login-button" href="/students/<%=current_student.id%>">Admin</a>
+      <% else %>
+        <%= link_to 'Logout', logout_url, class:"nav-item nav-link pull-xs-right", id: "login-button", method: :delete, data: {confirm: 'Are you sure?'}%>
+        <a class="nav-item nav-link pull-xs-right" id="login-button" href="/students/<%=current_student.id%>">Profile</a>
+      <% end %>
+    <% else %>
       <a class="nav-item nav-link pull-xs-right" href="/login"><button id="login-button">Graduate Log In</button></a>
       <a class="nav-item nav-link pull-xs-right" href="/students/new"><button id="login-button">Sign Up</button></a>
-    <% end %>
+    <% end %> -->
 
 
   </div>
