@@ -31,10 +31,10 @@
     <%= f.password_field :password %>
   </div>
 
-  <!-- <div class="field">
+  <div class="field">
     <%= f.label :course %>
-    <%= f.select :course_ids, Course.all.collect {|x| [x.name, x.id]}, {} %>
-  </div> -->
+    <%= f.select :course_id, Course.all.collect {|x| [x.name, x.id]}, {} %>
+  </div>
 
   <div class="field">
     <%= f.label :event %>

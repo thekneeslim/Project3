@@ -5,6 +5,7 @@ class MainController < ApplicationController
   end
 
   def browse
+    @events = Event.all
     render :browse
   end
 
@@ -17,7 +18,7 @@ class MainController < ApplicationController
   end
 
   def admin
-    
+
   end
 
 end

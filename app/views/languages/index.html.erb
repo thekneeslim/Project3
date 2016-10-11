@@ -39,13 +39,8 @@
 
           <div class="modal-body">
             <div class="form-group row field">
-              <%= f.label :course, class: "col-xs-3 col-form-label" %>
-              <%= f.select :course_ids, Course.all.collect {|x| [x.name, x.id]}, {}, class: "col-xs-7 form-control selectForm" %>
-
-            </div>
-            <div class="form-group row field">
-              <%= f.label :event, class: "col-xs-3 col-form-label" %>
-              <%= f.select :event_id, Event.all.collect {|x| [x.name, x.id]}, {}, class: "col-xs-7 form-control selectForm" %>
+              <%= f.label :language, class: "col-xs-3 col-form-label" %>
+              <%= f.select :language_ids, Language.all.collect {|x| [x.name, x.id]}, {},  :multiple => true, class: "col-xs-7 form-control selectForm" %>
             </div>
           </div>
           <div class="modal-footer">
@@ -60,7 +55,6 @@
     <!-- ============ MODAL END ============ -->
   </div>
 </div>
-
 
 
 

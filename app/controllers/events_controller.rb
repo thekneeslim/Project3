@@ -7,6 +7,23 @@ class EventsController < ApplicationController
     @events = Event.all
   end
 
+  def search
+    puts "BREAKKKKKKKKKK"
+    # puts params.inspect
+    puts "BREAKKKKKKKKKK"
+    @event = Event.find(params[:id])
+    # @students = Student.where(:id => Course.where(:id => params[:id]))
+    # @students = Student.all(:include => :course, :conditions => ["interests.id = ?", 4])
+    @students = Student.joins([:course]).where(id: params[:id])
+    # @students = Student.Course.where(id: params[:id])
+    puts "Student: #{@students}"
+    # puts "Event: #{@event}"
+    respond_to do |format|
+      format.json { render :json => @event }
+      format.json { render :json => @students }
+    end
+  end
+
   # GET /events/1
   # GET /events/1.json
   def show
@@ -71,4 +88,5 @@ class EventsController < ApplicationController
     def event_params
       params.require(:event).permit(:date, :start, :end, :description, :location)
     end
+
 end

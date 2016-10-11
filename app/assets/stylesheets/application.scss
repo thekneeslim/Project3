@@ -14,11 +14,11 @@
  */
  @import "bootstrap";
  @import "compass/css3";
- @font-face { 
-   font-family: Kostic; 
-   font-weight: bold; 
+ @font-face {
+   font-family: Kostic;
+   font-weight: bold;
    src: url('Kostic-Serif-W00-Bold.ttf')
-   
+
  };
 
 a {
@@ -75,6 +75,11 @@ th {
   margin-right: 7%;
 }
 
+.buttonTags {
+  border: 1px solid #ff5f5f ;
+  background-color: white;
+}
+
 .card-header {
   width: 100%;
   background-color: #ff5f5f;
@@ -102,13 +107,12 @@ th {
   margin: 0px;
 }
 
-
 #GAprofile {
   padding: 10px 0 0 3px;
   color: white;
   font-family: Kostic;
   font-weight: 800;
-  
+
 }
 
 
@@ -286,8 +290,37 @@ h2 {
 }
 
 #date {
-  margin: 0 auto;
+  margin: 10px auto;
   text-align: center;
+  border: #ff5f5f solid 1px;
+  border-radius: 5px;
+}
+
+#selectMeetGreet {
+  padding: 10px;
+}
+
+#submitBtnSession {
+  margin-left: 20px;
+}
+
+.navbar-brand {
+  padding: 15px 0 0 15px;
+}
+
+.selectNavDropDown {
+  margin-left: 5%;
+}
+
+.tempPinkBorder {
+  border: #ff5f5f solid 1px;
+  border-radius: 5px;
+  height: 500px;
+}
+
+.meetGreetDetails {
+  margin: 20px 0;
+  // background-color: orange;
 }
 
 #box {
@@ -311,10 +344,10 @@ h2 {
 
 }
 
-.card {
-  width: 90%;
-  // border: 1px solid grey;
-}
+// .card {
+//   width: 90%;
+//   // border: 1px solid grey;
+// }
 
 .card-profile-name {
   color: black;
@@ -330,14 +363,12 @@ h2 {
   // text-decoration: none;
 }
 
-
-
-h1 {
-  text-align: center;
-  font-family: Tahoma, Arial, sans-serif;
-  color: #06D85F;
-  margin: 80px 0;
-}
+// h1 {
+//   text-align: center;
+//   font-family: Tahoma, Arial, sans-serif;
+//   color: #06D85F;
+//   margin: 80px 0;
+// }
 
 
 #logo {
@@ -345,7 +376,6 @@ h1 {
   float: left;
   margin-top: 14px;
 }
-
 
 #login-button {
   background-color: #ff5f5f;
@@ -449,4 +479,3 @@ input#student_profile_pic_url {
 }
 
 // profile pic avatar END
-

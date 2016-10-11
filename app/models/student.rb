@@ -1,9 +1,9 @@
 class Student < ApplicationRecord
-  has_and_belongs_to_many :courses
   has_and_belongs_to_many :projects
   has_and_belongs_to_many :languages
   has_many :works
   belongs_to :event
+  belongs_to :course
 
   validates :email,
   presence: true,
