@@ -5,6 +5,7 @@ class MainController < ApplicationController
   end
 
   def browse
+    @events = Event.all
     render :browse
   end
 
@@ -17,4 +18,3 @@ def landing
 end
 
 end
-

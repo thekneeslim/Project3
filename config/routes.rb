@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :works
 
   get "students/:id/education" => "students#education"
-
+  post "events/:id" => "events#search"
 
   resources :students
   resources :languages

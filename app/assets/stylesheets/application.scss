@@ -101,12 +101,6 @@ th {
   margin: 0px;
 }
 
-
-.navbar-brand {
-  padding: 15px 0 0 15px;
-}
-
-
 .axis {
 
   /*margin: 0 auto;*/
@@ -278,8 +272,32 @@ h2 {
 }
 
 #date {
-  margin: 0 auto;
+  margin: 10px auto;
   text-align: center;
+  border: #ff5f5f solid 1px;
+  border-radius: 5px;
+}
+
+#selectMeetGreet {
+  padding: 10px;
+}
+
+#submitBtnSession {
+  margin-left: 20px;
+}
+
+.navbar-brand {
+  padding: 15px 0 0 15px;
+}
+
+.selectNavDropDown {
+  margin-left: 5%;
+}
+
+.tempPinkBorder {
+  border: #ff5f5f solid 1px;
+  border-radius: 5px;
+  height: 500px;
 }
 
 #box {
@@ -324,17 +342,12 @@ h2 {
 
 
 
-h1 {
-  text-align: center;
-  font-family: Tahoma, Arial, sans-serif;
-  color: #06D85F;
-  margin: 80px 0;
-}
-
-
-
-// *= require_self
-// @import "bootstrap-sprockets";
+// h1 {
+//   text-align: center;
+//   font-family: Tahoma, Arial, sans-serif;
+//   color: #06D85F;
+//   margin: 80px 0;
+// }
 
 
 #login-button {
