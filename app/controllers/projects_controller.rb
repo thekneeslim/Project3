@@ -5,12 +5,13 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    if current_student.admin == true
-      @projects = Project.all
-    else
-      @student = Student.find(@current_student.id)
-    end
+    # if current_student.admin == true
+    #   @projects = Project.all
+    # else
 
+    @student = Student.find(current_student.id)
+    # end
+    @project = Project.new
   end
 
   # GET /projects/1

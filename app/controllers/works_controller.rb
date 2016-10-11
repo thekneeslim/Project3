@@ -7,7 +7,7 @@ class WorksController < ApplicationController
     # if current_student.admin == true
     #   @works = Work.all
     # else
-      @student = Student.find(@current_student.id)
+    @student = Student.find(current_student.id)
     # end
     @work = Work.new
   end
