@@ -12,4 +12,9 @@ class MainController < ApplicationController
     render :profile
   end
 
+def landing
+  render layout: false
 end
+
+end
+
