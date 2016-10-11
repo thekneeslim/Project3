@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :works
 
   get "students/:id/education" => "students#education"
+  get "students/:id/profile_pic" => "students#profile_pic"
+
 
 
   resources :students

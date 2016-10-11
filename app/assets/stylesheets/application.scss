@@ -50,7 +50,7 @@ th {
 }
 
 .editButton {
-  margin: 10px 0;
+  margin: 10px 40%;
   width: 100px;
   display: inline-block;
 }
@@ -112,8 +112,8 @@ th {
 }
 
 
+/////////////// ROTATING PANES CSS START
 .axis {
-
   /*margin: 0 auto;*/
   margin-bottom: 15%;
   margin-left: 30%;
@@ -208,6 +208,9 @@ th {
   right: 17em;
   margin-top: -65px;
 }
+
+/////////////// ROTATING PANES CSS END
+
 
 /*.images {
   width: 100%;
@@ -367,6 +370,7 @@ h1 {
 
 
 
+
 // #login-button {
 //   $color: #ff5f5f;
 //   margin-right: 20px;
@@ -416,3 +420,33 @@ h1 {
 //     @include transition(all 10ms);
 //   }
 // }
+
+// profile pic avatar START
+
+#upload-image{
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+}
+
+div#img-frame {
+  text-align: center;
+}
+
+input[type=file]{
+    color:transparent;
+}
+
+input#student_profile_pic_url {
+    margin-left: 40%;
+}
+
+#current-image{
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  margin: 0 auto;
+}
+
+// profile pic avatar END
+
