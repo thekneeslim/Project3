@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get "students/:id/education" => "students#education"
   get "students/:id/profile_pic" => "students#profile_pic"
 
-
+  get "admin" => "main#admin"
 
   resources :students
   resources :languages

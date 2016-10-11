@@ -6,8 +6,8 @@
     <% if current_student %>
       <% if current_student.admin %>
         <%= link_to 'Logout', logout_url, class:"nav-item nav-link pull-xs-right", id: "login-button", method: :delete, data: {confirm: 'Are you sure?'}%>
-        <a class="nav-item nav-link pull-xs-right" id="login-button" href="/students/<%=current_student.id%>">Profile</a>
-        <a class="nav-item nav-link pull-xs-right" id="login-button" href="/students/<%=current_student.id%>">Admin</a>
+        <!-- <a class="nav-item nav-link pull-xs-right" id="login-button" href="/students/<%=current_student.id%>">Profile</a> -->
+        <a class="nav-item nav-link pull-xs-right" id="login-button" href="/admin">Admin</a>
       <% else %>
         <%= link_to 'Logout', logout_url, class:"nav-item nav-link pull-xs-right", id: "login-button", method: :delete, data: {confirm: 'Are you sure?'}%>
         <a class="nav-item nav-link pull-xs-right" id="login-button" href="/students/<%=current_student.id%>">Profile</a>

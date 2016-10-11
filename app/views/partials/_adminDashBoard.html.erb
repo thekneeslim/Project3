@@ -1,0 +1,31 @@
+<div class="col-md-3">
+  <h3 id="titleHeader">Admin Dashboard</h3>
+  <div class="card">
+    <div class="card-header">
+      Manage Students' Profiles
+    </div>
+    <div class="card-block">
+      <ul class="nav nav-pills nav-stacked container-fluid">
+        <li class="nav-item pink">
+          <a class="nav-link" href="/students/<%= current_student.id%>">Courses</a>
+        </li>
+        <!-- PROFILE PICCCCC LINKKKKKKK -->
+        <li class="nav-item pink">
+          <a class="nav-link" href="/students/<%= current_student.id%>/profile_pic">Events</a>
+        </li>
+        <li class="nav-item pink">
+          <a class="nav-link" href="/students/<%= current_student.id%>/education">Languages</a>
+        </li>
+        <li class="nav-item pink">
+          <a class="nav-link" href="/works">Students' Projects</a>
+        </li>
+        <li class="nav-item pink">
+          <a class="nav-link" href="/projects">Students' Profiles</a>
+        </li>
+        <li class="nav-item pink">
+          <a class="nav-link" href="/languages">Students' Past Experience</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
