@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   delete "logout" => "sessions#destroy"
 
   get "students/:id/education" => "students#education"
+  get "students/:id/profile_pic" => "students#profile_pic"
   get "events/search" => "events#search"
 
   resources :events

@@ -1,14 +1,23 @@
-<nav class="navbar navbar-fixed-top navbar-light" style="background-color: #ffffff;">
+<nav class="navbar navbar-fixed-top navbar-light" style="background-color: #000000;">
   <div class="nav navbar-nav">
-    <a class="navbar-brand" href="/"><img src="http://i.imgur.com/4006cp5.png"></a>
+    <img id="logo" src="http://i.imgur.com/JtGZKB3.png">
+    <a id="GAprofile" class="navbar-brand" href="/">Profiles</a>
 
-    <% if current_student.present? %>
-     <%= link_to 'Logout', logout_url, class:"nav-item nav-link pull-xs-right", id: "login-button", method: :delete, data: {confirm: 'Are you sure?'}%>
-     <a class="nav-item nav-link pull-xs-right" id="login-button" href="/students/<%=current_student.id%>">Profile</a>
-      <% else%>
+    <% if current_student %>
+      <% if current_student.admin %>
+        <%= link_to 'Logout', logout_url, class:"nav-item nav-link pull-xs-right", id: "login-button", method: :delete, data: {confirm: 'Are you sure?'}%>
+        <a class="nav-item nav-link pull-xs-right" id="login-button" href="/students/<%=current_student.id%>">Profile</a>
+        <a class="nav-item nav-link pull-xs-right" id="login-button" href="/students/<%=current_student.id%>">Admin</a>
+      <% else %>
+        <%= link_to 'Logout', logout_url, class:"nav-item nav-link pull-xs-right", id: "login-button", method: :delete, data: {confirm: 'Are you sure?'}%>
+        <a class="nav-item nav-link pull-xs-right" id="login-button" href="/students/<%=current_student.id%>">Profile</a>
+      <% end %>
+    <% else %>
       <a class="nav-item nav-link pull-xs-right" href="/login"><button id="login-button">Graduate Log In</button></a>
       <a class="nav-item nav-link pull-xs-right" href="/students/new"><button id="login-button">Sign Up</button></a>
-    <%end%>
+    <% end %>
+
+
   </div>
 </nav>
 

@@ -14,6 +14,12 @@
  */
  @import "bootstrap";
  @import "compass/css3";
+ @font-face {
+   font-family: Kostic;
+   font-weight: bold;
+   src: url('Kostic-Serif-W00-Bold.ttf')
+
+ };
 
 a {
   color: black;
@@ -44,7 +50,7 @@ th {
 }
 
 .editButton {
-  margin: 10px 0;
+  margin: 10px 40%;
   width: 100px;
   display: inline-block;
 }
@@ -94,15 +100,28 @@ th {
 
  body {
   /*background: #333;*/
-  padding: 70px 0;
+  padding: 67px 0;
   // font: 15px/20px Arial, sans-serif;
   font-family: "Circular", Helvetica, sans-serif;
 
   margin: 0px;
 }
 
-.axis {
+<<<<<<< HEAD
+=======
 
+#GAprofile {
+  padding: 10px 0 0 3px;
+  color: white;
+  font-family: Kostic;
+  font-weight: 800;
+
+}
+
+
+/////////////// ROTATING PANES CSS START
+>>>>>>> 383938715f0745dd45d3f513870dca9a589cc7d1
+.axis {
   /*margin: 0 auto;*/
   margin-bottom: 15%;
   margin-left: 30%;
@@ -197,6 +216,9 @@ th {
   right: 17em;
   margin-top: -65px;
 }
+
+/////////////// ROTATING PANES CSS END
+
 
 /*.images {
   width: 100%;
@@ -345,8 +367,6 @@ h2 {
   // text-decoration: none;
 }
 
-
-
 // h1 {
 //   text-align: center;
 //   font-family: Tahoma, Arial, sans-serif;
@@ -355,52 +375,111 @@ h2 {
 // }
 
 
+#logo {
+  display:inline ;
+  float: left;
+  margin-top: 14px;
+}
+
 #login-button {
-  $color: #47A2F8;
-  margin-right: 20px;
-  margin-top: 2px;
-  outline:none;
-
-  @mixin font-color {
-    @if lightness($color) > 50 {
-      color: white;
-      // text-shadow: 0 0.1em 0 rgba(white,0.5);
-  	} @else {
-  		color: black;
-      // text-shadow: 0 -0.08em 0 darken($color, 20%);
-		}
-  }
-
-  font-size: 11px;
+  background-color: #ff5f5f;
+  border-radius: 3px;
+  border: #ff5f5f 1px solid;
+  // font-family: "Circular", Helvetica, sans-serif;
   font-weight: 800;
-  font-family: "Circular", Helvetica, sans-serif;
-  border-bottom-color: #1467f1;
-  border-bottom-style: solid;
-  border-bottom-width: 3px;
-  @include font-color;
-  display: inline-block;
-  outline: none;
-  cursor: pointer;
-  padding: 0.8em 1.5em 0.8em;
-  @include border-radius(14px);
-  border: 1px solid;
-  border-color: darken($color, 20%) darken($color, 30%) darken($color, 40%);
-  background-color: $color;
-  @include background-image(linear-gradient($color, darken($color, 10%)));
-  @include box-shadow(0 0.1em 0.5em rgba(black,0.10), 0 0.1em 0.2em rgba(black,0.3), 0 -0.1em 0.07em rgba(black,0.3) inset, 0 0.1em 0.07em rgba(white,0.2) inset);
-  @include transition(all 100ms);
-
+  font-size: 0.8rem;
+  // line-height: 1.35;
+  min-width: 10.5rem;
+  padding: 0.5rem 0;
+  margin-top: 1%;
+  margin-left: 20px;
+  color: white;
   &:hover {
-    @include box-shadow(0 0.1em 0.5em rgba(black,0.4), 0 0.1em 0.2em rgba(black,0.4), 0 -0.1em 0.07em rgba(black,0.3) inset, 0 0.1em 0.07em rgba(white,0.2) inset);
-  }
-
-  &:active {
-    outline:none;
-    padding: 0.8em 1.5em 0.8em;
-    margin-top: 0.1em;
-    border-color: darken($color, 30%) darken($color, 20%) $color;
-    @include background-image(linear-gradient(darken($color, 5%), $color));
-    @include box-shadow(0 0.1em 0.2em rgba(black,0.1) inset, 0 0.1em 0.1em rgba(black,0.2) inset, 0.05em 0 0.07em rgba(black,0.2) inset, -0.05em 0 0.07em rgba(black,0.2) inset);
-    @include transition(all 10ms);
+    border: #ff5f5f 1px solid ;
+    background-color: #F6201D;
   }
 }
+
+
+
+
+
+
+// #login-button {
+//   $color: #ff5f5f;
+//   margin-right: 20px;
+//   margin-top: 2px;
+//   outline:none;
+
+//   @mixin font-color {
+//     @if lightness($color) > 50 {
+//       color: white;
+//       // text-shadow: 0 0.1em 0 rgba(white,0.5);
+//   	} @else {
+//   		color: black;
+//       // text-shadow: 0 -0.08em 0 darken($color, 20%);
+// 		}
+//   }
+
+//   font-size: 11px;
+//   font-weight: 800;
+//   font-family: "Circular", Helvetica, sans-serif;
+//   // border-bottom-color: #1467f1;
+//   border-bottom-style: solid;
+//   border-bottom-width: 3px;
+//   @include font-color;
+//   display: inline-block;
+//   outline: none;
+//   cursor: pointer;
+//   padding: 0.8em 1.5em 0.8em;
+//   @include border-radius(1px);
+//   border: 1px solid;
+//   border-color: darken($color, 20%) darken($color, 30%) darken($color, 40%);
+//   background-color: $color;
+//   // @include background-image(linear-gradient($color, darken($color, 10%)));
+//   @include box-shadow(0 0.1em 0.5em rgba(black,0.10), 0 0.1em 0.2em rgba(black,0.3), 0 -0.1em 0.07em rgba(black,0.3) inset, 0 0.1em 0.07em rgba(white,0.2) inset);
+//   @include transition(all 100ms);
+
+//   &:hover {
+//     @include box-shadow(0 0.1em 0.5em rgba(black,0.4), 0 0.1em 0.2em rgba(black,0.4), 0 -0.1em 0.07em rgba(black,0.3) inset, 0 0.1em 0.07em rgba(white,0.2) inset);
+//   }
+
+//   &:active {
+//     outline:none;
+//     padding: 0.8em 1.5em 0.8em;
+//     margin-top: 0.1em;
+//     border-color: darken($color, 30%) darken($color, 20%) $color;
+//     @include background-image(linear-gradient(darken($color, 5%), $color));
+//     @include box-shadow(0 0.1em 0.2em rgba(black,0.1) inset, 0 0.1em 0.1em rgba(black,0.2) inset, 0.05em 0 0.07em rgba(black,0.2) inset, -0.05em 0 0.07em rgba(black,0.2) inset);
+//     @include transition(all 10ms);
+//   }
+// }
+
+// profile pic avatar START
+
+#upload-image{
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+}
+
+div#img-frame {
+  text-align: center;
+}
+
+input[type=file]{
+    color:transparent;
+}
+
+input#student_profile_pic_url {
+    margin-left: 40%;
+}
+
+#current-image{
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  margin: 0 auto;
+}
+
+// profile pic avatar END

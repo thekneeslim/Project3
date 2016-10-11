@@ -16,6 +16,11 @@ class StudentsController < ApplicationController
     render "/students/education"
   end
 
+  def profile_pic
+    @student = Student.find(@current_student.id)
+    render "/students/profile_pic"
+  end
+
   # GET /students/1
   # GET /students/1.json
   def show
@@ -46,6 +51,11 @@ class StudentsController < ApplicationController
   # PATCH/PUT /students/1
   # PATCH/PUT /students/1.json
   def update
+
+    uploaded_file = params[:student][:profile_pic_url].path
+    cloudinary_file = Cloudinary::Uploader.upload(uploaded_file)
+    params[:student][:profile_pic_url] = cloudinary_file["url"]
+
     puts params.inspect
     if @student.update(student_params)
       redirect_to @student, notice: 'Student was successfully updated.'
@@ -69,6 +79,6 @@ class StudentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-      params.require(:student).permit(:first_name, :last_name, :email, :password, :linkedin, :github, :website, :contact, :description, :event_id, :school, :qualification, :degree, :graduation, :course_ids => [], :project_ids => [], :language_ids => [])
+      params.require(:student).permit(:first_name, :last_name, :email, :password, :linkedin, :github, :website, :contact, :description, :event_id, :school, :qualification, :degree, :graduation, :profile_pic_url, :course_ids => [], :project_ids => [], :language_ids => [])
     end
 end
