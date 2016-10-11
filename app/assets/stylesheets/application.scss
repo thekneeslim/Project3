@@ -104,9 +104,13 @@ th {
 
 
 .navbar-brand {
-  padding: 15px 0 0 15px;
+  padding: 15px 0 0 45px;
+  @font-face { font-family: Kostic Serif; font-weight: bold; src: url('Kostic-Serif-W00-Bold');
 }
 
+.navbar-nav {
+  background-color: #000000;
+}
 
 .axis {
 
@@ -291,8 +295,8 @@ h2 {
 
 #login-button {
   $color: #47A2F8;
-  margin-right: 20px;
-  margin-top: 2px;
+  margin-right: 50px;
+  margin-top: 4px;
   outline:none;
   
   @mixin font-color {
@@ -341,4 +345,5 @@ h2 {
 
 
 
+ }
 }
