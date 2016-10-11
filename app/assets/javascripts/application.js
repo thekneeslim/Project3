@@ -12,11 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require tether
 //= require turbolinks
 //= require bootstrap
+
 //= require_tree .
 
-document.addEventListener('DOMContentLoaded', function () {
+$(document).on('turbolinks:load', function() {  
   console.log('DOM loaded');
 
   var carousel = $(".carousel"),

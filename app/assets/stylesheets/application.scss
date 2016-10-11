@@ -10,8 +10,73 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
-
+//= require_tree .
  */
+ @import "bootstrap";
+
+a {
+  color: black;
+  &:hover {
+    color:black;
+  }
+}
+
+th {
+  vertical-align: text-top;
+}
+
+.selectForm {
+  width: 67%;
+}
+
+#student_description {
+  height: 200px;
+}
+
+.pinkColour {
+  background-color: #ff5f5f;
+  color: white;
+}
+
+.tableHeaderWidth {
+  width: 200px;
+}
+
+.editButton {
+  margin: 10px auto;
+}
+
+#titleHeader {
+  margin-bottom: 20px;
+}
+
+.smallText {
+  float: right;
+  font-size: 10px;
+  margin-right: 7%;
+}
+
+.card-header {
+  width: 100%;
+  background-color: #ff5f5f;
+  color: white;
+}
+
+
+// .borderVerticleColumn {
+//   margin-top: 10%;
+//   margin-bottom: 10%;
+// }
+.pink {
+  color: black;
+  // background-color: #f6201d;
+  &:hover {
+    // background-color: #ff5f5f;
+    // color: white;
+    box-shadow: 0 3px 0 0 #ff5f5f;
+    // box-shadow: 0 3px 0 0 #a20101;
+  }
+}
 
 @import "bootstrap";
 @import "compass/css3";
@@ -19,15 +84,20 @@
  body {
   /*background: #333;*/
   padding: 70px 0;
-  font: 15px/20px Arial, sans-serif;
+  // font: 15px/20px Arial, sans-serif;
+  font-family: "Circular", Helvetica, sans-serif;
+
   margin: 0px;
 }
+
 
 .navbar-brand {
   padding: 15px 0 0 15px;
 }
 
-.container {
+
+.axis {
+
   /*margin: 0 auto;*/
   margin-bottom: 15%;
   margin-left: 30%;
@@ -206,7 +276,8 @@ h2 {
   text-align: center;
 }
 
-.button {
+
+#login-button {
   $color: #47A2F8;
   margin-right: 20px;
   margin-top: 2px;

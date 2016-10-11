@@ -1,0 +1,27 @@
+<div class="col-md-3">
+  <h3 id="titleHeader">Profile Navigation</h3>
+  <div class="card">
+    <div class="card-header">
+      Manage Profile
+    </div>
+    <div class="card-block">
+      <ul class="nav nav-pills nav-stacked container-fluid">
+        <li class="nav-item pink">
+          <a class="nav-link" href="/students/<%= current_student.id%>">General Information</a>
+        </li>
+        <li class="nav-item pink">
+          <a class="nav-link" href="/students/<%= current_student.id%>/education">Education</a>
+        </li>
+        <li class="nav-item pink">
+          <a class="nav-link" href="/works">Work</a>
+        </li>
+        <li class="nav-item pink">
+          <a class="nav-link" href="/projects">Project</a>
+        </li>
+        <li class="nav-item pink">
+          <a class="nav-link" href="/languages">Programming Lanugages</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

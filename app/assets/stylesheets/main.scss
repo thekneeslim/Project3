@@ -1,3 +1,58 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+#banner {
+  background-color: #47a2f8;;
+  height: 400px;
+}
+
+#browse {
+  text-align: center;
+  // margin: 0 auto;
+  // width: 100px;
+}
+
+#browse-button {
+  background-color: #47a2f8;
+  border-radius: 3px;
+  // font-family: "Circular", Helvetica, sans-serif;
+  font-weight: 800;
+  font-size: 1.125rem;
+  // line-height: 1.35;
+  min-width: 13.5rem;
+  padding: 1rem 0;
+  margin-top: 5%;
+  color: white;
+}
+
+#footer {
+  background: #383838;
+  color: white;
+  padding: 2.25rem 0;
+  margin-top: 5%;
+  // margin-bottom: 0;
+}
+
+#footer li {
+  // line-height: 80px;
+  font-size: 20px;
+}
+
+.anchor {
+  color: white;
+  text-decoration: none;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+    &:visited {
+      color: white;
+    }
+}
+
+// a:hover{
+//   text-decoration: none;
+// }
