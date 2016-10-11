@@ -1,4 +1,5 @@
 <div class="container">
+  <p id="notice"><%= notice %></p>
   <%= render "partials/verticleColumn" %>
 
   <!-- ============ FIRST EDIT BOX ============ -->
@@ -116,7 +117,7 @@
           </div>
           <div class="form-group row field">
             <%= f.label :qualification, class: "col-xs-3 col-form-label" %>
-            <select class="form-control col-xs-8 selectForm">
+            <select name="student[qualification]" id="post_qualification" class="form-control col-xs-8 selectForm">
               <option disabled>--SELECT--</option>
               <option value = "Ph.D">Ph.D</option>
               <option value = "Master's Degree">Master's Degree</option>

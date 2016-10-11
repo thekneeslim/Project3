@@ -6,6 +6,7 @@ class LanguagesController < ApplicationController
   # GET /languages.json
   def index
     @languages = Language.all
+    @language = Student.find(current_student.id)
   end
 
   # GET /languages/1

@@ -46,6 +46,7 @@ class StudentsController < ApplicationController
   # PATCH/PUT /students/1
   # PATCH/PUT /students/1.json
   def update
+    puts params.inspect
     if @student.update(student_params)
       redirect_to @student, notice: 'Student was successfully updated.'
     else
