@@ -18,7 +18,7 @@
 
 //= require_tree .
 
-$(document).on('turbolinks:load', function() {  
+$(document).on('turbolinks:load', function() {
   console.log('DOM loaded');
 
   var carousel = $(".carousel"),
