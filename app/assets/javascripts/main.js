@@ -45,6 +45,7 @@ $(document).on('turbolinks:load', function() {
     }).done(function (data) {
       console.log("Returned Data:", data)
       $("#studentDetails").empty()
+      $("#requestSelect").empty()
 
       for (var i = 0; i < data.length; i++ ) {
         $("#studentDetails").append(
