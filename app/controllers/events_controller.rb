@@ -5,6 +5,25 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
+    @event = Event.new
+
+  end
+
+  def search
+    puts "BREAKKKKKKKKKK"
+    # puts params.inspect
+    puts "BREAKKKKKKKKKK"
+    @event = Event.find(params[:id])
+    # @students = Student.where(:id => Course.where(:id => params[:id]))
+    # @students = Student.all(:include => :course, :conditions => ["interests.id = ?", 4])
+    # @students = Student.joins([:course]).where(id: params[:id])
+    # @students = Student.Course.where(id: params[:id])
+    # puts "Student: #{@students}"
+    # puts "Event: #{@event}"
+    respond_to do |format|
+      format.json { render :json => @event }
+      format.json { render :json => @students }
+    end
   end
 
   # GET /events/1
@@ -28,7 +47,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        format.html { redirect_to events_url, notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new }
@@ -69,6 +88,7 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:date, :start, :end, :description, :location)
+      params.require(:event).permit(:date, :start, :end, :description, :location, :name)
     end
+
 end

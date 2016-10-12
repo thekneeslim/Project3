@@ -14,6 +14,10 @@ class ProjectsController < ApplicationController
     @project = Project.new
   end
 
+  def projects_all
+      @projects = Project.all
+  end
+
   # GET /projects/1
   # GET /projects/1.json
   def show
@@ -32,7 +36,7 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(project_params)
-    @project.student_ids = @current_student.id
+    @project.student_ids = @current_student.id unless @project.student_ids
 
     if @project.save
       redirect_to projects_url, notice: 'Project was successfully created.'
@@ -45,7 +49,11 @@ class ProjectsController < ApplicationController
   # PATCH/PUT /projects/1.json
   def update
     if @project.update(project_params)
-      redirect_to projects_url, notice: 'Project was successfully updated.'
+      if @current_student.admin
+        redirect_to projects_all_url
+      else
+        redirect_to projects_url, notice: 'Project was successfully updated.'
+      end
     else
       render :edit
     end
@@ -55,7 +63,11 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1.json
   def destroy
     @project.destroy
-    redirect_to projects_url, notice: 'Project was successfully destroyed.'
+    if @current_student.admin
+      redirect_to projects_all_url
+    else
+      redirect_to projects_url, notice: 'Project was successfully destroyed.'
+    end
   end
 
   private

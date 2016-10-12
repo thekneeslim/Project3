@@ -12,6 +12,10 @@ class WorksController < ApplicationController
     @work = Work.new
   end
 
+  def works_all
+    @works = Work.all
+  end
+
   # GET /works/1
   # GET /works/1.json
   def show

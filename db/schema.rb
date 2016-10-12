@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161011082411) do
+ActiveRecord::Schema.define(version: 20161012025324) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,11 +19,6 @@ ActiveRecord::Schema.define(version: 20161011082411) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "courses_students", id: false, force: :cascade do |t|
-    t.integer "course_id",  null: false
-    t.integer "student_id", null: false
   end
 
   create_table "events", force: :cascade do |t|
@@ -81,6 +76,10 @@ ActiveRecord::Schema.define(version: 20161011082411) do
     t.text     "degree"
     t.date     "graduation"
     t.string   "profile_pic_url"
+    t.integer  "course_id"
+    t.string   "one_liner"
+    t.string   "link"
+    t.index ["course_id"], name: "index_students_on_course_id", using: :btree
     t.index ["event_id"], name: "index_students_on_event_id", using: :btree
   end
 
@@ -96,6 +95,7 @@ ActiveRecord::Schema.define(version: 20161011082411) do
     t.index ["student_id"], name: "index_works_on_student_id", using: :btree
   end
 
+  add_foreign_key "students", "courses"
   add_foreign_key "students", "events"
   add_foreign_key "works", "students"
 end

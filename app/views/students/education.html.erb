@@ -13,13 +13,19 @@
         <table>
           <tr>
             <th class="tableHeaderWidth">Course:</th>
-            <% @student.courses.each do |course| %>
-            <td><%= course.name %></td>
-            <%end%>
+            <td><%= @student.course.name %></td>
           </tr>
           <tr>
             <th class="tableHeaderWidth">Event:</th>
             <td><%= @student.event.name %></td>
+          </tr>
+          <tr>
+            <th class="tableHeaderWidth">Languages:</th>
+            <td>
+              <% @student.languages.each do |language| %>
+                <button type="button" class = "btn buttonTags"><%= language.name %></button>
+              <%end%>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -44,12 +50,15 @@
           <div class="modal-body">
             <div class="form-group row field">
               <%= f.label :course, class: "col-xs-3 col-form-label" %>
-              <%= f.select :course_ids, Course.all.collect {|x| [x.name, x.id]}, {}, class: "col-xs-7 form-control selectForm" %>
-
+              <%= f.select :course_id, Course.all.collect {|x| [x.name, x.id]}, {}, class: "col-xs-7 form-control selectForm" %>
             </div>
             <div class="form-group row field">
               <%= f.label :event, class: "col-xs-3 col-form-label" %>
               <%= f.select :event_id, Event.all.collect {|x| [x.name, x.id]}, {}, class: "col-xs-7 form-control selectForm" %>
+            </div>
+            <div class="form-group row field">
+              <%= f.label :language, class: "col-xs-3 col-form-label" %>
+              <%= f.select :language_ids, Language.all.collect {|x| [x.name, x.id]}, {}, :multiple => true, class: "col-xs-7 form-control selectForm" %>
             </div>
           </div>
           <div class="modal-footer">
