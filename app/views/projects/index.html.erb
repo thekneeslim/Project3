@@ -15,6 +15,7 @@
           </div>
           <div class="card-block">
             <table>
+
               <tr>
                 <th class="tableHeaderWidth">Github Repo:</th>
                 <td><%= project.github %></td>
@@ -26,6 +27,12 @@
               <tr>
                 <th class="tableHeaderWidth">Description:</th>
                 <td><%= project.description %></td>
+              </tr>
+              <tr>
+                <th class="tableHeaderWidth">Project Gifs:</th>
+                <td><%= project.project_gifs %></td>
+                <td><img src="<%= project.project_gifs %>" alt="http://giphy.com/embed/uobEGb3Cl2bcI" ></td>
+                <!-- <iframe src="//giphy.com/embed/uobEGb3Cl2bcI" width="480" height="309" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/howtogiphygifs-how-to-uobEGb3Cl2bcI">via GIPHY</a></p> -->
               </tr>
             </table>
 
@@ -52,6 +59,7 @@
               <%= form_for(project) do |f| %>
 
               <div class="modal-body">
+
                 <div class="form-group row field">
                   <%= f.label :name, class: "col-xs-3 col-form-label" %>
                   <%= f.text_field :name, value: project.name, class: 'col-xs-8'%>
@@ -68,6 +76,7 @@
                   <%= f.label :description, class: "col-xs-3 col-form-label" %>
                   <%= f.text_area :description, value: project.description, class: 'col-xs-8'%>
                 </div>
+                
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -104,6 +113,7 @@
           <% project = @project %>
           <%= form_for(project) do |f| %>
           <div class="modal-body">
+
             <div class="form-group row field">
               <%= f.label :name, class: "col-xs-3 col-form-label" %>
               <%= f.text_field :name, class: 'col-xs-8'%>
@@ -120,6 +130,7 @@
               <%= f.label :description, class: "col-xs-3 col-form-label" %>
               <%= f.text_area :description, class: 'col-xs-8'%>
             </div>
+
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
