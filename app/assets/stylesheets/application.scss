@@ -377,9 +377,16 @@ th {
 }
 
 .cardShadow {
+  text-align: center;
   &:hover {
     box-shadow: 10px 10px 5px #888888;
   }
+}
+
+.cardImage {
+  margin-top: 5px;
+  margin: 10px auto;
+  width: inherit;
 }
 // END BROWSING PAGE
 // NAVIGATIONAL BAR
