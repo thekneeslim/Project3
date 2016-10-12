@@ -15,6 +15,10 @@ class Student < ApplicationRecord
 
   has_secure_password
 
+  def name
+   "#{first_name.titlecase} #{last_name.titlecase}"
+  end
+
   def self.authenticate(params)
     Student.find_by_email(params[:email]).try(:authenticate, params[:password])
   end
