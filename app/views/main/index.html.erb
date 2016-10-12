@@ -1,5 +1,19 @@
 
-<div id="banner" class="container-fluid">js typed position here</div>
+
+<div class="banner">
+  Find Your Next Great
+  <br>
+  <div id="typed-strings" class="container-fluid">
+  <br>
+  <p>Web Developer.</p>
+  <p>UX Designer.</p>
+  <p><strike>All In One Cheap Labour.</strike></p>
+  </div>
+<span id="typed"></span>
+</div>
+
+
+
 
 <!-- <button type="button" class="btn btn-primary btn-lg">Large button</button> -->
 
@@ -30,3 +44,18 @@
     </div>
   </nav>
 </footer>
+
+
+<script>
+    $(function(){
+        $("#typed").typed({
+            stringsElement: $('#typed-strings'),
+            // strings: ["Web Developer.", "UX Designer.", "Bao Ka Liao Cheap Labour."],
+            typeSpeed: 40,
+            loop: true,
+            loopCount: false,
+            backSpeed: 10,
+            backDelay: 700,
+        });
+    });
+</script>
