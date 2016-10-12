@@ -1,3 +1,15 @@
+<style>
+  table, thead, tr, td, th {
+
+    padding: 8px;
+    text-align: center;
+  }
+
+  .mine {
+    margin: 0;
+  }
+</style>
+
 <div class="container">
   <%= render "partials/adminDashBoard" %>
 
@@ -12,17 +24,14 @@
       </div>
       <div class="card-block">
         <table>
-          <thead>
             <tr>
               <th>Name</th>
             </tr>
-          </thead>
-          <tbody>
-          <% @languages.each do |language| %>
+            <% @languages.each do |language| %>
             <tr>
               <td><%= language.name %></td>
               <td>
-                <button type="button" class="btn pinkColour editButton" data-toggle="modal" data-target="#languageInfoEdit">
+                <button type="button" class="btn pinkColour editButton mine" data-toggle="modal" data-target="#languageInfoEdit-<%=language.id%>">
                   Edit
                 </button>
               </td>
@@ -30,10 +39,9 @@
                 <%= button_to "Delete", language, :method => :delete, class: "btn pinkColour editButton" %>
               </td>
             </tr>
-          </tbody>
 
           <!-- MODAL FOR EDIT -->
-          <div class="modal fade" id="languageInfoEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal fade" id="languageInfoEdit-<%=language.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">

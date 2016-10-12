@@ -1,56 +1,55 @@
+<style>
+  table, thead, tr, td, th {
+
+    padding: 10px;
+    text-align: center;
+  }
+
+  .mine {
+    margin: 0;
+  }
+</style>
+
+
 <div class="container">
   <%= render "partials/adminDashBoard" %>
 
-  <h3 id="titleHeader">Profiles</h3>
+  <h3 id="titleHeader">Students' Work Experience</h3>
 
   <!-- ============ FIRST EDIT BOX ============ -->
   <div class="offset-md-1 col-md-8">
-    <!-- <h3 id="titleHeader">General Information</h3> -->
     <div class="card">
       <div class="card-header">
-        Profiles
+        Students' Work Experience
       </div>
       <div class="card-block">
         <table>
           <thead>
             <tr>
+              <th>Student</th>
+              <th>Company</th>
               <th>Name</th>
-              <th>Email</th>
-              <th>Contact</th>
-              <th>Website</th>
-              <th>Linkedin</th>
-              <th>Github</th>
-              <th>Website</th>
-              <th>Event</th>
-              <th>Course</th>
             </tr>
           </thead>
           <tbody>
-          <% @students.each do |student| %>
+          <% @works.each do |work| %>
             <tr>
-              <td><%= current_student.name %></td>
-              <td><%= student.email %></td>
-              <td><%= student.contact %></td>
-              <td><%= student.website %></td>
-              <td><%= student.linkedin %></td>
-              <td><%= student.github %></td>
-              <td><%= student.website %></td>
-              <!-- .present? checks if what you are calling exists then display, otherwise leave it black -->
-              <td><%= student.event.name if student.event.present? %></td>
-              <td><%= student.course.name if student.event.present?%></td>
+              <td><%= work.student.name %></td>
+              <td><%= work.company %></td>
+              <td><%= work.title %></td>
               <td>
-                <button type="button" class="btn pinkColour editButton" data-toggle="modal" data-target="#studentInfoEdit">
+                <button type="button" class="btn pinkColour editButton mine" data-toggle="modal" data-target="#workInfoEdit-<%=work.id%>">
                   Edit
                 </button>
               </td>
               <td>
-                <%= button_to "Delete", student, :method => :delete, class: "btn pinkColour editButton" %>
+                <%= button_to "Delete", work, :method => :delete, class: "btn pinkColour editButton mine" %>
               </td>
             </tr>
           </tbody>
 
           <!-- MODAL FOR EDIT -->
-          <div class="modal fade" id="studentInfoEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal fade" id="workInfoEdit-<%=work.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -58,48 +57,31 @@
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
-                  <h4 class="modal-title" id="myModalLabel">Student Details</h4>
+                  <h4 class="modal-title" id="myModalLabel">Work Details</h4>
                 </div>
                 <!-- ============ FORM ============ -->
-                <%= form_for(student) do |f| %>
+                <%= form_for(work) do |f| %>
 
                   <div class="modal-body">
                     <div class="form-group row field">
-                        <%= f.label :first_name, class: "col-xs-3 col-form-label" %>
-                        <%= f.text_field :first_name, value: student.first_name, class: 'col-xs-8'%>
+                      <%= f.label :company, class: "col-xs-3 col-form-label" %>
+                      <%= f.text_field :company, value: work.company, class: 'col-xs-8'%>
                     </div>
                     <div class="form-group row field">
-                        <%= f.label :last_name, class: "col-xs-3 col-form-label" %>
-                        <%= f.text_field :last_name, value: student.last_name, class: 'col-xs-8'%>
+                        <%= f.label :title, class: "col-xs-3 col-form-label" %>
+                        <%= f.text_field :title, value: work.title, class: 'col-xs-8'%>
                     </div>
                     <div class="form-group row field">
-                        <%= f.label :email, class: "col-xs-3 col-form-label" %>
-                        <%= f.text_field :email, value: student.email, class: 'col-xs-8'%>
+                        <%= f.label :start, class: "col-xs-3 col-form-label" %>
+                        <%= f.date_field :start, value: work.start, class: 'col-xs-8'%>
                     </div>
                     <div class="form-group row field">
-                        <%= f.label :contact, class: "col-xs-3 col-form-label" %>
-                        <%= f.text_field :contact, value: student.contact, class: 'col-xs-8'%>
+                        <%= f.label :end, class: "col-xs-3 col-form-label" %>
+                        <%= f.date_field :end, value: work.end, class: 'col-xs-8'%>
                     </div>
                     <div class="form-group row field">
-                        <%= f.label :website, class: "col-xs-3 col-form-label" %>
-                        <%= f.text_field :website, value: student.website, class: 'col-xs-8'%>
-                    </div>
-                    <div class="form-group row field">
-                        <%= f.label :linkedin, class: "col-xs-3 col-form-label" %>
-                        <%= f.text_field :linkedin, value: student.linkedin, class: 'col-xs-8'%>
-                    </div>
-                    <div class="form-group row field">
-                        <%= f.label :github, class: "col-xs-3 col-form-label" %>
-                        <%= f.text_field :github, value: student.github, class: 'col-xs-8'%>
-                    </div>
-                    <div class="form-group row field">
-                        <%= f.label :event, class: "col-xs-3 col-form-label" %>
-                        <%= f.select :event_id, Event.all.collect {|x| [x.name, x.id]}, class: 'col-xs-8 form-control selectForm'%>
-
-                    </div>
-                    <div class="form-group row field">
-                        <%= f.label :course, class: "col-xs-3 col-form-label" %>
-                        <%= f.select :course_id, Course.all.collect {|x| [x.name, x.id]}, class: 'col-xs-8 form-control selectForm'%>
+                        <%= f.label :description, class: "col-xs-3 col-form-label" %>
+                        <%= f.text_area :description, value: work.description, class: 'col-xs-8'%>
                     </div>
 
                   </div>

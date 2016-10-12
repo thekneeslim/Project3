@@ -62,7 +62,7 @@ class StudentsController < ApplicationController
     @student.admin = false;
 
     first_name = @student.first_name
-    last_last = @student.last_name
+    last_name = @student.last_name
     @student.link = (first_name + last_name).downcase
 
     if @student.save
