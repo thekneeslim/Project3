@@ -33,6 +33,10 @@
 
  };
 
+ body {
+  font-family: "Circular", Helvetica, sans-serif;
+  background-color: #f6f6f6;
+}
 
 a {
   color: black;
@@ -45,6 +49,10 @@ th {
   vertical-align: text-top;
 }
 
+.whiteSpace {
+  height: 54px;
+}
+
 .selectForm {
   width: 67%;
 }
@@ -55,6 +63,12 @@ th {
 
 .profileIcon {
   height: 18px;
+  padding: 10px 5px;
+  width: inherit;
+  &:hover {
+    text-decoration: none;
+    color: orange;
+  }
 }
 
 // #mainFooter {
@@ -69,11 +83,6 @@ th {
 
 .tagSpacing {
   margin-right: 10px;
-}
-
-#requestSelect {
-  text-align: center;
-  padding: 10px;
 }
 
 .tableHeaderWidth {
@@ -137,15 +146,6 @@ th {
     box-shadow: 0 3px 0 0 #ff5f5f;
     // box-shadow: 0 3px 0 0 #a20101;
   }
-}
-
- body {
-  /*background: #333;*/
-  padding: 56px 0;
-  // font: 15px/20px Arial, sans-serif;
-  font-family: "Circular", Helvetica, sans-serif;
-
-  margin: 0px;
 }
 
 #GAprofile {
@@ -316,11 +316,6 @@ th {
   height: 400px;
 }
 
-// h2 {
-//   color: white;
-//   text-align: center;
-// }
-
 .pane-title {
   font-size: 20px;
   width: 100%;
@@ -355,21 +350,52 @@ th {
   height: 600px;
 }
 
+
+// BROWSING PAGE
 #date {
   margin: 10px auto;
   text-align: center;
-  border: #ff5f5f solid 1px;
-  border-radius: 5px;
 }
 
 #selectMeetGreet {
   padding: 10px;
+  margin-top: 30px;
 }
 
 #submitBtnSession {
   margin-left: 20px;
 }
 
+#requestSelect {
+  text-align: center;
+  padding: 10px;
+}
+
+#classesInfo {
+  margin-top: 30px;
+  margin-bottom: 100px;
+}
+
+
+.courseLinks  {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.cardShadow {
+  text-align: center;
+  &:hover {
+    box-shadow: 10px 10px 5px #888888;
+  }
+}
+
+.cardImage {
+  margin-top: 5px;
+  margin: 10px auto;
+  width: inherit;
+}
+// END BROWSING PAGE
 // NAVIGATIONAL BAR
 
 .gaLogo {
