@@ -63,6 +63,12 @@ th {
 
 .profileIcon {
   height: 18px;
+  padding: 10px 5px;
+  width: inherit;
+  &:hover {
+    text-decoration: none;
+    color: orange;
+  }
 }
 
 // #mainFooter {
@@ -369,6 +375,7 @@ th {
   margin-top: 30px;
   margin-bottom: 100px;
 }
+
 
 .courseLinks  {
   &:hover {
