@@ -11,6 +11,11 @@ class StudentsController < ApplicationController
     puts @students
   end
 
+  def students_all
+    @students = Student.all
+    puts @students.inspect
+  end
+
   def education
     @student = Student.find(@current_student.id)
     render "/students/education"
@@ -72,15 +77,27 @@ class StudentsController < ApplicationController
   # PATCH/PUT /students/1.json
   def update
 
-    uploaded_file = params[:student][:profile_pic_url].path
-    cloudinary_file = Cloudinary::Uploader.upload(uploaded_file)
-    params[:student][:profile_pic_url] = cloudinary_file["url"]
+    # this checks if a upload file exist
+    # if true, upload on to cloudinary and update
+    if params[:student][:profile_pic_url].present?
+      uploaded_file = params[:student][:profile_pic_url].path
+      cloudinary_file = Cloudinary::Uploader.upload(uploaded_file)
+      params[:student][:profile_pic_url] = cloudinary_file["url"]
 
-    puts params.inspect
-    if @student.update(student_params)
-      redirect_to @student, notice: 'Student was successfully updated.'
+      puts params.inspect
+      if @student.update(student_params)
+        redirect_to @student, notice: 'Student was successfully updated.'
+      else
+        render :edit
+      end
+
+    # else just update
     else
-      render :edit
+      if @student.update(student_params)
+        redirect_to students_all_url, notice: 'Student was successfully updated.'
+      else
+        render :edit
+      end
     end
   end
 

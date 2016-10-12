@@ -7,6 +7,8 @@ class LanguagesController < ApplicationController
   def index
     @languages = Language.all
     @student = Student.find(current_student.id)
+    @language = Language.new
+
   end
 
   # GET /languages/1
@@ -30,7 +32,7 @@ class LanguagesController < ApplicationController
 
     respond_to do |format|
       if @language.save
-        format.html { redirect_to @language, notice: 'Language was successfully created.' }
+        format.html { redirect_to languages_url, notice: 'Language was successfully created.' }
         format.json { render :show, status: :created, location: @language }
       else
         format.html { render :new }
