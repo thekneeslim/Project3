@@ -1,7 +1,15 @@
 <nav class="navbar navbar-fixed-top navbar-light" style="background-color: #000000;">
   <div class="nav navbar-nav">
-    <img id="logo" src="http://i.imgur.com/JtGZKB3.png">
-    <a id="GAprofile" class="navbar-brand" href="/">Profile Singapore</a>
+    <img id="logo" src="http://i.imgur.com/1EZtcIO.png">
+    <a id="GAprofile" class="navbar-brand" href="/">GENERAL ASSEMBLY</a>
+
+    <% if current_student.present? %>
+     <%= link_to 'Logout', logout_url, class:"nav-item nav-link pull-xs-right", id: "login-button", method: :delete, data: {confirm: 'Are you sure?'}%>
+     <a class="nav-item nav-link pull-xs-right" id="login-button" href="/students/<%=current_student.id%>">Profile</a>
+      <% else%>
+      <a class="nav-item nav-link pull-xs-right" id="login" href="/login">Graduate Log In</a>
+      <a class="nav-item nav-link pull-xs-right" id="signup" href="/students/new">Sign Up</a>
+    <%end%>
 
     <% if current_student %>
       <% if current_student.admin %>

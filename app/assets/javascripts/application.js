@@ -43,3 +43,16 @@ $(document).on('turbolinks:load', function() {
   }
 
 })
+
+
+// typed.js START
+
+// $(function(){
+//       $(".element").typed({
+//         strings: ["First sentence.", "Second sentence."],
+//         typeSpeed: 0
+//       });
+//   });
+
+// typed.js END
+
