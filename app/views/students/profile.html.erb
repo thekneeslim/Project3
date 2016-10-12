@@ -13,40 +13,81 @@
     <div  class="container-fluid" id="profileFill">
       <!-- ========= LEFT BAR ========= -->
       <div id="contact" class="offset-md-1 col-md-3">
-        <%=@student.inspect%>
+        <div class="card card-block">
+          <h4 class="card-title"><%=@student.name%></h4>
+          <h6 class="card-subtitle text-muted"><%=@student.course.name%></h6></br>
+          <p class=><b>Event Details:</b></br>
+          <span class="text-muted"><%=@student.event.description%></br>
+          <%=@student.event.date%></br>
+          <%=@student.event.start%></p></br></span>
+
+          <p><a class="profileIcon" href="mailto:<%=@student.email%>"><img src="/assets/public/email.png"/> Email</a></p>
+          <p><a class="profileIcon" href="<%=@student.website%>"><img src="/assets/public/website.png"/> Website</a></p>
+          <p><a class="profileIcon" href="<%=@student.github%>"><img src="/assets/public/github.png"/> Github</a></p>
+          <p><a class="profileIcon" href="<%=@student.linkedin%>"><img src="/assets/public/linkedin.png"/> Linkedin</a></p>
+
+        </div>
       </div>
 
       <!-- ========= RIGHT BAR ========= -->
-      <div class="offset-md-1 col-md-7">
-        <div class="prev"><img class="arrows" src="/assets/public/left arrow.png" alt="" /></div>
-        <div class="boxAxis">
-          <div class="container-fluid axis" id="rotatingPlaneProfile">
-            <div class="carousel">
-              <div class="item a">
-                <div class="pane-title">Video Intro</div>
-              </div>
-              <div class="item b">
-                <div class="pane-title">Profile</div>
-
-              </div>
-              <div class="item c">
-                <div class="pane-title">Project 1</div>
-
-              </div>
-              <div class="item d">
-                <div class="pane-title">Project 2</div>
-
-              </div>
-              <div class="item e">
-                <div class="pane-title">Project 3</div>
-
-              </div>
-              <div class="item f">
-                <div class="pane-title">Past Experience</div>
+      <div class="offset-md-1 col-md-6">
+        <!-- START OF TOGGLE BAR -->
+        <div class="toggleBar">
+          <div class="prev"><img class="arrows" src="/assets/public/left arrow.png" alt="" /></div>
+          <div class="boxAxis">
+            <div class="container-fluid axis" id="rotatingPlaneProfile">
+              <div class="carousel">
+                <div class="item a">
+                  <div class="pane-title">Profile</div>
+                </div>
+                <div class="item b">
+                  <div class="pane-title">Video</div>
+                </div>
+                <div class="item c">
+                  <div class="pane-title">Project 1</div>
+                </div>
+                <div class="item d">
+                  <div class="pane-title">Project 2</div>
+                </div>
+                <div class="item e">
+                  <div class="pane-title">Project 3</div>
+                </div>
+                <div class="item f">
+                  <div class="pane-title">Past Experience</div>
+                </div>
               </div>
             </div>
+            <div class="next"><img class="arrows" src="/assets/public/right arrow.png"/></div>
           </div>
-          <div class="next"><img class="arrows" src="/assets/public/right arrow.png"/></div>
+        </div>
+        <!-- END OF TOGGLE BAR -->
+        <div class="container-fluid" id="informationBox">
+          <!-- PROFILE -->
+          <div class="toggleInfo" id="infoProfile">
+            <h3 id="bigFatName"><%=@student.first_name%> <%=@student.last_name%></h3>
+            <h6 class="text-muted"><%=@student.one_liner%></h6>
+            </br>
+            <p><img src="/assets/public/education.png"/> <%=@student.degree%> at <%=@student.school%></p>
+            <p><img src="/assets/public/location.png"/> Singapore</p>
+            <p>Languages: </br>
+            <% @student.languages.each do |language| %>
+              <span class='tag pinkColour tagSpacing'> <%= language.name %> </span>
+            <%end%>
+            </p>
+
+          </div>
+          <!-- VIDEO -->
+          <div class="toggleInfo" id="infoVideo">VIDEO LINK</div>
+          <!-- PROJECT 1 -->
+
+          <!-- PROJECT 2 -->
+          <div class="toggleInfo" id="infoProject2">Pear</div>
+          <!-- PROJECT 3 -->
+          <div class="toggleInfo" id="infoProject3">Dragon</div>
+          <!-- JOB EXPERIENCES -->
+          <div class="toggleInfo" id="infoExperiences">Fly</div>
         </div>
       </div>
     </div>
+
+    <%= render "partials/footer" %>

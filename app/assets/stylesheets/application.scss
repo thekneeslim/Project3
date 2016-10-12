@@ -40,6 +40,15 @@ th {
   height: 200px;
 }
 
+.profileIcon {
+  height: 18px;
+}
+
+// #mainFooter {
+//   position: relative;
+//   margin-bottom: -100px;
+// }
+
 .pinkColour {
   background-color: #ff5f5f;
   color: white;
@@ -128,7 +137,7 @@ th {
 /////////////// ROTATING PANES CSS START
 .axis {
   /*margin: 0 auto;*/
-  margin-bottom: 15%;
+  margin-bottom: 30px;
   margin-left: 170px;
   width: 150px;
   height: 80px;
@@ -223,6 +232,40 @@ th {
 
 /////////////// ROTATING PANES CSS END
 
+#informationBox {
+  position: relative;
+  border: 1px solid orange;
+  border-bottom: 1px solid orange;
+}
+
+.toggleInfo {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#infoVideo {
+  visibility: hidden;
+}
+#infoProject1 {
+  visibility: hidden;
+}
+#infoProject2 {
+  visibility: hidden;
+}
+#infoProject3 {
+  visibility: hidden;
+}
+#infoExperiences {
+  visibility: hidden;
+}
+
+#bigFatName {
+  padding: 10px;
+  border-bottom: 3px solid #383838;
+  width: 300px;
+}
+
 #cover_photo {
   width: 100%;
   margin-top: -30px;
@@ -261,10 +304,11 @@ h2 {
 
 #quote {
   width: 40%;
-  height: 200px;
+  height: 150px;
+  border-radius: 5px;
   float: right;
   margin-right: 5%;
-  margin-top: -100px;
+  margin-top: -75px;
   margin-bottom: 50px;
   text-align: center;
   color: white;
@@ -280,16 +324,6 @@ h2 {
   /*border: 1px solid black;*/
   width: 90%;
   height: 600px;
-}
-
-#information {
-  border: 1px solid black;
-  /*display: inline-block;*/
-  width: 45%;
-  height: 50%;
-  margin-left: 45%;
-  margin-top: -10%;
-  /*margin-bottom: -40%;*/
 }
 
 #date {
