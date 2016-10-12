@@ -66,6 +66,9 @@ class StudentsController < ApplicationController
     @student.link = (first_name + last_name).downcase
 
     if @student.save
+      # this line is necessary to allow student to be directly logged in
+      # after signed up
+      session[:student_id] = @student.id
       redirect_to @student, notice: 'Student was successfully created.'
     else
       render :new

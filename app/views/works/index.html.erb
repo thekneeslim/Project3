@@ -28,11 +28,12 @@
               </tr>
             </table>
 
-            <%= button_to "Delete", work, :method => :delete, class: "btn pinkColour editButton" %>
-
-            <button type="button" class="btn pinkColour editButton" data-toggle="modal" data-target="#work<%=work.id%>">
-              Edit
-            </button>
+            <div class="buttonBox">
+              <button type="button" class="btn pinkColour editButton editButtonSpecial" data-toggle="modal" data-target="#work<%=work.id%>">
+                Edit
+              </button>
+              <%= button_to "Delete", work, :method => :delete, class: "btn pinkColour editButton editButtonSpecial" %>
+            </div>
           </div>
         </div>
 
@@ -87,7 +88,7 @@
 
 
     <!-- ============ CREATE NEW ============ -->
-    <div class="container">
+    <div class="col-md-9 col-md-offset-3">
       <button type="button" class="btn pinkColour editButton createNew" data-toggle="modal" data-target="#createNewEntry">
         Create New Entry
       </button>
