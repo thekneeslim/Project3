@@ -25,6 +25,13 @@ class StudentsController < ApplicationController
     end
   end
 
+  def profile
+    current_url = request.original_url
+    split = current_url.split("=")
+    @student = Student.where(link: split.last)
+    render :profile
+  end
+
   def profile_pic
     @student = Student.find(@current_student.id)
     render "/students/profile_pic"
@@ -49,6 +56,10 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(student_params)
     @student.admin = false;
+
+    first_name = @student.first_name
+    last_last = @student.last_name
+    @student.link = (first_name + last_name).downcase
 
     if @student.save
       redirect_to @student, notice: 'Student was successfully created.'

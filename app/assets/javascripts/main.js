@@ -49,12 +49,14 @@ $(document).on('turbolinks:load', function() {
 
       for (var i = 0; i < data.length; i++ ) {
         $("#studentDetails").append(
-          "<div class='card'>" +
-            "<div class='card-block'>" +
-              "<h4 class='card-title'>" + data[i].first_name + " " + data[i].last_name + "</h4>" +
-              "<h6 class='card-subtitle text-muted'>" + data[i].one_liner + "</h6>" +
-              "<p>" + data[i].qualification + " in " + data[i].degree + " at " + data[i].school + "</p>" +
-              "<div id='languageTag'></div>" +
+          "<div class='card' id='" + data[i].id + "'>" +
+            "<a href='/profile/=" + data[i].link + "'>" +
+              "<div class='card-block'>" +
+                "<h4 class='card-title'>" + data[i].first_name + " " + data[i].last_name + "</h4>" +
+                "<h6 class='card-subtitle text-muted'>" + data[i].one_liner + "</h6>" +
+                "<p>" + data[i].qualification + " in " + data[i].degree + " at " + data[i].school + "</p>" +
+                "<div id='languageTag'></div>" +
+              "</a>" +
             "</div>" +
           "</div>"
         )
@@ -66,7 +68,6 @@ $(document).on('turbolinks:load', function() {
           }
         }
       }
-
     })
   })
 })
