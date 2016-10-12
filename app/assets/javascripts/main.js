@@ -55,14 +55,14 @@ $(document).on('turbolinks:load', function() {
                 "<h4 class='card-title'>" + data[i].first_name + " " + data[i].last_name + "</h4>" +
                 "<h6 class='card-subtitle text-muted'>" + data[i].one_liner + "</h6>" +
                 "<p>" + data[i].qualification + " in " + data[i].degree + " at " + data[i].school + "</p>" +
-                "<div id='languageTag'></div>" +
+                "<div id='languageTag" + data[i].id + "'></div>" +
               "</a>" +
             "</div>" +
           "</div>"
         )
         if (data[i].languages.length > 0) {
           for (var k = 0; k < data[i].languages.length; k++) {
-            $("#languageTag").append(
+            $("#languageTag"+ data[i].id + "").append(
               "<span class='tag pinkColour tagSpacing'>"+ data[i].languages[k].name +"</span>"
             )
           }

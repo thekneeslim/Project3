@@ -32,7 +32,7 @@ class StudentsController < ApplicationController
   def profile
     current_url = request.original_url
     split = current_url.split("=")
-    @student = Student.where(link: split.last)
+    @student = Student.where(link: split.last).take
     render :profile
   end
 

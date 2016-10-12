@@ -42,4 +42,30 @@ $(document).on('turbolinks:load', function() {
     });
   }
 
+
+  $(function(){
+      $("#typed").typed({
+          stringsElement: $('#typed-strings'),
+          // strings: ["Web Developer.", "UX Designer.", "Bao Ka Liao Cheap Labour."],
+          typeSpeed: 40,
+          loop: true,
+          loopCount: false,
+          backSpeed: 10,
+          backDelay: 700,
+      });
+  });
+
+
 })
+
+
+// typed.js START
+
+// $(function(){
+//       $(".element").typed({
+//         strings: ["First sentence.", "Second sentence."],
+//         typeSpeed: 0
+//       });
+//   });
+
+// typed.js END
