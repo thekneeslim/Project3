@@ -49,8 +49,9 @@ ActiveRecord::Schema.define(version: 20161012174436) do
     t.string   "github"
     t.string   "site"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "project_gifs"
   end
 
   create_table "projects_students", id: false, force: :cascade do |t|
