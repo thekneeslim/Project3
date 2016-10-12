@@ -22,9 +22,10 @@ $(document).on('turbolinks:load', function() {
     }).done(function (data) {
       console.log("Returned Data:", data)
       $("#sessionDetails").empty()
+      $("#infoOnClasses").empty()
       $("#sessionDetails").append(
         "<div class='card'>" +
-          "<div class='card-block'>" +
+          "<div class='card-block cardShadow'>" +
             "<h4 class='card-title'>" + data.name + "</h4>" +
             "<p><b>Date:</b> </br>" + data.date + "</p>" +
             "<p><b>Time:</b> </br> " + data.start + "</p> </br>" +
@@ -39,9 +40,6 @@ $(document).on('turbolinks:load', function() {
       url: '/students/search',
       method: 'GET',
       data: {id: greetID}
-      // data: {id: this.value},
-      // data: {data}
-      // dataType: 'json'
     }).done(function (data) {
       console.log("Returned Data:", data)
       $("#studentDetails").empty()
@@ -49,8 +47,8 @@ $(document).on('turbolinks:load', function() {
 
       for (var i = 0; i < data.length; i++ ) {
         $("#studentDetails").append(
-          "<div class='card' id='" + data[i].id + "'>" +
-            "<a href='/profile/=" + data[i].link + "'>" +
+          "<div class='card cardShadow' id='" + data[i].id + "'>" +
+            "<a class='courseLinks' href='/profile/=" + data[i].link + "'>" +
               "<div class='card-block'>" +
                 "<h4 class='card-title'>" + data[i].first_name + " " + data[i].last_name + "</h4>" +
                 "<h6 class='card-subtitle text-muted'>" + data[i].one_liner + "</h6>" +
