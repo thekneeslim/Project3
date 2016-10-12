@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
-  before_action :is_admin, except: [:index, :show]
+  before_action :is_admin
 
   def index
     @courses = Course.all

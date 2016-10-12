@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
   before_action :current_student, except: [:index, :show]
+  before_action :is_admin, only: [:projects_all]
 
   # GET /projects
   # GET /projects.json

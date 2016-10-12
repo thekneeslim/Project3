@@ -1,5 +1,7 @@
 class WorksController < ApplicationController
   before_action :set_work, only: [:show, :edit, :update, :destroy]
+  before_action :is_admin, only: [:works_all]
+
 
   # GET /works
   # GET /works.json
