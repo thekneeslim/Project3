@@ -14,42 +14,42 @@
 <div class="container">
   <%= render "partials/adminDashBoard" %>
 
-  <h3 id="titleHeader">Projectss</h3>
+  <h3 id="titleHeader">Students' Work Experience</h3>
 
   <!-- ============ FIRST EDIT BOX ============ -->
   <div class="offset-md-1 col-md-8">
     <div class="card">
       <div class="card-header">
-        Projectss
+        Students' Work Experience
       </div>
       <div class="card-block">
         <table>
           <thead>
             <tr>
-              <th>Name</th>
               <th>Student</th>
-              <th>Website</th>
+              <th>Company</th>
+              <th>Name</th>
             </tr>
           </thead>
           <tbody>
-          <% @projects.each do |project| %>
+          <% @works.each do |work| %>
             <tr>
-              <td><%= project.name %></td>
-              <td><%= project.student.name %></td>
-              <td><%= project.site %></td>
+              <td><%= work.student.name %></td>
+              <td><%= work.company %></td>
+              <td><%= work.title %></td>
               <td>
-                <button type="button" class="btn pinkColour editButton mine" data-toggle="modal" data-target="#projectInfoEdit-<%=project.id%>">
+                <button type="button" class="btn pinkColour editButton mine" data-toggle="modal" data-target="#workInfoEdit-<%=work.id%>">
                   Edit
                 </button>
               </td>
               <td>
-                <%= button_to "Delete", project, :method => :delete, class: "btn pinkColour editButton mine" %>
+                <%= button_to "Delete", work, :method => :delete, class: "btn pinkColour editButton mine" %>
               </td>
             </tr>
           </tbody>
 
           <!-- MODAL FOR EDIT -->
-          <div class="modal fade" id="projectInfoEdit-<%=project.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal fade" id="workInfoEdit-<%=work.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -57,27 +57,31 @@
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
-                  <h4 class="modal-title" id="myModalLabel">Project Details</h4>
+                  <h4 class="modal-title" id="myModalLabel">Work Details</h4>
                 </div>
                 <!-- ============ FORM ============ -->
-                <%= form_for(project) do |f| %>
+                <%= form_for(work) do |f| %>
 
                   <div class="modal-body">
                     <div class="form-group row field">
-                        <%= f.label :name, class: "col-xs-3 col-form-label" %>
-                        <%= f.text_field :name, value: project.name, class: 'col-xs-8'%>
+                      <%= f.label :company, class: "col-xs-3 col-form-label" %>
+                      <%= f.text_field :company, value: work.company, class: 'col-xs-8'%>
                     </div>
                     <div class="form-group row field">
-                        <%= f.label :github, class: "col-xs-3 col-form-label" %>
-                        <%= f.text_field :github, value: project.github, class: 'col-xs-8'%>
+                        <%= f.label :title, class: "col-xs-3 col-form-label" %>
+                        <%= f.text_field :title, value: work.title, class: 'col-xs-8'%>
                     </div>
                     <div class="form-group row field">
-                        <%= f.label :website, class: "col-xs-3 col-form-label" %>
-                        <%= f.text_field :site, value: project.site, class: 'col-xs-8'%>
+                        <%= f.label :start, class: "col-xs-3 col-form-label" %>
+                        <%= f.date_field :start, value: work.start, class: 'col-xs-8'%>
+                    </div>
+                    <div class="form-group row field">
+                        <%= f.label :end, class: "col-xs-3 col-form-label" %>
+                        <%= f.date_field :end, value: work.end, class: 'col-xs-8'%>
                     </div>
                     <div class="form-group row field">
                         <%= f.label :description, class: "col-xs-3 col-form-label" %>
-                        <%= f.text_area :description, value: project.description, class: 'col-xs-8'%>
+                        <%= f.text_area :description, value: work.description, class: 'col-xs-8'%>
                     </div>
 
                   </div>
@@ -101,7 +105,6 @@
 
 
     </div>
-
 
 
   </div>

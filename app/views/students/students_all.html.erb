@@ -1,3 +1,16 @@
+<style>
+  table, thead, tr, td, th {
+
+    padding: 10px;
+    text-align: center;
+  }
+
+  .mine {
+    margin: 0;
+  }
+</style>
+
+
 <div class="container">
   <%= render "partials/adminDashBoard" %>
 
@@ -15,36 +28,24 @@
           <thead>
             <tr>
               <th>Name</th>
-              <th>Email</th>
-              <th>Contact</th>
-              <th>Website</th>
-              <th>Linkedin</th>
-              <th>Github</th>
-              <th>Website</th>
-              <th>Event</th>
               <th>Course</th>
+              <th>Event</th>
             </tr>
           </thead>
           <tbody>
           <% @students.each do |student| %>
             <tr>
-              <td><%= current_student.name %></td>
-              <td><%= student.email %></td>
-              <td><%= student.contact %></td>
-              <td><%= student.website %></td>
-              <td><%= student.linkedin %></td>
-              <td><%= student.github %></td>
-              <td><%= student.website %></td>
+              <td><%= student.first_name %></td>
               <!-- .present? checks if what you are calling exists then display, otherwise leave it black -->
-              <td><%= student.event.name if student.event.present? %></td>
-              <td><%= student.course.name if student.event.present?%></td>
+              <td><%= student.course.name if student.course.present?%></td>
+              <td><%= student.event.name if student.event.present?%></td>
               <td>
-                <button type="button" class="btn pinkColour editButton" data-toggle="modal" data-target="#studentInfoEdit">
+                <button type="button" class="btn pinkColour editButton mine" data-toggle="modal" data-target="#studentInfoEdit">
                   Edit
                 </button>
               </td>
               <td>
-                <%= button_to "Delete", student, :method => :delete, class: "btn pinkColour editButton" %>
+                <%= button_to "Delete", student, :method => :delete, class: "btn pinkColour editButton mine" %>
               </td>
             </tr>
           </tbody>

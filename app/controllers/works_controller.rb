@@ -12,6 +12,10 @@ class WorksController < ApplicationController
     @work = Work.new
   end
 
+  def works_all
+    @works = Work.all
+  end
+
   # GET /works/1
   # GET /works/1.json
   def show
@@ -44,7 +48,11 @@ class WorksController < ApplicationController
   # PATCH/PUT /works/1.json
   def update
       if @work.update(work_params)
-        redirect_to works_url, notice: 'Work was successfully updated.'
+        if @current_student.admin
+          redirect_to works_all_url
+        else
+          redirect_to works_url, notice: 'Work was successfully updated.'
+        end
       else
         format.html { render :edit }
       end

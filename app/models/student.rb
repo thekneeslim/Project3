@@ -1,7 +1,7 @@
 class Student < ApplicationRecord
   has_and_belongs_to_many :projects
   has_and_belongs_to_many :languages
-  has_many :works
+  has_many :works, dependent: :destroy
   belongs_to :event
   belongs_to :course
 
