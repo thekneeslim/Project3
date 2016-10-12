@@ -10,6 +10,9 @@ class MainController < ApplicationController
   end
 
   def profile
+    student_id = params[:graduate]
+    @student = Student.find(student_id)
+    puts "#{@student}"
     render :profile
   end
 
