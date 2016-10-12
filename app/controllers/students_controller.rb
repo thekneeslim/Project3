@@ -13,7 +13,6 @@ class StudentsController < ApplicationController
 
   def students_all
     @students = Student.all
-    puts @students.inspect
   end
 
   def education

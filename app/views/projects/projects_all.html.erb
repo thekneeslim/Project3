@@ -1,17 +1,45 @@
+<style>
+  /*table, thead, tr, td, th {
+
+    padding: 20px;
+    text-align: center;
+  }*/
+
+  .mine {
+    margin: 0;
+  }
+</style>
+
 <div class="container">
   <%= render "partials/adminDashBoard" %>
 
   <h3 id="titleHeader">Projects</h3>
 
   <!-- ============ FIRST EDIT BOX ============ -->
+  <% @projects.each do |project| %>
+
   <div class="offset-md-1 col-md-8">
     <!-- <h3 id="titleHeader">General Information</h3> -->
     <div class="card">
       <div class="card-header">
-        Projects
+        <%= project.name %>
       </div>
       <div class="card-block">
         <table>
+          <tr>
+            <th class="tableHeaderWidth">Name:</th>
+            <td><%= project.name %></td>
+          </tr>
+          <tr>
+            <th class="tableHeaderWidth">Website:</th>
+            <td><%= project.site %></td>
+          </tr>
+          <tr>
+            <th class="tableHeaderWidth">Description:</th>
+            <td><%= project.description %></td>
+          </tr>
+
+          <!--
           <thead>
             <tr>
               <th>Name</th>
@@ -21,7 +49,6 @@
             </tr>
           </thead>
           <tbody>
-          <% @projects.each do |project| %>
             <tr>
               <td><%= project.name %></td>
               <td><%= project.github %></td>
@@ -36,8 +63,12 @@
                 <%= button_to "Delete", project, :method => :delete, class: "btn pinkColour editButton" %>
               </td>
             </tr>
-          </tbody>
+          </tbody> -->
 
+        </table>
+          <button type="button" class="btn pinkColour editButton" data-toggle="modal" data-target="#projectInfoEdit">
+            Edit
+          </button>
           <!-- MODAL FOR EDIT -->
           <div class="modal fade" id="projectInfoEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -84,8 +115,6 @@
 
 
 
-          <% end %>
-        </table>
 
       </div>
 
@@ -94,5 +123,7 @@
 
 
   </div>
+  <% end %>
+
 
 </div>
