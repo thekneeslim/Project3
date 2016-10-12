@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get "students/search" => "students#search"
   get "events/search" => "events#search"
 
+  get "admin" => "main#admin"
+
   resources :events
   resources :works
   resources :students

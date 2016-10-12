@@ -20,4 +20,8 @@ class MainController < ApplicationController
     render layout: false
   end
 
+  def admin
+
+  end
+
 end
