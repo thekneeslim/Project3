@@ -1,3 +1,19 @@
+<style>
+  /*table, thead, tr, td, th {
+
+    padding: 20px;
+    text-align: center;
+  }*/
+
+  .mine {
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .align {
+    text-align: center;
+  }
+</style>
 
 <div class="container">
   <%= render "partials/adminDashBoard" %>
@@ -5,46 +21,35 @@
   <h3 id="titleHeader">Events</h3>
 
   <!-- ============ FIRST EDIT BOX ============ -->
+  <% @events.each do |event| %>
   <div class="offset-md-1 col-md-8">
     <!-- <h3 id="titleHeader">General Information</h3> -->
     <div class="card">
       <div class="card-header">
-        Events
+        <%= event.name %>
       </div>
       <div class="card-block">
         <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Description</th>
-              <th>Date</th>
-              <th>Time</th>
-              <th>Location</th>
-            </tr>
-          </thead>
-          <tbody>
-          <% @events.each do |event| %>
-            <tr>
-              <td><%= event.name %></td>
-              <td><%= event.description %></td>
-              <!-- need to change date format? -->
-              <!-- change time detail format on output? -->
-              <td><%= event.date %></td>
-              <td><%= event.start %> to <%= event.start %> </td>
-              <td><%= event.location %></td>
-              <td>
-                <button type="button" class="btn pinkColour editButton" data-toggle="modal" data-target="#eventInfoEdit">
-                  Edit
-                </button>
-              </td>
-              <td>
-                <%= button_to "Delete", event, :method => :delete, class: "btn pinkColour editButton" %>
-              </td>
-            </tr>
-          </tbody>
+          <tr>
+            <th class="tableHeaderWidth">Name:</th>
+            <td><%= event.name %></td>
+          </tr>
+          <tr>
+            <th class="tableHeaderWidth">Date:</th>
+            <td><%= event.date %></td>
+          </tr>
+
+        </table>
+        <div class="container-fluid align">
+          <button type="button" class="btn pinkColour editButton mine" data-toggle="modal" data-target="#eventInfoEdit-<%= event.id %>">
+            Edit
+          </button>
+          <%= button_to "Delete", event, :method => :delete, class: "btn pinkColour editButton mine" %>
+        </div>
+
 
           <!-- MODAL FOR EDIT -->
-          <div class="modal fade" id="eventInfoEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal fade" id="eventInfoEdit-<%= event.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -95,7 +100,6 @@
           </div>
             <!-- ============ MODAL EDIT END ============ -->
 
-          <% end %>
         </table>
 
       </div>
@@ -103,12 +107,7 @@
 
     </div>
 
-    <!-- ============ CREATE NEW COURSE ============ -->
-    <div class="container">
-      <button type="button" class="btn pinkColour editButton createNew" data-toggle="modal" data-target="#createNewEntry">
-        Create New Event
-      </button>
-    </div>
+    <!-- ============ CREATE NEW EVENT ============ -->
     <!-- MODAL -->
     <div class="modal fade" id="createNewEntry" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -162,5 +161,12 @@
 
 
   </div>
+  <% end %>
+  <!-- <div class="container"> -->
+    <button type="button" class="btn pinkColour editButton createNew" data-toggle="modal" data-target="#createNewEntry">
+      Create New Event
+    </button>
+  <!-- </div> -->
+
 
 </div>

@@ -1,7 +1,7 @@
 <style>
   table, thead, tr, td, th {
 
-    padding: 20px;
+    padding: 10px;
     text-align: center;
   }
 
@@ -29,6 +29,7 @@
             <tr>
               <th>Name</th>
               <th>Course</th>
+              <th>Event</th>
             </tr>
           </thead>
           <tbody>
@@ -36,7 +37,8 @@
             <tr>
               <td><%= student.first_name %></td>
               <!-- .present? checks if what you are calling exists then display, otherwise leave it black -->
-              <td><%= student.course.name if student.event.present?%></td>
+              <td><%= student.course.name if student.course.present?%></td>
+              <td><%= student.event.name if student.event.present?%></td>
               <td>
                 <button type="button" class="btn pinkColour editButton mine" data-toggle="modal" data-target="#studentInfoEdit">
                   Edit

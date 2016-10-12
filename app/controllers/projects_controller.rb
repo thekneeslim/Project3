@@ -36,7 +36,9 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(project_params)
-    @project.student_ids = @current_student.id unless @project.student_ids
+    # @project.student_ids = @current_student.id unless @project.student_ids
+    @student_id = @current_student.id
+
 
     if @project.save
       redirect_to projects_url, notice: 'Project was successfully created.'

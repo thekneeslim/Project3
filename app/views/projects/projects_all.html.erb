@@ -1,76 +1,55 @@
 <style>
-  /*table, thead, tr, td, th {
+  table, thead, tr, td, th {
 
-    padding: 20px;
+    padding: 10px;
     text-align: center;
-  }*/
+  }
 
   .mine {
     margin: 0;
   }
 </style>
 
+
 <div class="container">
   <%= render "partials/adminDashBoard" %>
 
-  <h3 id="titleHeader">Projects</h3>
+  <h3 id="titleHeader">Projectss</h3>
 
   <!-- ============ FIRST EDIT BOX ============ -->
-  <% @projects.each do |project| %>
-
   <div class="offset-md-1 col-md-8">
-    <!-- <h3 id="titleHeader">General Information</h3> -->
     <div class="card">
       <div class="card-header">
-        <%= project.name %>
+        Projectss
       </div>
       <div class="card-block">
         <table>
-          <tr>
-            <th class="tableHeaderWidth">Name:</th>
-            <td><%= project.name %></td>
-          </tr>
-          <tr>
-            <th class="tableHeaderWidth">Website:</th>
-            <td><%= project.site %></td>
-          </tr>
-          <tr>
-            <th class="tableHeaderWidth">Description:</th>
-            <td><%= project.description %></td>
-          </tr>
-
-          <!--
           <thead>
             <tr>
               <th>Name</th>
-              <th>Github</th>
-              <th>Site</th>
-              <th>Description</th>
+              <th>Student</th>
+              <th>Website</th>
             </tr>
           </thead>
           <tbody>
+          <% @projects.each do |project| %>
             <tr>
               <td><%= project.name %></td>
-              <td><%= project.github %></td>
+              <td><%= project.student.name %></td>
               <td><%= project.site %></td>
-              <td><%= project.description %></td>
               <td>
-                <button type="button" class="btn pinkColour editButton" data-toggle="modal" data-target="#projectInfoEdit">
+                <button type="button" class="btn pinkColour editButton mine" data-toggle="modal" data-target="#projectInfoEdit-<%=project.id%>">
                   Edit
                 </button>
               </td>
               <td>
-                <%= button_to "Delete", project, :method => :delete, class: "btn pinkColour editButton" %>
+                <%= button_to "Delete", project, :method => :delete, class: "btn pinkColour editButton mine" %>
               </td>
             </tr>
-          </tbody> -->
+          </tbody>
 
-        </table>
-          <button type="button" class="btn pinkColour editButton" data-toggle="modal" data-target="#projectInfoEdit">
-            Edit
-          </button>
           <!-- MODAL FOR EDIT -->
-          <div class="modal fade" id="projectInfoEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal fade" id="projectInfoEdit-<%=project.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -93,7 +72,7 @@
                         <%= f.text_field :github, value: project.github, class: 'col-xs-8'%>
                     </div>
                     <div class="form-group row field">
-                        <%= f.label :site, class: "col-xs-3 col-form-label" %>
+                        <%= f.label :website, class: "col-xs-3 col-form-label" %>
                         <%= f.text_field :site, value: project.site, class: 'col-xs-8'%>
                     </div>
                     <div class="form-group row field">
@@ -115,6 +94,8 @@
 
 
 
+          <% end %>
+        </table>
 
       </div>
 
@@ -122,8 +103,7 @@
     </div>
 
 
-  </div>
-  <% end %>
 
+  </div>
 
 </div>

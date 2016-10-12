@@ -46,7 +46,7 @@ class LanguagesController < ApplicationController
   def update
     respond_to do |format|
       if @language.update(language_params)
-        format.html { redirect_to @language, notice: 'Language was successfully updated.' }
+        format.html { redirect_to languages_url, notice: 'Language was successfully updated.' }
         format.json { render :show, status: :ok, location: @language }
       else
         format.html { render :edit }
