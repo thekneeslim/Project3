@@ -14,9 +14,9 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     # @students = Student.where(:id => Course.where(:id => params[:id]))
     # @students = Student.all(:include => :course, :conditions => ["interests.id = ?", 4])
-    @students = Student.joins([:course]).where(id: params[:id])
+    # @students = Student.joins([:course]).where(id: params[:id])
     # @students = Student.Course.where(id: params[:id])
-    puts "Student: #{@students}"
+    # puts "Student: #{@students}"
     # puts "Event: #{@event}"
     respond_to do |format|
       format.json { render :json => @event }

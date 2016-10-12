@@ -16,6 +16,15 @@ class StudentsController < ApplicationController
     render "/students/education"
   end
 
+  def search
+    @students = Student.where(course_id: params[:id])
+    puts "STUDEENTS: #{@students}"
+
+    respond_to do |format|
+      format.json { render :json => @students, :include => [:projects, :languages] }
+    end
+  end
+
   def profile_pic
     @student = Student.find(@current_student.id)
     render "/students/profile_pic"

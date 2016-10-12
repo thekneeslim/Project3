@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   get "students/:id/education" => "students#education"
   get "students/:id/profile_pic" => "students#profile_pic"
+  get "students/search" => "students#search"
   get "events/search" => "events#search"
 
   get "admin" => "main#admin"
