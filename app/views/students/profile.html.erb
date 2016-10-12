@@ -1,52 +1,52 @@
 
+  <!-- ========= COVER PHOTO ========= -->
     <div id="cover_photo">
-      <img id="photo" src="<%=@student.inspect%>" />
+      <img id="photo" src="<%=@student.profile_pic_url%>"/>
     </div>
 
+
+    <!-- ========= QUOTE ========= -->
     <div id="quote">
-
-      <div> <%=@student.inspect%></div>
+      <%=@student.one_liner%>
     </div>
 
-    <div id="wrapper">
-
-      <div id="contact">
-
+    <div  class="container-fluid" id="profileFill">
+      <!-- ========= LEFT BAR ========= -->
+      <div id="contact" class="offset-md-1 col-md-3">
+        <%=@student.inspect%>
       </div>
 
-      <div class="axis">
-        <div class="carousel">
-          <div class="item a">
-            <div class="pane-title">Video Intro</div>
-          </div>
-          <div class="item b">
-            <div class="pane-title">Profile</div>
+      <!-- ========= RIGHT BAR ========= -->
+      <div class="offset-md-1 col-md-7">
+        <div class="prev"><img class="arrows" src="/assets/public/left arrow.png" alt="" /></div>
+        <div class="boxAxis">
+          <div class="container-fluid axis" id="rotatingPlaneProfile">
+            <div class="carousel">
+              <div class="item a">
+                <div class="pane-title">Video Intro</div>
+              </div>
+              <div class="item b">
+                <div class="pane-title">Profile</div>
 
-          </div>
-          <div class="item c">
-            <div class="pane-title">Project 1</div>
+              </div>
+              <div class="item c">
+                <div class="pane-title">Project 1</div>
 
-          </div>
-          <div class="item d">
-            <div class="pane-title">Project 2</div>
+              </div>
+              <div class="item d">
+                <div class="pane-title">Project 2</div>
 
-          </div>
-          <div class="item e">
-            <div class="pane-title">Project 3</div>
+              </div>
+              <div class="item e">
+                <div class="pane-title">Project 3</div>
 
+              </div>
+              <div class="item f">
+                <div class="pane-title">Past Experience</div>
+              </div>
+            </div>
           </div>
-          <div class="item f">
-            <div class="pane-title">Past Experience</div>
-          </div>
+          <div class="next"><img class="arrows" src="/assets/public/right arrow.png"/></div>
         </div>
-        <div class="next">Next</div>
-        <div class="prev">Prev</div>
       </div>
-
-      <div id="information">
-        <div>
-          this is an information div
-        </div>
-      </div>
-
     </div>
