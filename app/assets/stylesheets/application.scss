@@ -232,45 +232,50 @@ th {
   border-bottom: 1px solid orange;
 }
 
-.toggleInfo {
-  // position: absolute;
-//   top: 0;
-  left: 0;
-  border: 1px orange solid;
-}
-
 .projectGif {
   height: 200px;
   width: 300px;
-  text-align: center;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: 10px;
+  background-image: url("/assets/public/blank.jpg");
+  background-size: contain;
 }
 
-// #infoProfile {
-//   border: 1px orange solid;
-// }
-//
-// #infoVideo {
-//   // visibility: hidden;
-//   border: 1px orange solid;
-// }
-// #infoProject1 {
-//   // visibility: hidden;
-//   border: 1px orange solid;
-// }
-// #infoProject2 {
-//   // visibility: hidden;
-//   border: 1px orange solid;
-// }
-// #infoProject3 {
-//   // visibility: hidden;
-//   border: 1px orange solid;
-// }
-// #infoExperiences {
-//   // visibility: hidden;
-//   border: 1px orange solid;
-// }
+.settlingDates {
+  display: inline-block;
+}
+
+#workDates {
+  text-align: right;
+}
+
+.toggleInfo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px orange solid;
+  width: inherit;
+}
+
+#infoProfile {
+}
+
+#infoVideo {
+  visibility: hidden;
+}
+
+#infoProjects {
+  visibility: hidden;
+}
+
+#infoExperiences {
+  visibility: hidden;
+}
+
+.alignMiddle {
+  text-align: center;
+  margin-bottom: 40px;
+}
 
 /////////////// ROTATING PANES CSS START
 .axis {
@@ -318,7 +323,7 @@ th {
   transform: rotateY(270deg) translateZ(105px);
 }
 
-.next, .prev {
+#next, #prev {
   color: #444;
   position: absolute;
   cursor: pointer;
@@ -334,7 +339,7 @@ th {
   height: 80px;
 }
 
-.next {
+#next {
   margin-left: 120px;
 }
 

@@ -24,8 +24,8 @@ $(document).on('turbolinks:load', function() {
   var carousel = $(".carousel"),
       currdeg  = 0;
 
-  $(".next").on("click", { d: "n" }, rotate);
-  $(".prev").on("click", { d: "p" }, rotate);
+  $("#next").on("click", { d: "n" }, rotate);
+  $("#prev").on("click", { d: "p" }, rotate);
 
   function rotate(e){
     if(e.data.d=="n"){
@@ -41,5 +41,56 @@ $(document).on('turbolinks:load', function() {
       "transform": "rotateY("+currdeg+"deg)"
     });
   }
+
+  // ========================== INFORMATION BAR ==========================
+
+    var identity = 0;
+    $('#prev').click(function() {
+      $("#infoProfile").css("visibility", "hidden")
+      $("#infoVideo").css("visibility", "hidden")
+      $("#infoProjects").css("visibility", "hidden")
+      $("#infoExperiences").css("visibility", "hidden")
+      identity--
+      console.log("Prev:", identity);
+
+      if (identity < 0) {
+        identity = 3
+      }
+
+      console.log("Prev 2:", identity);
+      if (identity == 0) {
+        $("#infoProfile").css("visibility", "visible")
+      } else if (identity == 1 ) {
+        $("#infoVideo").css("visibility", "visible")
+      } else if (identity == 2) {
+        $("#infoProjects").css("visibility", "visible")
+      } else {
+        $("#infoExperiences").css("visibility", "visible")
+      }
+
+    })
+
+    $('#next').click(function() {
+      $("#infoProfile").css("visibility", "hidden")
+      $("#infoVideo").css("visibility", "hidden")
+      $("#infoProjects").css("visibility", "hidden")
+      $("#infoExperiences").css("visibility", "hidden")
+      
+      identity++
+      console.log(identity)
+      if (identity > 3) {
+        identity = 0
+      }
+      console.log(identity)
+      if (identity == 0) {
+        $("#infoProfile").css("visibility", "visible")
+      } else if (identity == 1 ) {
+        $("#infoVideo").css("visibility", "visible")
+      } else if (identity == 2) {
+        $("#infoProjects").css("visibility", "visible")
+      } else {
+        $("#infoExperiences").css("visibility", "visible")
+      }
+    })
 
 })
