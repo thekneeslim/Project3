@@ -24,6 +24,8 @@ Event.create(name: "Meet & Greet UX 3")
 Student.create(first_name: "Admin", last_name: "Tan", email: "admin@email.com", password: "admin@email.com", admin: "true")
 Student.create(first_name: "Eugene", last_name: "Oei", email: "eugene@email.com", password: "eugene@email.com", linkedin: "https://sg.linkedin.com/in/eugeneoei", github: "https://github.com/eugeneoei", website:"www.soccernet.com", contact:91181444, description: "I am a man", admin: "false", event_id: 1, school: "Singapore Management University", qualification: "Bachelor's Degree
 ", degree: "Finance", graduation: "2014-05-01", profile_pic_url: "http://res.cloudinary.com/di820hhex/image/upload/v1476362172/gexcxefsms1omvadmxr6.jpg", course_id: 1, one_liner: "Hush.sg is my baby", link: "eugeneoei")
+Student.create(first_name: "Denise", last_name: "Lim", email: "denise@email.com", password: "opopopop", linkedin: "https://www.linkedin.com/in/denise-lim", github: "https://github.com/thekneeslim", website:"https://www.google.com", contact:93829339, description: "Collect moments, not things. Spend on experiences, not materials. Be scared and do it anyway!", admin: "true", event_id: 1, school: "Singapore Management University", qualification: "Bachelor's Degree
+", degree: "Accountancy", graduation: "2014-05-01", profile_pic_url: "http://res.cloudinary.com/di820hhex/image/upload/v1476250731/hmzwcwaom7enzjc8z7rr.jpg", course_id: 1, one_liner: "Professional slacker", link: "deniselim")
 
 
 Work.create(title: "CEO", start: "2016-08-15", end: "2016-11-04", description: "I built Hush.sg from scratch with PHP", student_id: 2, company: "Hush.sg")
