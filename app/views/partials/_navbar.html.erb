@@ -7,10 +7,11 @@
         <%= link_to 'Logout', logout_url, class:"nav-item nav-link pull-xs-right", method: :delete, data: {confirm: 'Are you sure?'}%>
         <a class="nav-item nav-link pull-xs-right" href="/students/<%=current_student.id%>">Profile</a>
         <a class="nav-item nav-link pull-xs-right" href="/admin">Admin</a>
-        <span class="nav-link pull-xs-right">Welcome, <%=current_student.first_name%>!</span>
+        <span class="nav-link userName pull-xs-right">Welcome, <%=current_student.first_name%>!</span>
       <% else %>
         <%= link_to 'Logout', logout_url, class:"nav-item nav-link pull-xs-right", method: :delete, data: {confirm: 'Are you sure?'}%>
         <a class="nav-item nav-link pull-xs-right" href="/students/<%=current_student.id%>">Profile</a>
+        <span class="nav-link userName pull-xs-right">Welcome, <%=current_student.first_name%>!</span>
       <% end %>
     <% else %>
       <a class="nav-item nav-link pull-xs-right" href="/login">Graduate Log In</a>

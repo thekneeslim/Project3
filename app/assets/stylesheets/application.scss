@@ -376,17 +376,31 @@ th {
   margin-bottom: 100px;
 }
 
+.astheticLine {
+  width: 80%;
+  border-bottom: 2px solid grey;
+  padding-bottom: 3px;
+}
 
 .courseLinks  {
   &:hover {
     text-decoration: none;
   }
+  &:visited {
+    text-decoration: none;
+  }
+}
+
+.alignCenter {
+  text-align: center;
 }
 
 .cardShadow {
-  text-align: center;
   &:hover {
     box-shadow: 10px 10px 5px #888888;
+  }
+  &:visited {
+    text-decoration: none;
   }
 }
 
@@ -397,7 +411,6 @@ th {
 }
 // END BROWSING PAGE
 // NAVIGATIONAL BAR
-
 .gaLogo {
   height: 40px;
   color: white;
@@ -432,6 +445,12 @@ th {
   &:hover {
     color: white;
     background-color: #383838;
+  }
+}
+
+.userName {
+  &:hover {
+    background-color: black;
   }
 }
 
