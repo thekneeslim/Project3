@@ -71,7 +71,7 @@
                     </div>
                     <div class="form-group row field">
                         <%= f.label :description, class: "col-xs-3 col-form-label" %>
-                        <%= f.text_field :description, value: course.description, class: 'col-xs-8'%>
+                        <%= f.text_area :description, value: course.description, class: 'col-xs-8'%>
                     </div>
                     <div class="form-group row field">
                         <%= f.label :picture_url, class: "col-xs-3 col-form-label" %>
@@ -127,21 +127,21 @@
             </div>
             <div class="form-group row field">
               <%= f.label :description, class: "col-xs-3 col-form-label" %>
-              <%= f.text_field :description, class: 'col-xs-8'%>
+              <%= f.text_area :description, class: 'col-xs-8'%>
             </div>
 
             <div id="img-frame" class="field">
 
 
-              <img id="upload-image" src="http://previews.123rf.com/images/tkacchuk/tkacchuk1412/tkacchuk141200194/34316368-Attached-file-icon-on-white-background--Stock-Vector.jpg" />
+              <img id="upload-image" src="/assets/public/file-upload-pic.jpg" />
 
             </div>
 
             <!-- <div class="form-group row field"> -->
-            <!-- <div class="container containerSpecial"> -->
+            <div class="container containerSpecial">
             <div class="form-group row field">
               <!-- <%= f.label :profile_pic, class: "col-xs-3 col-form-label" %> -->
-              <%= f.file_field :picture_url %>
+              <%= f.file_field :picture_url, class: "course-upload-button", rows: "40" %>
             </div>
 
 
