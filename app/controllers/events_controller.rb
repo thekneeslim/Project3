@@ -1,7 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :current_student, except: [:search]
-  # before_action :is_admin, except: [:search]
 
   # GET /events
   # GET /events.json
