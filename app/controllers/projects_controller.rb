@@ -36,13 +36,14 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
-    @project = Project.new(project_params)
-    # @project.student_ids = @current_student.id unless @project.student_ids
-    @student_id = @current_student.id
+    # creating a new project with the params passed from form to controller
+    # then pushing this new project into the array of projects by current student
+    # note that this is a has and belongs to many relationship
+    @project = Project.create(project_params)
+    @current_student.projects.push(@project)
 
-
-    if @project.save
-      redirect_to projects_url, notice: 'Project was successfully created.'
+    if @current_student.save
+      redirect_to projects_path, notice: 'Project was successfully created.'
     else
       render :new
     end
