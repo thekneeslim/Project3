@@ -50,21 +50,29 @@ $(document).on('turbolinks:load', function() {
           "<div class='card cardShadow media' id='" + data[i].id + "'>" +
             "<a class='courseLinks' href='/profile/=" + data[i].link + "'>" +
               "<div class='card-block'>" +
-                "<div class='media-right'>" +
-                  "<img class='media-object browseImage' src='" + data[i].profile_pic_url + "' />" +
-                "</div>" +
                 "<div class='media-body'>" +
                   "<h4 class='card-title'>" + data[i].first_name + " " + data[i].last_name + "</h4>" +
                   "<h6 class='card-subtitle text-muted astheticLine'>" + data[i].one_liner + "</h6></br>" +
                   "<p><img src='/assets/public/education.png'/> " + data[i].qualification + " in " + data[i].degree + " at " + data[i].school + "</p>" +
-                  "<p><img src='/assets/public/location.png'/> Singapore</p>" +
-                  "<div id='languageTag" + data[i].id + "'></div>" +
+                  "<div id='projectsTag" + data[i].id + "'>Projects:</br> </div>" +
+                  "<div id='languageTag" + data[i].id + "'>Languages:</br> </div>" +
+                "</div>" +
+                "<div class='media-right'>" +
+                  "<img class='media-object browseImage img-circle' src='" + data[i].profile_pic_url + "' />" +
                 "</div>" +
               "</div>" +
             "</a>" +
           "</div>"
         )
-
+        // INCLUDING PROJECTS
+        if (data[i].projects.length > 0) {
+          for (var k = 0; k < data[i].projects.length; k++) {
+            $("#projectsTag"+ data[i].id + "").append(
+              "<span class='tag blueColour tagSpacing'>"+ data[i].projects[k].name +"</span>"
+            )
+          }
+        }
+        // INCLUDING LANGUAGES
         if (data[i].languages.length > 0) {
           for (var k = 0; k < data[i].languages.length; k++) {
             $("#languageTag"+ data[i].id + "").append(
