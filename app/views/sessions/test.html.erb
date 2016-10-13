@@ -1,0 +1,107 @@
+<style media="screen">
+
+
+.h2-special {
+  font-family: "PFDin", Impact, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 0.9;
+  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
+  font-size: 2.25rem;
+}
+
+.label-special {
+  display: block;
+  margin: 16px 0px 4px;
+  margin: 1rem 0rem 0.25rem;
+  font-family: "Circular", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.form-container {
+  margin-top: 100px;
+}
+
+.input-special-login {
+  border: 1px solid #dadada;
+  border-radius: 0;
+  background-color: #ffffff;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  font-family: "Circular", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  outline: none;
+  color: #222222;
+  display: block;
+  margin: 0px 0px 16px 0px;
+  margin: 0rem 0rem 1rem 0rem;
+  padding: 16px;
+  padding: 1rem;
+  width: 100%;
+
+}
+
+.input-special-submit {
+  display: inline-block;
+  margin-bottom: 3px;
+  padding: 13px 32px;
+  padding: 0.8125rem 2rem;
+  border: 0;
+  font-family: "Circular", Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  font-size: 1.125rem;
+  text-align: center;
+  border-radius: 3px;
+  color: #ffffff;
+  background-color: #fa4542;
+  box-shadow: 0 3px 0 0 #a20101;
+  text-decoration: none;
+  width: 100%;
+}
+
+.anchor-special {
+  color: #222222;
+  font-size: 20px;
+  font-family: "News 706", Georgia, serif;
+  line-height: 1.4;
+}
+
+.alternate-signup {
+  text-align: center;
+  border: 1px solid #ececec;
+  margin: 2rem 17px;
+  padding: 1rem;
+  width: 95%;
+}
+
+</style>
+
+
+<div class="container col-md-6 offset-md-3 form-container">
+  <h2 class="h2-special">SIGN IN</h2>
+  <div class="form-group">
+    <%= form_for :student do |f| %>
+    <%= f.label :email, class: "label-special" %>
+    <%= f.email_field :email, placeholder: "example@email.com", class:"input-special-login" %>
+    <br>
+    <%= f.label :password, class: "label-special" %>
+    <%= f.password_field :password, placeholder: "password", class:"input-special-login" %>
+    <br>
+    <div class="loginButton">
+      <%= f.submit "Login", class: "input-special-submit"%>
+    </div>
+    <% end %>
+  </div>
+  <div class="row">
+    <div class="col-md-12 alternate-signup">
+      <span class="anchor-special"> Dont have an account? </span>
+      <a class="anchor-special" href="/students/new">Sign Up!</a>
+    </div>
+  </div>
+</div>
+
+<!-- above for log in. below for sign up -->
