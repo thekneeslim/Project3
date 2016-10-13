@@ -1,3 +1,10 @@
+<style>
+  .mine {
+    margin: 0;
+  }
+</style>
+
+
 <div class="container">
   <p id="notice"><%= notice %></p>
 
@@ -29,19 +36,28 @@
                 <th class="tableHeaderWidth">Description:</th>
                 <td><%= project.description %></td>
               </tr>
-              <tr>
-                <th class="tableHeaderWidth">Project Gifs:</th>
-                <td><%= project.project_gifs %></td>
-                <td><img src="<%= project.project_gifs %>" alt="http://giphy.com/embed/uobEGb3Cl2bcI" ></td>
+              <!-- <tr> -->
+                <!-- <th class="tableHeaderWidth">Project Gifs:</th> -->
+                <!-- <td><%= project.project_gifs %></td> -->
                 <!-- <iframe src="//giphy.com/embed/uobEGb3Cl2bcI" width="480" height="309" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/howtogiphygifs-how-to-uobEGb3Cl2bcI">via GIPHY</a></p> -->
-              </tr>
+              <!-- </tr> -->
             </table>
+            <div class="container containerSpecial">
+              <% if project.project_gifs.present? %>
 
-            <%= button_to "Delete", project, :method => :delete, class: "btn pinkColour editButton" %>
+              <iframe src="<%= project.project_gifs %>" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+              <% else %>
+              <iframe src="//giphy.com/embed/3o7TKDNV8ZqWei6iFq" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+              <% end %>
+            </div>
 
-            <button type="button" class="btn pinkColour editButton" data-toggle="modal" data-target="#project<%=project.id%>">
-              Edit
-            </button>
+            <div class="container containerSpecial">
+
+              <button type="button" class="btn pinkColour editButton editButtonSpecial" data-toggle="modal" data-target="#project<%=project.id%>">
+                Edit
+              </button>
+              <%= button_to "Delete", project, :method => :delete, class: "btn pinkColour editButton editButtonSpecial" %>
+            </div>
           </div>
         </div>
 
