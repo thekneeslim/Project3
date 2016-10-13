@@ -1,3 +1,44 @@
 // Place all the styles related to the students controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#new_student {
+    // height: 40%;
+    width: 24%;
+    margin: 4em auto;
+    font-family: Georgia;
+    
+}
+
+// #field {
+//     width: 280px;
+// }
+
+#student_first_name {
+    width: 260px;
+}
+
+#student_last_name {
+    width: 260px;
+}
+
+#student_email {
+    width: 260px;
+}
+
+#student_password {
+    width: 260px;
+}
+
+#student_course_id {
+    width: 260px;
+}
+
+#student_event_id {
+    width: 260px;
+}
+
+#submit-button-signup {
+    text-align: center;
+    margin: 1em;
+}
