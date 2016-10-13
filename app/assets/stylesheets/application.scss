@@ -439,10 +439,12 @@ th {
 }
 
 .cardImage {
-  margin-top: 5px;
-  margin: 10px auto;
+  // margin-top: 5px;
+  // margin: 10px auto;
   width: inherit;
+  // height: 200px;
   object-fit: cover;
+  object-position: center;
 }
 
 .browseImage {
