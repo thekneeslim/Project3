@@ -35,7 +35,9 @@
           <% @projects.each do |project| %>
             <tr>
               <td><%= project.name %></td>
-              <td><%= project.student.name %></td>
+              <% project.students.each do |student| %>
+              <td><%= student.name %></td>
+              <% end %>
               <td><%= project.site %></td>
               <td>
                 <button type="button" class="btn pinkColour editButton mine" data-toggle="modal" data-target="#projectInfoEdit-<%=project.id%>">
@@ -93,8 +95,8 @@
             <!-- ============ MODAL EDIT END ============ -->
 
 
+            <% end %>
 
-          <% end %>
         </table>
 
       </div>
