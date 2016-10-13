@@ -6,6 +6,7 @@ class MainController < ApplicationController
 
   def browse
     @events = Event.all
+    @courses = Course.all
     render :browse
   end
 

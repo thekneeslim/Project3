@@ -12,7 +12,22 @@
   </form>
 </div>
 
-<div class="container" id="requestSelect"></br><h2>Our courses!</h2></div>
+<!-- <div class="container" id="requestSelect"></br><h2>Our courses!</h2></div>
+<div class="card-deck-wrapper" id="classesInfo">
+  <% @courses.each do |course| %>
+    <div class="card cardShadow alignCenter">
+      <a class="courseLinks" href="<%=course.link%>">
+        <img class="card-img-top cardImage" src="<%=course.picture_url%>" alt="Card image cap">
+        <div class="card-block">
+          <h4 class="card-title"><%=course.name%></h4>
+          <p class="card-text"><%=course.description%></p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </a>
+    </div>
+  <%end%>
+</div> -->
+
 <!-- COURSE INFORMATION -->
 <div class="container" id="infoOnClasses">
   <div class="card-deck-wrapper" id="classesInfo">
