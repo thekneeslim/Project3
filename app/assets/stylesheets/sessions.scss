@@ -5,21 +5,30 @@
 #login_form {
     height: 40%;
     width: 40%;
-    margin: 8em auto;
-    font-family: Georgia;
-    
-    
+    margin: 0 auto;
+    // font-family: Georgia;
 }
 
 #submit-button {
-    // margin: 20px 4em;
-    text-align: center;
+  height: 40%;
+  width: 40%;
+}
+
+.loginButton {
+  text-align: center;
+}
+
+#logoSize {
+  object-fit: contain;
+  height: 200px;
+  width: 200px;
+  margin: 50px auto;
 }
 
 #login-right-pic {
     max-width: 100%;
-    height: 120px;
-    width: 120px;
+    height: 200px;
+    width: 200px;
     float: right;
     display: inline;
 }
@@ -27,15 +36,5 @@
 #login-right {
     position: fixed;
     right: 100px;
-    bottom: 200px;
+    bottom: 100px;
 }
-
-// input {
-//     display: block;
-//     margin: 0 auto;
-// }
-
-// form {
-//     margin: 0 auto;
-//     height: auto;
-// }

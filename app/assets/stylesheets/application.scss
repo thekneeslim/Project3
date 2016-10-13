@@ -38,12 +38,12 @@
   background-color: #f6f6f6;
 }
 
-a {
-  color: black;
-  &:hover {
-    color:black;
-  }
-}
+// a {
+//   color: black;
+//   &:visited {
+//     text-decoration: none;
+//   }
+// }
 
 th {
   vertical-align: text-top;
@@ -69,9 +69,14 @@ th {
   height: 18px;
   padding: 10px 5px;
   width: inherit;
+  color: black;
   &:hover {
     text-decoration: none;
     color: orange;
+  }
+  &:hover:visited {
+    text-decoration: none;
+    // color:black;
   }
 }
 
@@ -554,7 +559,6 @@ th {
 }
 
 .login-button {
-
   margin-left: 20px;
   color: white;
   &:hover {

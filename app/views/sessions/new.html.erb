@@ -1,23 +1,29 @@
 
-  <div class="form-signin" id="login_form">
+
+<div class="container loginButton">
+  <img id="logoSize" src="/assets/public/galogo.png"/>
+</div>
+  <div class="form-signin form-group" id="login_form">
     <!--<h2 class="form-signin-heading">Please sign in</h2>-->
     <%= form_for :student do |f| %>
         <%= f.label :email %>
-        <%= f.email_field :email, placeholder: "Enter your email", class:"form-control" %>
+        <%= f.email_field :email, placeholder: "example@email.com", class:"form-control loginPage" %>
         <br>
         <%= f.label :password %>
-        <%= f.password_field :password, placeholder: "Enter your password", class:"form-control" %>
+        <%= f.password_field :password, placeholder: "password", class:"form-control loginPage" %>
         <br>
         <br>
-        <div id="submit-button"><%= f.submit "Login" %></div>
+        <div class="loginButton">
+          <%= f.submit "Login", class:"btn pinkColour loginPage", id:"submit-button"%>
+        </div>
     <% end %>
   </div>
-  
+
   <div id="login-right">
     <img id="login-right-pic" src="http://i.imgur.com/nTbLEfV.png"></img>
   </div>
-  
-  
+
+
 <!--<div class="container">-->
 <!--  <form>-->
 <!--    <div class="form-group row">-->
@@ -33,6 +39,6 @@
 <!--      </div>-->
 <!--    </div>-->
 <!--    <button type="submit" class="btn btn-primary">Sign in</button>-->
-    
+
 <!--  </form>-->
 <!--</div>-->
