@@ -43,11 +43,12 @@
               <!-- </tr> -->
             </table>
             <div class="container containerSpecial">
+
               <% if project.project_gifs.present? %>
 
-              <iframe src="<%= project.project_gifs %>" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+              <iframe src="<%= project.project_gifs %>" width="400" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
               <% else %>
-              <iframe src="//giphy.com/embed/3o7TKDNV8ZqWei6iFq" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+              <iframe src="//giphy.com/embed/3o7TKDNV8ZqWei6iFq" width="400" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
               <% end %>
             </div>
 
@@ -90,14 +91,20 @@
                   <%= f.text_field :site, value: project.site, class: 'col-xs-8'%>
                 </div>
                 <div class="form-group row field">
+                  <%= f.label :project_gifs, class: "col-xs-3 col-form-label" %>
+                  <%= f.text_field :project_gifs, value: project.project_gifs, class: 'col-xs-8'%>
+                </div>
+                <div class="form-group row field">
                   <%= f.label :description, class: "col-xs-3 col-form-label" %>
                   <%= f.text_area :description, value: project.description, class: 'col-xs-8'%>
                 </div>
 
+                <!-- add in gif upate field -->
+
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="submit" class="btn pinkColour">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               </div>
               <!-- ============ FORM END ============ -->
               <%end%>
@@ -157,8 +164,8 @@
 
           </div>
           <div class="modal-footer">
+            <%= button_to "Create", project, :method => :create, class: "btn pinkColour editButton editButtonSpecial" %>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <%= button_to "Create", project, :method => :create, class: "btn pinkColour editButton" %>
           </div>
           <% end %>
           <!-- ============ FORM END ============ -->
