@@ -81,6 +81,7 @@ class StudentsController < ApplicationController
 
     # this checks if a upload file exist
     # if true, upload on to cloudinary and update
+    # note that we are modifying the params here before updating the student object
     if params[:student][:profile_pic_url].present?
       uploaded_file = params[:student][:profile_pic_url].path
       cloudinary_file = Cloudinary::Uploader.upload(uploaded_file)
