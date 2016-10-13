@@ -231,13 +231,6 @@ th {
   border-bottom: 1px solid orange;
 }
 
-.toggleInfo {
-  // position: absolute;
-//   top: 0;
-  left: 0;
-  border: 1px orange solid;
-}
-
 .projectGif {
   height: 200px;
   width: 300px;
@@ -255,23 +248,27 @@ th {
   text-align: right;
 }
 
+.toggleInfo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px orange solid;
+  width: inherit;
+}
+
 #infoProfile {
 }
 
 #infoVideo {
-  // visibility: hidden;
+  visibility: hidden;
 }
-#infoProject1 {
-  // visibility: hidden;
+
+#infoProjects {
+  visibility: hidden;
 }
-#infoProject2 {
-  // visibility: hidden;
-}
-#infoProject3 {
-  // visibility: hidden;
-}
+
 #infoExperiences {
-  // visibility: hidden;
+  visibility: hidden;
 }
 
 .alignMiddle {
@@ -325,7 +322,7 @@ th {
   transform: rotateY(270deg) translateZ(105px);
 }
 
-.next, .prev {
+#next, #prev {
   color: #444;
   position: absolute;
   cursor: pointer;
@@ -341,7 +338,7 @@ th {
   height: 80px;
 }
 
-.next {
+#next {
   margin-left: 120px;
 }
 

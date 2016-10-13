@@ -85,9 +85,4 @@ $(document).on('turbolinks:load', function() {
     })
   })
 
-// ========================== PROFILE ==========================
-  $('#selectMeetGreet').submit(function(e) {
-
-  })
-
 })
