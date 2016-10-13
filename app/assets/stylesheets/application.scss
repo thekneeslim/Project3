@@ -38,12 +38,12 @@
   background-color: #f6f6f6;
 }
 
-// a {
-//   color: black;
-//   &:visited {
-//     text-decoration: none;
-//   }
-// }
+a {
+  color: black;
+  &:visited {
+    text-decoration: none;
+  }
+}
 
 th {
   vertical-align: text-top;
@@ -237,8 +237,8 @@ th {
 
 #informationBox {
   position: relative;
-  border: 1px solid orange;
-  border-bottom: 1px solid orange;
+  // border: 1px solid orange;
+  // border-bottom: 1px solid orange;
 }
 
 .projectGif {
@@ -248,10 +248,6 @@ th {
   border-radius: 10px;
   background-image: url("/assets/public/blank.jpg");
   background-size: contain;
-}
-
-.settlingDates {
-  display: inline-block;
 }
 
 #workDates {
@@ -315,18 +311,24 @@ th {
   font-size: 5em;
   text-align: center;
   border-radius: 10px;
-  border: 1px solid black;
+  // border: 1px solid black;
   color: black;
 }
 
 .a {
   transform: rotateY(0deg) translateZ(105px);
+  background-color: #ff5f5f;
+  color: white;
 }
 .b {
   transform: rotateY(90deg) translateZ(105px);
+  background-color: #fbd334;
+  color: black;
 }
 .c {
   transform: rotateY(180deg) translateZ(105px);
+  background-color: #358df2;
+  color: white;
 }
 .d {
   transform: rotateY(270deg) translateZ(105px);

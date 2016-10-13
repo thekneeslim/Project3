@@ -1,53 +1,49 @@
 <div class="form-group" id="signup-form">
-<%= form_for(student) do |f| %>
-  <% if student.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
+  <%= form_for(student) do |f| %>
+    <% if student.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
 
-      <ul>
-      <% student.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% student.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group row field">
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, class: 'form-control' %>
+    </div>
+    <div class="form-group row field">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, class: 'form-control' %>
+    </div>
+
+    <div class="form-group row field"><div>
+      <%= f.label :email %>
+      <%= f.text_field :email, class: 'form-control' %>
+    </div>
+
+    <div class="form-group row field">
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+    </div>
+
+    <div class="form-group row field">
+      <%= f.label :course %>
+      <%= f.select :course_id, Course.all.collect {|x| [x.name, x.id]}, {}, class: 'form-control' %>
+    </div>
+
+    <div class="form-group row field">
+      <%= f.label :event %>
+      <%= f.select :event_id, Event.all.collect {|x| [x.name, x.id]}, {}, class: 'form-control' %>
+    </div>
+
+    <div id="submit-button-signup">
+      <%= f.submit "Create", class:"btn pinkColour" %>
+      <!-- <%= f.submit "Login", class:"btn pinkColour loginPage", id:"submit-button loginForm"%> -->
     </div>
   <% end %>
-
-
-  
-    <%= f.label :first_name %><br>
-    <div class="field">
-      <%= f.text_field :first_name %><br>
-    </div>
-
-  
-    <%= f.label :last_name %><br>
-  <div class="field">
-    <%= f.text_field :last_name %><br>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %><br>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.password_field :password %><br>
-  </div>
-
-  <div class="field">
-    <%= f.label :course %><br>
-    <%= f.select :course_id, Course.all.collect {|x| [x.name, x.id]}, {} %><br><br>
-  </div>
-
-  <div class="field">
-    <%= f.label :event %><br>
-    <%= f.select :event_id, Event.all.collect {|x| [x.name, x.id]}, {} %><br><br>
-  </div>
-
-  <div id="submit-button-signup">
-    <%= f.submit %>
-  </div>
-<% end %>
-
 </div>
