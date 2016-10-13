@@ -1,28 +1,23 @@
 <style>
-  /*table, thead, tr, td, th {
-
-    padding: 20px;
-    text-align: center;
-  }*/
-
-  .mine {
-    margin: 0 auto;
-    margin-top: 20px;
-  }
-
-  .align {
-    text-align: center;
-  }
+.mine {
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.align {
+  text-align: center;
+}
 </style>
 
+<div class="container topMarginBuffer">
+  <p id="notice"><%= notice %></p>
+</div>
 <div class="container">
   <%= render "partials/adminDashBoard" %>
 
-  <h3 id="titleHeader">Events</h3>
-
   <!-- ============ FIRST EDIT BOX ============ -->
-  <% @events.each do |event| %>
   <div class="offset-md-1 col-md-8">
+    <h3 id="titleHeader">Events</h3>
+    <% @events.each do |event| %>
     <!-- <h3 id="titleHeader">General Information</h3> -->
     <div class="card">
       <div class="card-header">
@@ -48,125 +43,125 @@
         </div>
 
 
-          <!-- MODAL FOR EDIT -->
-          <div class="modal fade" id="eventInfoEdit-<%= event.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <!-- this is the x close button at the top right hand corner of modal -->
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                  <h4 class="modal-title" id="myModalLabel">Event Details</h4>
-                </div>
-                <!-- ============ FORM ============ -->
-                <%= form_for(event) do |f| %>
-
-                  <div class="modal-body">
-                    <div class="form-group row field">
-                        <%= f.label :name, class: "col-xs-3 col-form-label" %>
-                        <%= f.text_field :name, value: event.name, class: 'col-xs-8'%>
-                    </div>
-                    <div class="form-group row field">
-                        <%= f.label :description, class: "col-xs-3 col-form-label" %>
-                        <%= f.text_field :description, value: event.description, class: 'col-xs-8'%>
-                    </div>
-                    <div class="form-group row field">
-                      <%= f.label :date, class: "col-xs-3 col-form-label" %>
-                      <%= f.date_field :date, value: event.date, class: 'col-xs-8'%>
-                    </div>
-                    <div class="form-group row field">
-                        <%= f.label :start, class: "col-xs-3 col-form-label" %>
-                        <%= f.time_field :start, value: event.start, class: 'col-xs-8'%>
-                    </div>
-                    <div class="form-group row field">
-                        <%= f.label :end, class: "col-xs-3 col-form-label" %>
-                        <%= f.time_field :end, value: event.end, class: 'col-xs-8'%>
-                    </div>
-                    <div class="form-group row field">
-                        <%= f.label :location, class: "col-xs-3 col-form-label" %>
-                        <%= f.text_field :location, value: event.location, class: 'col-xs-8'%>
-                    </div>
-
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn pinkColour">Save changes</button>
-                  </div>
-                <!-- ============ FORM END ============ -->
-                <%end%>
+        <!-- MODAL FOR EDIT -->
+        <div class="modal fade" id="eventInfoEdit-<%= event.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <!-- this is the x close button at the top right hand corner of modal -->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Event Details</h4>
               </div>
+              <!-- ============ FORM ============ -->
+              <%= form_for(event) do |f| %>
+
+              <div class="modal-body">
+                <div class="form-group row field">
+                  <%= f.label :name, class: "col-xs-3 col-form-label" %>
+                  <%= f.text_field :name, value: event.name, class: 'col-xs-8'%>
+                </div>
+                <div class="form-group row field">
+                  <%= f.label :description, class: "col-xs-3 col-form-label" %>
+                  <%= f.text_field :description, value: event.description, class: 'col-xs-8'%>
+                </div>
+                <div class="form-group row field">
+                  <%= f.label :date, class: "col-xs-3 col-form-label" %>
+                  <%= f.date_field :date, value: event.date, class: 'col-xs-8'%>
+                </div>
+                <div class="form-group row field">
+                  <%= f.label :start, class: "col-xs-3 col-form-label" %>
+                  <%= f.time_field :start, value: event.start, class: 'col-xs-8'%>
+                </div>
+                <div class="form-group row field">
+                  <%= f.label :end, class: "col-xs-3 col-form-label" %>
+                  <%= f.time_field :end, value: event.end, class: 'col-xs-8'%>
+                </div>
+                <div class="form-group row field">
+                  <%= f.label :location, class: "col-xs-3 col-form-label" %>
+                  <%= f.text_field :location, value: event.location, class: 'col-xs-8'%>
+                </div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn pinkColour">Save changes</button>
+              </div>
+              <!-- ============ FORM END ============ -->
+              <%end%>
             </div>
           </div>
-            <!-- ============ MODAL EDIT END ============ -->
-
-        </table>
-
-      </div>
-
-
-    </div>
-
-    <!-- ============ CREATE NEW EVENT ============ -->
-    <!-- MODAL -->
-    <div class="modal fade" id="createNewEntry" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <h4 class="modal-title" id="myModalLabel">New Entry</h4>
-          </div>
-          <!-- ============ FORM ============ -->
-
-          <% event = @event %>
-          <%= form_for(event) do |f| %>
-          <div class="modal-body">
-            <div class="form-group row field">
-                <%= f.label :name, class: "col-xs-3 col-form-label" %>
-                <%= f.text_field :name, value: event.name, class: 'col-xs-8'%>
-            </div>
-            <div class="form-group row field">
-                <%= f.label :description, class: "col-xs-3 col-form-label" %>
-                <%= f.text_field :description, value: event.description, class: 'col-xs-8'%>
-            </div>
-            <div class="form-group row field">
-              <%= f.label :date, class: "col-xs-3 col-form-label" %>
-              <%= f.date_field :date, value: event.date, class: 'col-xs-8'%>
-            </div>
-            <div class="form-group row field">
-                <%= f.label :start, class: "col-xs-3 col-form-label" %>
-                <%= f.time_field :start, value: event.start, class: 'col-xs-8'%>
-            </div>
-            <div class="form-group row field">
-                <%= f.label :end, class: "col-xs-3 col-form-label" %>
-                <%= f.time_field :end, value: event.end, class: 'col-xs-8'%>
-            </div>
-            <div class="form-group row field">
-                <%= f.label :location, class: "col-xs-3 col-form-label" %>
-                <%= f.text_field :location, value: event.location, class: 'col-xs-8'%>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <%= button_to "Create", event, :method => :create, class: "btn pinkColour editButton" %>
-          </div>
-          <% end %>
-          <!-- ============ FORM END ============ -->
         </div>
-      </div>
+        <!-- ============ MODAL EDIT END ============ -->
+
+      </table>
+
     </div>
-      <!-- ============ MODAL END ============ -->
 
 
   </div>
+
+  <!-- ============ CREATE NEW EVENT ============ -->
+  <!-- MODAL -->
+  <div class="modal fade" id="createNewEntry" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">New Entry</h4>
+        </div>
+        <!-- ============ FORM ============ -->
+
+        <% event = @event %>
+        <%= form_for(event) do |f| %>
+        <div class="modal-body">
+          <div class="form-group row field">
+            <%= f.label :name, class: "col-xs-3 col-form-label" %>
+            <%= f.text_field :name, value: event.name, class: 'col-xs-8'%>
+          </div>
+          <div class="form-group row field">
+            <%= f.label :description, class: "col-xs-3 col-form-label" %>
+            <%= f.text_field :description, value: event.description, class: 'col-xs-8'%>
+          </div>
+          <div class="form-group row field">
+            <%= f.label :date, class: "col-xs-3 col-form-label" %>
+            <%= f.date_field :date, value: event.date, class: 'col-xs-8'%>
+          </div>
+          <div class="form-group row field">
+            <%= f.label :start, class: "col-xs-3 col-form-label" %>
+            <%= f.time_field :start, value: event.start, class: 'col-xs-8'%>
+          </div>
+          <div class="form-group row field">
+            <%= f.label :end, class: "col-xs-3 col-form-label" %>
+            <%= f.time_field :end, value: event.end, class: 'col-xs-8'%>
+          </div>
+          <div class="form-group row field">
+            <%= f.label :location, class: "col-xs-3 col-form-label" %>
+            <%= f.text_field :location, value: event.location, class: 'col-xs-8'%>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <%= button_to "Create", event, :method => :create, class: "btn pinkColour editButton" %>
+        </div>
+        <% end %>
+        <!-- ============ FORM END ============ -->
+      </div>
+    </div>
+  </div>
+  <!-- ============ MODAL END ============ -->
+
+
   <% end %>
-  <!-- <div class="container"> -->
-    <button type="button" class="btn pinkColour editButton createNew" data-toggle="modal" data-target="#createNewEntry">
-      Create New Event
-    </button>
-  <!-- </div> -->
+</div>
+<!-- <div class="container"> -->
+<button type="button" class="btn pinkColour editButton createNew" data-toggle="modal" data-target="#createNewEntry">
+  Create New Event
+</button>
+<!-- </div> -->
 
 
 </div>
