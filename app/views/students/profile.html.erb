@@ -7,7 +7,8 @@
 
     <!-- ========= QUOTE ========= -->
     <div id="quote">
-      <%=@student.one_liner%>
+      "<%=@student.description%>"
+    <p id="endQuote">- <%=@student.first_name%> <%=@student.last_name%></p>
     </div>
 
     <div  class="container-fluid" id="profileFill">
@@ -64,7 +65,7 @@
         <div class="container-fluid" id="informationBox">
           <!-- PROFILE -->
           <div class="toggleInfo" id="infoProfile">
-            <h3 id="bigFatName"><%=@student.first_name%> <%=@student.last_name%></h3>
+            <h3 class="bigFatName"><%=@student.first_name%> <%=@student.last_name%></h3>
             <h6 class="text-muted"><%=@student.one_liner%></h6>
             </br>
             <p><img src="/assets/public/education.png"/> <%=@student.degree%> at <%=@student.school%></p>
@@ -77,13 +78,32 @@
 
           </div>
           <!-- VIDEO -->
-          <div class="toggleInfo" id="infoVideo">VIDEO LINK</div>
-          <!-- PROJECT 1 -->
+          <div class="toggleInfo" id="infoVideo">
+            <h3 class="bigFatName">Video Introduction</h3>
+            <h6 class="text-muted"><%=@student.one_liner%></h6>
+            </br>
+            <img class="projectGif" src="<%=@student.contact%>" />
+          </div>
 
+          <!-- PROJECTS-->
+          <% i = 1 %>
+          <%@student.projects.each do |project|%>
+            <div class="toggleInfo" class="infoProjects" id="student<%project.id%>">Pear
+              <h3 class="bigFatName"><%=project.name%></h3>
+              <h6 class="text-muted"><%=project.description%></h6>
+              <p><a class="profileIcon" href="<%=project.site%>"><img src="/assets/public/website.png"/> Deployed Site</a></p>
+              <p><a class="profileIcon" href="<%=project.site%>"><img src="/assets/public/github.png"/> Github</a></p>
+              </br>
+              <img class="projectGif" src="<%=project.project_gifs%>" />
+            </div>
+            <% i += 1 %>
+          <%end%>
+          <!-- PROJECT 1 -->
+          <!-- <div class="toggleInfo" id="infoProject1">Pear</div> -->
           <!-- PROJECT 2 -->
-          <div class="toggleInfo" id="infoProject2">Pear</div>
+          <!-- <div class="toggleInfo" id="infoProject2">Pear</div> -->
           <!-- PROJECT 3 -->
-          <div class="toggleInfo" id="infoProject3">Dragon</div>
+          <!-- <div class="toggleInfo" id="infoProject3">Dragon</div> -->
           <!-- JOB EXPERIENCES -->
           <div class="toggleInfo" id="infoExperiences">Fly</div>
         </div>
