@@ -76,7 +76,8 @@
             <h6 class="text-muted"><%=@student.one_liner%></h6>
             </br>
             <div class="alignMiddle">
-              <img class="projectGif" src="<%=@student.contact%>" />
+              <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/6Dakd7EIgBE" frameborder="0" allowfullscreen></iframe> -->
+              <iframe width="560" height="315" src="<%=@student.video%>" frameborder="0" allowfullscreen></iframe>
             </div>
           </div>
 
@@ -90,9 +91,9 @@
                 <p><a class="profileIcon" href="<%=project.site%>"><img src="/assets/public/website.png"/> Deployed Site</a></p>
                 <p><a class="profileIcon" href="<%=project.site%>"><img src="/assets/public/github.png"/> Github</a></p>
                 </br>
-                <!-- <iframe src="<%=project.project_gifs%>" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> -->
                 <div class="alignMiddle">
-                  <img class="projectGif" src="<%=project.project_gifs%>" />
+                  <iframe src="<%=project.project_gifs%>" width="300" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                  <!-- <iframe src="//giphy.com/embed/zA2aQyUmncvtK?html5=true" width="300" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> -->
                 </div>
               </div>
               <% i += 1 %>

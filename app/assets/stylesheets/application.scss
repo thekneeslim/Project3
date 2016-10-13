@@ -49,6 +49,10 @@ th {
   vertical-align: text-top;
 }
 
+// .topMarginBuffer {
+//   margin-top: 5%;
+// }
+
 .whiteSpace {
   height: 54px;
 }
@@ -253,7 +257,7 @@ th {
   position: absolute;
   top: 0;
   left: 0;
-  border: 1px orange solid;
+  // border: 1px orange solid;
   width: inherit;
 }
 
@@ -454,6 +458,13 @@ th {
   position: relative;
   top: 5.5px;
   left: 15px;
+  &:hover {
+    color: white;
+  }
+  &:visited {
+    text-decoration: none;
+    color: white;
+  }
 }
 
 .navBarColor {
