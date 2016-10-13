@@ -25,7 +25,7 @@ $(document).on('turbolinks:load', function() {
       $("#infoOnClasses").empty()
       $("#sessionDetails").append(
         "<div class='card'>" +
-          "<div class='card-block cardShadow'>" +
+          "<div class='card-block'>" +
             "<h4 class='card-title'>" + data.name + "</h4>" +
             "<p><b>Date:</b> </br>" + data.date + "</p>" +
             "<p><b>Time:</b> </br> " + data.start + "</p> </br>" +
@@ -51,8 +51,9 @@ $(document).on('turbolinks:load', function() {
             "<a class='courseLinks' href='/profile/=" + data[i].link + "'>" +
               "<div class='card-block'>" +
                 "<h4 class='card-title'>" + data[i].first_name + " " + data[i].last_name + "</h4>" +
-                "<h6 class='card-subtitle text-muted'>" + data[i].one_liner + "</h6>" +
-                "<p>" + data[i].qualification + " in " + data[i].degree + " at " + data[i].school + "</p>" +
+                "<h6 class='card-subtitle text-muted astheticLine'>" + data[i].one_liner + "</h6></br>" +
+                "<p><img src='/assets/public/education.png'/> " + data[i].qualification + " in " + data[i].degree + " at " + data[i].school + "</p>" +
+                "<p><img src='/assets/public/location.png'/> Singapore</p>" +
                 "<div id='languageTag" + data[i].id + "'></div>" +
               "</a>" +
             "</div>" +

@@ -143,6 +143,11 @@
     </div>
     <div class="card-block">
       <table>
+        <tbody>
+          <tr>
+            <th class="tableHeaderWidth">One Liner:</th>
+            <td><%= @student.one_liner %></td>
+          </tr>
           <tr>
             <th class="tableHeaderWidth">Description:</th>
             <td><%= @student.description %></td>
@@ -168,6 +173,10 @@
       <%= form_for(@student) do |f| %>
 
         <div class="modal-body">
+          <div class="form-group row field">
+              <%= f.label :one_liner, class: "col-xs-3 col-form-label" %>
+              <%= f.text_field :one_liner, value: current_student.one_liner, class: 'col-xs-8'%>
+          </div>
           <div class="form-group row field">
               <%= f.label :description, class: "col-xs-3 col-form-label" %>
               <%= f.text_area :description, value: current_student.description, class: 'col-xs-8'%>
