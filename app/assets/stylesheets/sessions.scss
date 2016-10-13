@@ -2,11 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#login_form {
-    height: 40%;
-    width: 40%;
-    margin: 0 auto;
-    // font-family: Georgia;
+
+.loginForm {
+    height: 50%;
+    width: 50%;
 }
 
 #submit-button {
@@ -16,6 +15,7 @@
 
 .loginButton {
   text-align: center;
+  margin: 0 auto;
 }
 
 #logoSize {
@@ -23,6 +23,14 @@
   height: 200px;
   width: 200px;
   margin: 50px auto;
+}
+
+#student_email {
+  margin: 0 auto;
+}
+
+#student_password {
+  margin: 0 auto;
 }
 
 #login-right-pic {

@@ -108,8 +108,8 @@
             <%@student.works.each do |work|%>
               <h3 class="bigFatName"><%=work.title%></h3>
               <h6 class="text-muted">
-                <div class="settlingDates"><%=work.company%></div>
-                <div class="settlingDates" id="workDates"><i><%=work.start.to_formatted_s(:rfc822)%> - <%=work.end.to_formatted_s(:rfc822)%></i></div>
+                <div><%=work.company%></div>
+                <div id="workDates"><i><%=work.start.to_formatted_s(:rfc822)%> - <%=work.end.to_formatted_s(:rfc822)%></i></div>
               </h6>
               <p><%=work.description%></p>
             <%end%>
