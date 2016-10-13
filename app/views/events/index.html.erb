@@ -3,6 +3,11 @@
   margin: 0 auto;
   margin-top: 20px;
 }
+
+.mineSpecial {
+  margin: 0 auto;
+}
+
 .align {
   text-align: center;
 }
@@ -148,8 +153,8 @@
           </div>
         </div>
         <div class="modal-footer">
+          <%= button_to "Create", event, :method => :create, class: "btn pinkColour editButton mineSpecial" %>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <%= button_to "Create", event, :method => :create, class: "btn pinkColour editButton" %>
         </div>
         <% end %>
         <!-- ============ FORM END ============ -->
