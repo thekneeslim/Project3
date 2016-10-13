@@ -47,12 +47,6 @@
                 <div class="item c">
                   <div class="pane-title">Projects</div>
                 </div>
-                <!-- <div class="item d">
-                  <div class="pane-title">Project 2</div>
-                </div>
-                <div class="item e">
-                  <div class="pane-title">Project 3</div>
-                </div> -->
                 <div class="item d">
                   <div class="pane-title">Past Experience</div>
                 </div>
@@ -82,7 +76,9 @@
             <h3 class="bigFatName">Video Introduction</h3>
             <h6 class="text-muted"><%=@student.one_liner%></h6>
             </br>
-            <img class="projectGif" src="<%=@student.contact%>" />
+            <div class="alignMiddle">
+              <img class="projectGif" src="<%=@student.contact%>" />
+            </div>
           </div>
 
           <!-- PROJECTS-->
@@ -95,19 +91,30 @@
                 <p><a class="profileIcon" href="<%=project.site%>"><img src="/assets/public/website.png"/> Deployed Site</a></p>
                 <p><a class="profileIcon" href="<%=project.site%>"><img src="/assets/public/github.png"/> Github</a></p>
                 </br>
-                <img class="projectGif" src="<%=project.project_gifs%>" />
+                <!-- <iframe src="<%=project.project_gifs%>" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> -->
+                <div class="alignMiddle">
+                  <img class="projectGif" src="<%=project.project_gifs%>" />
+                </div>
               </div>
               <% i += 1 %>
             <%end%>
           </div>
-          <!-- PROJECT 1 -->
-          <!-- <div class="toggleInfo" id="infoProject1">Pear</div> -->
-          <!-- PROJECT 2 -->
-          <!-- <div class="toggleInfo" id="infoProject2">Pear</div> -->
-          <!-- PROJECT 3 -->
-          <!-- <div class="toggleInfo" id="infoProject3">Dragon</div> -->
+
           <!-- JOB EXPERIENCES -->
-          <div class="toggleInfo" id="infoExperiences">Fly</div>
+          <div class="toggleInfo" id="infoExperiences">
+            <%jobs = @student.works.sort_by &:end %>
+            <%job = jobs.reverse! %>
+            <%@student.works = job %>
+            <%@student.works.each do |work|%>
+              <h3 class="bigFatName"><%=work.title%></h3>
+              <h6 class="text-muted">
+                <div class="settlingDates"><%=work.company%></div>
+                <div class="settlingDates" id="workDates"><i><%=work.start.to_formatted_s(:rfc822)%> - <%=work.end.to_formatted_s(:rfc822)%></i></div>
+              </h6>
+              <p><%=work.description%></p>
+            <%end%>
+          </div>
+          
         </div>
       </div>
     </div>

@@ -6,6 +6,7 @@ console.log("HELLO WORLD");
 
 $(document).on('turbolinks:load', function() {
 
+// BROWSING PAGE
   $('#selectMeetGreet').submit(function(e) {
     e.preventDefault();
 
@@ -83,4 +84,9 @@ $(document).on('turbolinks:load', function() {
       }
     })
   })
+
+// ========================== PROFILE ==========================
+  $('#selectMeetGreet').submit(function(e) {
+
+
 })

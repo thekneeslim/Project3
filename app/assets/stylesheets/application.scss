@@ -241,35 +241,43 @@ th {
 .projectGif {
   height: 200px;
   width: 300px;
-  text-align: center;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: 10px;
+  background-image: url("/assets/public/blank.jpg");
+  background-size: contain;
 }
 
-// #infoProfile {
-//   border: 1px orange solid;
-// }
-//
-// #infoVideo {
-//   // visibility: hidden;
-//   border: 1px orange solid;
-// }
-// #infoProject1 {
-//   // visibility: hidden;
-//   border: 1px orange solid;
-// }
-// #infoProject2 {
-//   // visibility: hidden;
-//   border: 1px orange solid;
-// }
-// #infoProject3 {
-//   // visibility: hidden;
-//   border: 1px orange solid;
-// }
-// #infoExperiences {
-//   // visibility: hidden;
-//   border: 1px orange solid;
-// }
+.settlingDates {
+  display: inline-block;
+}
+
+#workDates {
+  text-align: right;
+}
+
+#infoProfile {
+}
+
+#infoVideo {
+  // visibility: hidden;
+}
+#infoProject1 {
+  // visibility: hidden;
+}
+#infoProject2 {
+  // visibility: hidden;
+}
+#infoProject3 {
+  // visibility: hidden;
+}
+#infoExperiences {
+  // visibility: hidden;
+}
+
+.alignMiddle {
+  text-align: center;
+  margin-bottom: 40px;
+}
 
 /////////////// ROTATING PANES CSS START
 .axis {
