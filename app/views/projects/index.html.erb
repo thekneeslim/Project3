@@ -5,7 +5,7 @@
 </style>
 
 
-<div class="container">
+<div class="container topMarginBuffer">
   <p id="notice"><%= notice %></p>
 
   <%= render "partials/verticleColumn" %>
@@ -92,8 +92,15 @@
                 </div>
                 <div class="form-group row field">
                   <%= f.label :project_gifs, class: "col-xs-3 col-form-label" %>
-                  <%= f.text_field :project_gifs, value: project.project_gifs, class: 'col-xs-8'%>
+                    <%= f.text_field :project_gifs, value: project.project_gifs, class: 'col-xs-8'%>
                 </div>
+
+                    <!-- <div class="input-group">
+                      <div class="input-group-addon">$</div>
+                      <input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
+                      <div class="input-group-addon">.00</div>
+                    </div>
+                 -->
                 <div class="form-group row field">
                   <%= f.label :description, class: "col-xs-3 col-form-label" %>
                   <%= f.text_area :description, value: project.description, class: 'col-xs-8'%>

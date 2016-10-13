@@ -38,16 +38,20 @@
   background-color: #f6f6f6;
 }
 
-a {
-  color: black;
-  &:hover {
-    color:black;
-  }
-}
+// a {
+//   color: black;
+//   &:visited {
+//     text-decoration: none;
+//   }
+// }
 
 th {
   vertical-align: text-top;
 }
+
+// .topMarginBuffer {
+//   margin-top: 5%;
+// }
 
 .whiteSpace {
   height: 54px;
@@ -65,9 +69,14 @@ th {
   height: 18px;
   padding: 10px 5px;
   width: inherit;
+  color: black;
   &:hover {
     text-decoration: none;
     color: orange;
+  }
+  &:hover:visited {
+    text-decoration: none;
+    // color:black;
   }
 }
 
@@ -253,7 +262,7 @@ th {
   position: absolute;
   top: 0;
   left: 0;
-  border: 1px orange solid;
+  // border: 1px orange solid;
   width: inherit;
 }
 
@@ -454,6 +463,13 @@ th {
   position: relative;
   top: 5.5px;
   left: 15px;
+  &:hover {
+    color: white;
+  }
+  &:visited {
+    text-decoration: none;
+    color: white;
+  }
 }
 
 .navBarColor {
@@ -543,7 +559,6 @@ th {
 }
 
 .login-button {
-
   margin-left: 20px;
   color: white;
   &:hover {
