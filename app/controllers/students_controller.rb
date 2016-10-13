@@ -97,7 +97,11 @@ class StudentsController < ApplicationController
     # else just update
     else
       if @student.update(student_params)
-        redirect_to students_all_url, notice: 'Student was successfully updated.'
+        if current_student.admin
+          redirect_to students_all_url, notice: 'Student was successfully updated.'
+        else
+          redirect_to @student, notice: 'Student was successfully updated.'
+        end
       else
         render :edit
       end
