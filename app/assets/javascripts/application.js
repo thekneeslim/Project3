@@ -29,10 +29,10 @@ $(document).on('turbolinks:load', function() {
 
   function rotate(e){
     if(e.data.d=="n"){
-      currdeg = currdeg - 60;
+      currdeg = currdeg - 90;
     }
     if(e.data.d=="p"){
-      currdeg = currdeg + 60;
+      currdeg = currdeg + 90;
     }
     carousel.css({
       "-webkit-transform": "rotateY("+currdeg+"deg)",

@@ -45,15 +45,15 @@
                   <div class="pane-title">Video</div>
                 </div>
                 <div class="item c">
-                  <div class="pane-title">Project 1</div>
+                  <div class="pane-title">Projects</div>
                 </div>
-                <div class="item d">
+                <!-- <div class="item d">
                   <div class="pane-title">Project 2</div>
                 </div>
                 <div class="item e">
                   <div class="pane-title">Project 3</div>
-                </div>
-                <div class="item f">
+                </div> -->
+                <div class="item d">
                   <div class="pane-title">Past Experience</div>
                 </div>
               </div>
@@ -86,18 +86,20 @@
           </div>
 
           <!-- PROJECTS-->
-          <% i = 1 %>
-          <%@student.projects.each do |project|%>
-            <div class="toggleInfo" class="infoProjects" id="student<%project.id%>">Pear
-              <h3 class="bigFatName"><%=project.name%></h3>
-              <h6 class="text-muted"><%=project.description%></h6>
-              <p><a class="profileIcon" href="<%=project.site%>"><img src="/assets/public/website.png"/> Deployed Site</a></p>
-              <p><a class="profileIcon" href="<%=project.site%>"><img src="/assets/public/github.png"/> Github</a></p>
-              </br>
-              <img class="projectGif" src="<%=project.project_gifs%>" />
-            </div>
-            <% i += 1 %>
-          <%end%>
+          <div class="toggleInfo infoProjects">
+            <% i = 1 %>
+            <%@student.projects.each do |project|%>
+              <div>
+                <h3 class="bigFatName"><%=project.name%></h3>
+                <h6 class="text-muted"><%=project.description%></h6>
+                <p><a class="profileIcon" href="<%=project.site%>"><img src="/assets/public/website.png"/> Deployed Site</a></p>
+                <p><a class="profileIcon" href="<%=project.site%>"><img src="/assets/public/github.png"/> Github</a></p>
+                </br>
+                <img class="projectGif" src="<%=project.project_gifs%>" />
+              </div>
+              <% i += 1 %>
+            <%end%>
+          </div>
           <!-- PROJECT 1 -->
           <!-- <div class="toggleInfo" id="infoProject1">Pear</div> -->
           <!-- PROJECT 2 -->
