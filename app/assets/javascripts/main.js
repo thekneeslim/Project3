@@ -47,18 +47,24 @@ $(document).on('turbolinks:load', function() {
 
       for (var i = 0; i < data.length; i++ ) {
         $("#studentDetails").append(
-          "<div class='card cardShadow' id='" + data[i].id + "'>" +
+          "<div class='card cardShadow media' id='" + data[i].id + "'>" +
             "<a class='courseLinks' href='/profile/=" + data[i].link + "'>" +
               "<div class='card-block'>" +
-                "<h4 class='card-title'>" + data[i].first_name + " " + data[i].last_name + "</h4>" +
-                "<h6 class='card-subtitle text-muted astheticLine'>" + data[i].one_liner + "</h6></br>" +
-                "<p><img src='/assets/public/education.png'/> " + data[i].qualification + " in " + data[i].degree + " at " + data[i].school + "</p>" +
-                "<p><img src='/assets/public/location.png'/> Singapore</p>" +
-                "<div id='languageTag" + data[i].id + "'></div>" +
-              "</a>" +
-            "</div>" +
+                "<div class='media-right'>" +
+                  "<img class='media-object browseImage' src='" + data[i].profile_pic_url + "' />" +
+                "</div>" +
+                "<div class='media-body'>" +
+                  "<h4 class='card-title'>" + data[i].first_name + " " + data[i].last_name + "</h4>" +
+                  "<h6 class='card-subtitle text-muted astheticLine'>" + data[i].one_liner + "</h6></br>" +
+                  "<p><img src='/assets/public/education.png'/> " + data[i].qualification + " in " + data[i].degree + " at " + data[i].school + "</p>" +
+                  "<p><img src='/assets/public/location.png'/> Singapore</p>" +
+                  "<div id='languageTag" + data[i].id + "'></div>" +
+                "</div>" +
+              "</div>" +
+            "</a>" +
           "</div>"
         )
+
         if (data[i].languages.length > 0) {
           for (var k = 0; k < data[i].languages.length; k++) {
             $("#languageTag"+ data[i].id + "").append(
