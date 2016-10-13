@@ -20,21 +20,22 @@
    src: url('Kostic-Serif-W00-Bold.ttf')
 
  };
- 
- @font-face { 
-   font-family: Built-titling; 
+
+ @font-face {
+   font-family: Built-titling;
    src: url('built-titling-bd.ttf')
-   
- };
- 
- @font-face { 
-   font-family: Laqonic-Black; 
-   src: url('Laqonic-4F-Unicase-Bold.otf')
-   
+
  };
 
-.navbar {
-  padding: 0px 0px 0px 0px;
+ @font-face {
+   font-family: Laqonic-Black;
+   src: url('Laqonic-4F-Unicase-Bold.otf')
+
+ };
+
+ body {
+  font-family: "Circular", Helvetica, sans-serif;
+  background-color: #f6f6f6;
 }
 
 a {
@@ -48,6 +49,10 @@ th {
   vertical-align: text-top;
 }
 
+.whiteSpace {
+  height: 54px;
+}
+
 .selectForm {
   width: 67%;
 }
@@ -56,6 +61,21 @@ th {
   height: 200px;
 }
 
+.profileIcon {
+  height: 18px;
+  padding: 10px 5px;
+  width: inherit;
+  &:hover {
+    text-decoration: none;
+    color: orange;
+  }
+}
+
+// #mainFooter {
+//   position: relative;
+//   margin-bottom: -100px;
+// }
+
 .pinkColour {
   background-color: #ff5f5f;
   color: white;
@@ -63,11 +83,6 @@ th {
 
 .tagSpacing {
   margin-right: 10px;
-}
-
-#requestSelect {
-  text-align: center;
-  padding: 10px;
 }
 
 .tableHeaderWidth {
@@ -82,6 +97,16 @@ th {
 
 .createNew {
   width: 300px;
+}
+
+.editButtonSpecial {
+  margin: 0;
+  margin-left: 10px;
+}
+
+.buttonBox {
+  text-align: center;
+  margin-top: 10px;
 }
 
 
@@ -123,15 +148,6 @@ th {
   }
 }
 
- body {
-  /*background: #333;*/
-  padding: 56px 0;
-  // font: 15px/20px Arial, sans-serif;
-  font-family: "Circular", Helvetica, sans-serif;
-
-  margin: 0px;
-}
-
 #GAprofile {
   padding: 0px 0 0 1px;
   color: white;
@@ -140,7 +156,7 @@ th {
   font-size: 28px;
   margin-top: 8px;
   margin-right: 26px;
-  
+
 }
 
 #login, #signup {
@@ -151,7 +167,7 @@ th {
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 18px;
-  
+
 }
 
 #login:hover {
@@ -162,18 +178,13 @@ th {
   background-color: #383838;
 }
 
-// #signup {
-//   font-family: Georgia;
-//   color: white;
-// }
-
 /////////////// ROTATING PANES CSS START
 .axis {
   /*margin: 0 auto;*/
-  margin-bottom: 15%;
-  margin-left: 30%;
+  margin-bottom: 30px;
+  margin-left: 170px;
   width: 150px;
-  height: 100px;
+  height: 80px;
   position: relative;
   perspective: 1000px;
   /*border: 1px solid black;*/
@@ -198,7 +209,7 @@ th {
   width: 150px;
   height: 80px;
   /* line-height to be the same as height*/
-  line-height: 100px;
+  // line-height: 100px;
   font-size: 5em;
   text-align: center;
   /*color: #FFF;*/
@@ -236,8 +247,8 @@ th {
 .next, .prev {
   color: #444;
   position: absolute;
-  top: 100px;
-  padding: 1em 2em;
+  // top: 100px;
+  // padding: 1em 2em;
   cursor: pointer;
   /*background: #CCC;*/
   border-radius: 5px;
@@ -246,60 +257,63 @@ th {
   transition: box-shadow 0.1s, top 0.1s;
   width: 10px;
   height: 10px;
+  display: inline-block;
 }
 
-/*.next:hover, .prev:hover { color: #000; }
-.next:active, .prev:active {
-  top: 104px;
-  box-shadow: 0 1px 0 #999;
-}*/
+
+.arrows {
+  height: 80px;
+}
 
 .next {
-  left: 17em;
-  margin-top: -65px;
-}
-
-.prev {
-  right: 17em;
-  margin-top: -65px;
+  margin-left: 120px;
 }
 
 /////////////// ROTATING PANES CSS END
 
+#informationBox {
+  position: relative;
+  border: 1px solid orange;
+  border-bottom: 1px solid orange;
+}
 
-/*.images {
-  width: 100%;
-  height: 100%;
-  border-radius: 5px;
-}*/
+.toggleInfo {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#infoVideo {
+  visibility: hidden;
+}
+#infoProject1 {
+  visibility: hidden;
+}
+#infoProject2 {
+  visibility: hidden;
+}
+#infoProject3 {
+  visibility: hidden;
+}
+#infoExperiences {
+  visibility: hidden;
+}
+
+#bigFatName {
+  padding: 10px;
+  border-bottom: 3px solid #383838;
+  width: 300px;
+}
 
 #cover_photo {
   width: 100%;
-  height: 300px;;
-  /*border: 1px solid black;*/
   margin-top: -30px;
   background-color: black;
-  /*z-index: -1;*/
 }
 
 #photo {
   width: 100%;
-  height: 100%;
-  /*z-index: -1;*/
-}
-
-h2 {
-  color: white;
-  text-align: center;
-}
-
-#contact {
-  height: 250px;
-  width: 150px;
-  margin-left: 15%;
-  margin-top: 5%;
-  border: 1px solid red;
-  display: inline-block;
+  height: 400px;
 }
 
 .pane-title {
@@ -309,14 +323,21 @@ h2 {
   line-height: 80px;
 }
 
+#profileFill {
+  clear: both;
+}
+
 #quote {
-  /*border: 1px solid black;*/
-  width: 50%;
-  margin-left: 40%;
-  margin-top: -5%;
+  width: 40%;
+  height: 150px;
+  border-radius: 5px;
+  float: right;
+  margin-right: 5%;
+  margin-top: -75px;
+  margin-bottom: 50px;
   text-align: center;
   color: white;
-  /*background-color: rgba(0,0,0,0.7);*/
+  vertical-align: middle;
   background-color: black;
   opacity: 0.8;
   z-index: 1;
@@ -325,43 +346,96 @@ h2 {
 
 #wrapper {
   margin: 0 auto;
-  /*border: 1px solid black;*/
   width: 90%;
   height: 600px;
 }
 
-#information {
-  border: 1px solid black;
-  /*display: inline-block;*/
-  width: 45%;
-  height: 50%;
-  margin-left: 45%;
-  margin-top: -10%;
-  /*margin-bottom: -40%;*/
-}
 
+// BROWSING PAGE
 #date {
   margin: 10px auto;
   text-align: center;
-  border: #ff5f5f solid 1px;
-  border-radius: 5px;
 }
 
 #selectMeetGreet {
   padding: 10px;
+  margin-top: 30px;
 }
 
 #submitBtnSession {
   margin-left: 20px;
 }
 
-.navbar-brand {
-  padding: 15px 0 0 15px;
+#requestSelect {
+  text-align: center;
+  padding: 10px;
 }
 
-.selectNavDropDown {
-  margin-left: 5%;
+#classesInfo {
+  margin-top: 30px;
+  margin-bottom: 100px;
 }
+
+
+.courseLinks  {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.cardShadow {
+  text-align: center;
+  &:hover {
+    box-shadow: 10px 10px 5px #888888;
+  }
+}
+
+.cardImage {
+  margin-top: 5px;
+  margin: 10px auto;
+  width: inherit;
+}
+// END BROWSING PAGE
+// NAVIGATIONAL BAR
+
+.gaLogo {
+  height: 40px;
+  color: white;
+}
+
+#GAname {
+  font-size: 30px;
+  font-family: Laqonic-Black;
+  position: relative;
+  top: 5.5px;
+  left: 15px;
+}
+
+.navBarColor {
+  color: white;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.navbar {
+  padding: 0px 0px 0px 0px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  background-color: black;
+  color: white;
+  padding: 15px 20px;
+  margin:0;
+
+  &:hover {
+    color: white;
+    background-color: #383838;
+  }
+}
+
+// NAVBAR END
 
 .tempPinkBorder {
   border: #ff5f5f solid 1px;
@@ -416,6 +490,7 @@ h2 {
   height: 26px;
   width: 26px;
 }
+
 
 
 // #login-button {
@@ -500,8 +575,6 @@ input#student_profile_pic_url {
 
 // profile pic avatar END
 
-
-
 // typed.js START
 
 .typed-cursor{
@@ -533,6 +606,5 @@ input#student_profile_pic_url {
             50% { opacity:0; }
             100% { opacity:1; }
         }
-        
-// typed.js END
 
+// typed.js END

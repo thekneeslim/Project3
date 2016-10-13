@@ -1,61 +1,27 @@
 
 
 <div class="banner">
+  <img id="bannerImage" src="/assets/public/bannerbackground.png" />
   Find Your Next Great
   <br>
   <div id="typed-strings" class="container-fluid">
-  <br>
-  <p>Web Developer.</p>
-  <p>UX Designer.</p>
-  <p><strike>All In One Cheap Labour.</strike></p>
+    <br>
+    <p>Web Developer</p>
+    <p>UX Designer</p>
+    <p>Android Developer</p>
   </div>
-<span id="typed"></span>
+  <span id="typed"></span>
 </div>
 
-
-
-
-<!-- <button type="button" class="btn btn-primary btn-lg">Large button</button> -->
-
-<div id="browse">
-  <a id="browse-button" class="btn btn-primary btn-lg" href="/browse" role="button">Browse Candidates!</a>
+<div id="browse" class="container-fluid">
+  <div class="col-md-4">
+    <img id="progLang" src="/assets/public/proglanguages.png" />
+  </div>
+  <div class="col-md-7" id="mgDetails">
+    <h1 class="mdSpecifics">MEET & GREET!</h1>
+    <h3 class="mdSpecifics">-date of event-</h3>
+    <a id="browse-button" class="btn btn-primary btn-lg" href="/browse" role="button">Browse Candidates!</a>
+  </div>
 </div>
 
-<footer>
-  <nav id="footer" class="navbar">
-    <div class="container text-xs-center">
-      <ul class="nav nav-inline">
-        <li class="nav-item">
-          Active © 2016 General Assembly. All Rights Reserved.
-        </li>
-        <li class="nav-item">
-          <a class="anchor" href="https://generalassemb.ly/regulatory-information">Regulatory Information</a>
-        </li>
-        <li class="nav-item">
-          <a class="anchor" href="https://generalassemb.ly/terms_and_conditions">Terms</a>
-        </li>
-        <li class="nav-item">
-          <a class="anchor" href="https://generalassemb.ly/privacy_policy">Privacy</a>
-        </li>
-        <li class="nav-item">
-          <a class="anchor" href="http://nytm.org/made-in-nyc">Assembled in NYC</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</footer>
-
-
-<script>
-    $(function(){
-        $("#typed").typed({
-            stringsElement: $('#typed-strings'),
-            // strings: ["Web Developer.", "UX Designer.", "Bao Ka Liao Cheap Labour."],
-            typeSpeed: 40,
-            loop: true,
-            loopCount: false,
-            backSpeed: 10,
-            backDelay: 700,
-        });
-    });
-</script>
+<%= render "partials/footer" %>

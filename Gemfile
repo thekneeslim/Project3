@@ -7,7 +7,6 @@ end
 
 gem 'carrierwave'
 gem 'cloudinary'
-
 gem 'bootstrap', '~> 4.0.0.alpha4'
 gem 'compass-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

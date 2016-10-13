@@ -63,6 +63,14 @@
                         <%= f.label :name, class: "col-xs-3 col-form-label" %>
                         <%= f.text_field :name, value: course.name, class: 'col-xs-8'%>
                     </div>
+                    <div class="form-group row field">
+                        <%= f.label :description, class: "col-xs-3 col-form-label" %>
+                        <%= f.text_field :description, value: course.description, class: 'col-xs-8'%>
+                    </div>
+                    <div class="form-group row field">
+                        <%= f.label :picture_url, class: "col-xs-3 col-form-label" %>
+                        <%= f.text_field :picture_url, value: course.picture_url, class: 'col-xs-8'%>
+                    </div>
 
                   </div>
                   <div class="modal-footer">
@@ -111,6 +119,26 @@
               <%= f.label :name, class: "col-xs-3 col-form-label" %>
               <%= f.text_field :name, class: 'col-xs-8'%>
             </div>
+            <div class="form-group row field">
+              <%= f.label :description, class: "col-xs-3 col-form-label" %>
+              <%= f.text_field :description, class: 'col-xs-8'%>
+            </div>
+
+            <div id="img-frame" class="field">
+              <% if course.picture_url %>
+              <img id="upload-image" src="<%= course.picture_url %>" />
+              <% else %>
+              <img id="upload-image" src="http://previews.123rf.com/images/tkacchuk/tkacchuk1412/tkacchuk141200194/34316368-Attached-file-icon-on-white-background--Stock-Vector.jpg" />
+              <% end %>
+            </div>
+
+            <div class="form-group row field">
+              <!-- <%= f.label :profile_pic, class: "col-xs-3 col-form-label" %> -->
+              <%= f.file_field :picture_url %>
+            </div>
+
+
+
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -127,3 +155,19 @@
   </div>
 
 </div>
+
+<script>
+
+  document.getElementById("course_picture_url").onchange = function () {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+          // get loaded data and render thumbnail.
+          document.getElementById("upload-image").src = e.target.result;
+      };
+
+      // read the image file as a data URL.
+      reader.readAsDataURL(this.files[0]);
+  };
+
+</script>

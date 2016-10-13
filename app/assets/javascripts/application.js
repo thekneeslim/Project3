@@ -42,6 +42,20 @@ $(document).on('turbolinks:load', function() {
     });
   }
 
+
+  $(function(){
+      $("#typed").typed({
+          stringsElement: $('#typed-strings'),
+          // strings: ["Web Developer.", "UX Designer.", "Bao Ka Liao Cheap Labour."],
+          typeSpeed: 40,
+          loop: true,
+          loopCount: false,
+          backSpeed: 10,
+          backDelay: 700,
+      });
+  });
+
+
 })
 
 
@@ -55,4 +69,3 @@ $(document).on('turbolinks:load', function() {
 //   });
 
 // typed.js END
-

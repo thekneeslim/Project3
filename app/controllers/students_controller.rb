@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
   before_action :current_student, except: [:index, :show, :new, :create]
-  # before_action :is_admin, except: [:index, :show, :edit, :update, :create]
+  before_action :is_admin, only: [:students_all]
 
   # GET /students
   # GET /students.json
@@ -32,7 +32,7 @@ class StudentsController < ApplicationController
   def profile
     current_url = request.original_url
     split = current_url.split("=")
-    @student = Student.where(link: split.last)
+    @student = Student.where(link: split.last).take
     render :profile
   end
 
@@ -66,6 +66,9 @@ class StudentsController < ApplicationController
     @student.link = (first_name + last_name).downcase
 
     if @student.save
+      # this line is necessary to allow student to be directly logged in
+      # after signed up
+      session[:student_id] = @student.id
       redirect_to @student, notice: 'Student was successfully created.'
     else
       render :new
@@ -78,6 +81,7 @@ class StudentsController < ApplicationController
 
     # this checks if a upload file exist
     # if true, upload on to cloudinary and update
+    # note that we are modifying the params here before updating the student object
     if params[:student][:profile_pic_url].present?
       uploaded_file = params[:student][:profile_pic_url].path
       cloudinary_file = Cloudinary::Uploader.upload(uploaded_file)

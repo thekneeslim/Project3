@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 
     if student
       session[:student_id] = student.id
-      flash[:success] = "Student logged in!!"
+      flash[:success] = "Successfully logged in!!"
       redirect_to root_path
     else
       flash[:danger] = "Credentials Invalid!!"
@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:student_id] = nil
-    flash[:success] = "Student logged out!!"
+    flash[:success] = "Successfully logged out!!"
     redirect_to root_path
   end
 
