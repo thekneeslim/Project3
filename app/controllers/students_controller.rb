@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
-  before_action :current_student, except: [:index, :show, :new, :create]
-  before_action :is_admin, only: [:students_all]
+  before_action :current_student, except: [:index, :show, :new, :create, :search, :profile]
+  # before_action :is_admin, except: [:search, :profile]
 
   # GET /students
   # GET /students.json
