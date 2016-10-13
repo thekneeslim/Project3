@@ -74,8 +74,8 @@
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="submit" class="btn pinkColour">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               </div>
               <!-- ============ FORM END ============ -->
               <%end%>
@@ -130,8 +130,8 @@
             </div>
           </div>
           <div class="modal-footer">
+            <%= button_to "Create", work, :method => :create, class: "btn pinkColour editButton editButtonSpecial" %>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <%= button_to "Create", work, :method => :create, class: "btn pinkColour editButton" %>
           </div>
           <% end %>
           <!-- ============ FORM END ============ -->

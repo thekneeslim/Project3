@@ -71,6 +71,7 @@ th {
   }
 }
 
+
 .pinkColour {
   background-color: #ff5f5f;
   color: white;
@@ -106,7 +107,7 @@ th {
 
 .containerSpecial {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 
@@ -573,8 +574,11 @@ input[type=file]{
 }
 
 input#student_profile_pic_url {
-    margin-left: 40%;
+    margin-left: 42%;
+    margin-top: 3%;
 }
+
+
 
 #current-image{
   width: 200px;
@@ -618,3 +622,7 @@ input#student_profile_pic_url {
         }
 
 // typed.js END
+
+.gif {
+  border-radius: 10px;
+}

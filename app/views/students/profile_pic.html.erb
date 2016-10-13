@@ -11,17 +11,20 @@
       </div>
       <div class="card-block">
         <table align="center">
-          <!-- <tr>
-            <th class="tableHeaderWidth">Current Picture:</th>
-          </tr> -->
           <tr>
-            <td><img id="current-image" src="<%= @student.profile_pic_url%>" alt="https://yt3.ggpht.com/-X89g07D2L6I/AAAAAAAAAAI/AAAAAAAAAAA/ySwbmEnwNQY/s900-c-k-no-mo-rj-c0xffffff/photo.jpg" ></td>
+            <% if @student.profile_pic_url.present? %>
+            <td><img id="current-image" src="<%= @student.profile_pic_url%>" /></td>
+            <% else %>
+            <td><img id="current-image" src="/assets/public/unknown_user.png" /></td>
+            <% end %>
           </tr>
         </tbody>
       </table>
-      <button type="button" class="btn pinkColour editButton" data-toggle="modal" data-target="#profilePicfoEdit">
-        Edit
-      </button>
+      <div class="containerSpecial">
+        <button type="button" class="btn pinkColour editButton editButtonSpecial" data-toggle="modal" data-target="#profilePicfoEdit">
+          Edit
+        </button>
+      </div>
     </div>
 
     <!-- MODAL -->
@@ -40,9 +43,6 @@
           <div class="modal-body">
 
             <!-- PROFILE PIC UPLOAD SECTION -->
-
-
-
             <div id="img-frame" class="field">
               <% if @student.profile_pic_url %>
               <img id="upload-image" src="<%=@student.profile_pic_url%>" />
@@ -52,17 +52,14 @@
             </div>
 
             <div class="form-group row field">
-              <!-- <%= f.label :profile_pic, class: "col-xs-3 col-form-label" %> -->
-              <%= f.file_field :profile_pic_url %>
+              <%= f.file_field :profile_pic_url%>
             </div>
 
             <!-- PROFILE PIC UPLOAD SECTION END -->
-
-
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="submit" class="btn pinkColour">Save changes</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
           <!-- ============ FORM END ============ -->
           <%end%>
