@@ -54,7 +54,7 @@ $(document).on('turbolinks:load', function() {
                 "<div class='media-body'>" +
                   "<h4 class='card-title'>" + data[i].first_name + " " + data[i].last_name + "</h4>" +
                   "<h6 class='card-subtitle text-muted astheticLine'>" + data[i].one_liner + "</h6></br>" +
-                  "<p><img src='/assets/public/education.png'/> " + data[i].qualification + " in " + data[i].degree + " at " + data[i].school + "</p>" +
+                  "<p><img src='../../images/education.png'/> " + data[i].qualification + " in " + data[i].degree + " at " + data[i].school + "</p>" +
                   "<div id='projectsTag" + data[i].id + "'>Projects:</br> </div>" +
                   "<div id='languageTag" + data[i].id + "'>Languages:</br> </div>" +
                 "</div>" +

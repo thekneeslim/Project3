@@ -15,7 +15,7 @@
             <% if @student.profile_pic_url.present? %>
             <td><img id="current-image" src="<%= @student.profile_pic_url%>" /></td>
             <% else %>
-            <td><img id="current-image" src="/assets/public/unknown_user.png" /></td>
+            <td><img id="current-image" src="../../images/unknown_user.png" /></td>
             <% end %>
           </tr>
         </tbody>
@@ -44,10 +44,10 @@
 
             <!-- PROFILE PIC UPLOAD SECTION -->
             <div id="img-frame" class="field">
-              <% if @student.profile_pic_url %>
+              <% if @student.profile_pic_url.present? %>
               <img id="upload-image" src="<%=@student.profile_pic_url%>" />
               <% else %>
-              <img id="upload-image" src="https://yt3.ggpht.com/-X89g07D2L6I/AAAAAAAAAAI/AAAAAAAAAAA/ySwbmEnwNQY/s900-c-k-no-mo-rj-c0xffffff/photo.jpg" />
+              <img id="upload-image" src="../../images/unknown_user.png" />
               <% end %>
             </div>
 

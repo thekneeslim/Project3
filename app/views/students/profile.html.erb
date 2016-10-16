@@ -22,10 +22,10 @@
           <%=@student.event.date%></br>
           <%=@student.event.start%></p></br></span>
 
-          <p><a class="profileIcon" href="mailto:<%=@student.email%>"><img src="/assets/public/email.png"/> Email</a></p>
-          <p><a class="profileIcon" href="<%=@student.website%>"><img src="/assets/public/website.png"/> Website</a></p>
-          <p><a class="profileIcon" href="<%=@student.github%>"><img src="/assets/public/github.png"/> Github</a></p>
-          <p><a class="profileIcon" href="<%=@student.linkedin%>"><img src="/assets/public/linkedin.png"/> Linkedin</a></p>
+          <p><a class="profileIcon" href="mailto:<%=@student.email%>"><img src="../../images/email.png"/> Email</a></p>
+          <p><a class="profileIcon" href="<%=@student.website%>"><img src="../../images/website.png"/> Website</a></p>
+          <p><a class="profileIcon" href="<%=@student.github%>"><img src="../../images/github.png"/> Github</a></p>
+          <p><a class="profileIcon" href="<%=@student.linkedin%>"><img src="../../images/linkedin.png"/> Linkedin</a></p>
 
         </div>
       </div>
@@ -34,7 +34,7 @@
       <div class="offset-md-1 col-md-6">
         <!-- START OF TOGGLE BAR -->
         <div class="toggleBar">
-          <div id="prev"><img class="arrows" src="/assets/public/left arrow.png" alt="" /></div>
+          <div id="prev"><img class="arrows" src="../../images/left-arrow.png" alt="" /></div>
           <div class="boxAxis">
             <div class="container-fluid axis" id="rotatingPlaneProfile">
               <div class="carousel">
@@ -52,7 +52,7 @@
                 </div>
               </div>
             </div>
-            <div id="next"><img class="arrows" src="/assets/public/right arrow.png"/></div>
+            <div id="next"><img class="arrows" src="../../images/right-arrow.png"/></div>
           </div>
         </div>
         <!-- END OF TOGGLE BAR -->
@@ -62,8 +62,8 @@
             <h3 class="bigFatName"><%=@student.first_name%> <%=@student.last_name%></h3>
             <h6 class="text-muted"><%=@student.one_liner%></h6>
             </br>
-            <p><img src="/assets/public/education.png"/> <%=@student.degree%> at <%=@student.school%></p>
-            <p><img src="/assets/public/location.png"/> Singapore</p>
+            <p><img src="../../images/education.png"/> <%=@student.degree%> at <%=@student.school%></p>
+            <p><img src="../../images/location.png"/> Singapore</p>
             <p>Languages: </br>
             <% @student.languages.each do |language| %>
               <span class='tag pinkColour tagSpacing'> <%= language.name %> </span>
@@ -88,8 +88,8 @@
               <div>
                 <h3 class="bigFatName"><%=project.name%></h3>
                 <h6 class="text-muted"><%=project.description%></h6>
-                <p><a class="profileIcon" href="<%=project.site%>"><img src="/assets/public/website.png"/> Deployed Site</a></p>
-                <p><a class="profileIcon" href="<%=project.site%>"><img src="/assets/public/github.png"/> Github</a></p>
+                <p><a class="profileIcon" href="<%=project.site%>"><img src="../../images/website.png"/> Deployed Site</a></p>
+                <p><a class="profileIcon" href="<%=project.site%>"><img src="../../images/github.png"/> Github</a></p>
                 <div class="alignMiddle">
                   <iframe src="<%=project.project_gifs%>" width="300" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
                   <!-- <iframe src="//giphy.com/embed/zA2aQyUmncvtK?html5=true" width="300" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> -->
