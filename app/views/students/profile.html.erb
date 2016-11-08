@@ -34,7 +34,11 @@
       <div class="offset-md-1 col-md-6">
         <!-- START OF TOGGLE BAR -->
         <div class="toggleBar">
+<<<<<<< HEAD
           <div id="prev"><img class="arrows" src="/images/left arrow.png" alt="" /></div>
+=======
+          <div id="prev"><img class="arrows" src="../../images/left-arrow.png" alt="" /></div>
+>>>>>>> 01c322f80dbcc0c45fb94663da86afa618b0223c
           <div class="boxAxis">
             <div class="container-fluid axis" id="rotatingPlaneProfile">
               <div class="carousel">
@@ -52,7 +56,11 @@
                 </div>
               </div>
             </div>
+<<<<<<< HEAD
             <div id="next"><img class="arrows" src="/images/right arrow.png"/></div>
+=======
+            <div id="next"><img class="arrows" src="../../images/right-arrow.png"/></div>
+>>>>>>> 01c322f80dbcc0c45fb94663da86afa618b0223c
           </div>
         </div>
         <!-- END OF TOGGLE BAR -->
@@ -62,8 +70,13 @@
             <h3 class="bigFatName"><%=@student.first_name%> <%=@student.last_name%></h3>
             <h6 class="text-muted"><%=@student.one_liner%></h6>
             </br>
+<<<<<<< HEAD
             <p><img src="/images/education.png"/> <%=@student.degree%> at <%=@student.school%></p>
             <p><img src="/images/location.png"/> Singapore</p>
+=======
+            <p><img src="../../images/education.png"/> <%=@student.degree%> at <%=@student.school%></p>
+            <p><img src="../../images/location.png"/> Singapore</p>
+>>>>>>> 01c322f80dbcc0c45fb94663da86afa618b0223c
             <p>Languages: </br>
             <% @student.languages.each do |language| %>
               <span class='tag pinkColour tagSpacing'> <%= language.name %> </span>
@@ -88,8 +101,13 @@
               <div>
                 <h3 class="bigFatName"><%=project.name%></h3>
                 <h6 class="text-muted"><%=project.description%></h6>
+<<<<<<< HEAD
                 <p><a class="profileIcon" href="<%=project.site%>"><img src="/images/website.png"/> Deployed Site</a></p>
                 <p><a class="profileIcon" href="<%=project.site%>"><img src="/images/github.png"/> Github</a></p>
+=======
+                <p><a class="profileIcon" href="<%=project.site%>"><img src="../../images/website.png"/> Deployed Site</a></p>
+                <p><a class="profileIcon" href="<%=project.site%>"><img src="../../images/github.png"/> Github</a></p>
+>>>>>>> 01c322f80dbcc0c45fb94663da86afa618b0223c
                 <div class="alignMiddle">
                   <iframe src="<%=project.project_gifs%>" width="300" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
                   <!-- <iframe src="//giphy.com/embed/zA2aQyUmncvtK?html5=true" width="300" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> -->

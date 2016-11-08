@@ -1,7 +1,6 @@
 <nav class="navbar navbar-fixed-top navbar-light" id="navBar" style="background-color: #000000;">
   <div class="nav navbar-nav">
     <a id="GAname" class="navBarColor" href="/"><img class="gaLogo" src="/images/galogo.png"/> GENERAL ASSEMBLY</a>
-
     <% if current_student %>
       <% if current_student.admin %>
         <%= link_to 'Logout', logout_url, class:"nav-item nav-link pull-xs-right", method: :delete, data: {confirm: 'Are you sure?'}%>
