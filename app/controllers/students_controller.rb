@@ -7,8 +7,6 @@ class StudentsController < ApplicationController
   # GET /students.json
   def index
     @students = Student.all
-    puts "HIIIIIIIIIIII"
-    puts @students
   end
 
   def students_all
@@ -22,7 +20,6 @@ class StudentsController < ApplicationController
 
   def search
     @students = Student.where(course_id: params[:id])
-    puts "STUDEENTS: #{@students}"
 
     respond_to do |format|
       format.json { render :json => @students, :include => [:projects, :languages] }
@@ -41,22 +38,16 @@ class StudentsController < ApplicationController
     render "/students/profile_pic"
   end
 
-  # GET /students/1
-  # GET /students/1.json
   def show
   end
 
-  # GET /students/new
   def new
     @student = Student.new
   end
 
-  # GET /students/1/edit
   def edit
   end
 
-  # POST /students
-  # POST /students.json
   def create
     @student = Student.new(student_params)
     @student.admin = false;
@@ -75,10 +66,7 @@ class StudentsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /students/1
-  # PATCH/PUT /students/1.json
   def update
-
     # this checks if a upload file exist
     # if true, upload on to cloudinary and update
     # note that we are modifying the params here before updating the student object

@@ -1,10 +1,5 @@
-// # Place all the behaviors and hooks related to the matching controller here.
-// # All this logic will automatically be available in application.js.
-// # You can use CoffeeScript in this file: http://coffeescript.org/
-
-console.log("HELLO WORLD");
-
 $(document).on('turbolinks:load', function() {
+  console.log("HELLO WORLD");
 
 // BROWSING PAGE
   $('#selectMeetGreet').submit(function(e) {
@@ -17,9 +12,6 @@ $(document).on('turbolinks:load', function() {
       url: '/events/search',
       method: 'GET',
       data: {id: greetID}
-      // data: {id: this.value},
-      // data: {data}
-      // dataType: 'json'
     }).done(function (data) {
       console.log("Returned Data:", data)
       $("#sessionDetails").empty()
@@ -36,6 +28,7 @@ $(document).on('turbolinks:load', function() {
         "</div>"
       )
     })
+
     // APPEND STUDENT LIST
     $.ajax({
       url: '/students/search',
@@ -49,12 +42,13 @@ $(document).on('turbolinks:load', function() {
       for (var i = 0; i < data.length; i++ ) {
         $("#studentDetails").append(
           "<div class='card cardShadow media' id='" + data[i].id + "'>" +
+            // "<a class='courseLinks'>" +
             "<a class='courseLinks' href='/profile/=" + data[i].link + "'>" +
               "<div class='card-block'>" +
                 "<div class='media-body'>" +
                   "<h4 class='card-title'>" + data[i].first_name + " " + data[i].last_name + "</h4>" +
                   "<h6 class='card-subtitle text-muted astheticLine'>" + data[i].one_liner + "</h6></br>" +
-                  "<p><img src='/assets/public/education.png'/> " + data[i].qualification + " in " + data[i].degree + " at " + data[i].school + "</p>" +
+                  "<p><img src='/images/education.png'/> " + data[i].qualification + " in " + data[i].degree + " at " + data[i].school + "</p>" +
                   "<div id='projectsTag" + data[i].id + "'>Projects:</br> </div>" +
                   "<div id='languageTag" + data[i].id + "'>Languages:</br> </div>" +
                 "</div>" +

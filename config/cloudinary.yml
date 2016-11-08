@@ -5,6 +5,12 @@ development:
   api_secret: wJoCkGBuuRnRAQGTpAwcqxaNBrY
   enhance_image_tag: true
   static_image_support: false
+production:
+  cloud_name: di820hhex
+  api_key: '317984298387436'
+  api_secret: wJoCkGBuuRnRAQGTpAwcqxaNBrY
+  enhance_image_tag: true
+  static_image_support: true
 test:
   cloud_name: di820hhex
   api_key: '317984298387436'
