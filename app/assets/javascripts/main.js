@@ -62,6 +62,7 @@ $(document).on('turbolinks:load', function() {
                 "<div class='media-body'>" +
                   "<h4 class='card-title'>" + data[i].first_name + " " + data[i].last_name + "</h4>" +
                   "<h6 class='card-subtitle text-muted astheticLine'>" + data[i].one_liner + "</h6></br>" +
+                  "<p><img src='/images/job.png'/> " + data[i].works[0].title + " at " + data[i].works[0].company + "</p>" +
                   "<p><img src='/images/education.png'/> " + data[i].qualification + " in " + data[i].degree + " at " + data[i].school + "</p>" +
                   "<div id='projectsTag" + data[i].id + "'>Projects:</br> </div>" +
                   "<div id='languageTag" + data[i].id + "'>Proficiencies:</br> </div>" +

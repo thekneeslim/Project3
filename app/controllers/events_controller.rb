@@ -18,7 +18,6 @@ class EventsController < ApplicationController
     @event.end = @event.end.strftime("%I:%M%p")
     respond_to do |format|
       format.json { render :json => @event }
-      format.json { render :json => @students, :include => [:projects] }
     end
   end
 

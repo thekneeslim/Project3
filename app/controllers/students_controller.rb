@@ -22,7 +22,7 @@ class StudentsController < ApplicationController
     @students = Student.where(course_id: params[:id])
 
     respond_to do |format|
-      format.json { render :json => @students, :include => [:projects, :languages] }
+      format.json { render :json => @students, :include => [:projects, :languages, :works] }
     end
   end
 
