@@ -42,6 +42,27 @@
             <th class="tableHeaderWidth">Date:</th>
             <td><%= event.date %></td>
           </tr>
+          <tr>
+            <th class="tableHeaderWidth">Start:</th>
+            <% if event.start %>
+              <td><%= event.start.strftime("%I:%M%p") %></td>
+            <% else %>
+              <td><%= event.start %></td>
+            <% end %>
+          </tr>
+          <tr>
+            <th class="tableHeaderWidth">End:</th>
+            <% if event.start %>
+              <td><%= event.end.strftime("%I:%M%p") %></td>
+            <% else %>
+              <td><%= event.end %></td>
+            <% end %>
+          </tr>
+          <tr>
+            <th class="tableHeaderWidth">Location:</th>
+            <td><%= event.location %></td>
+          </tr>
+
 
         </table>
         <div class="container-fluid align">
@@ -89,7 +110,7 @@
                 </div>
                 <div class="form-group row field">
                   <%= f.label :location, class: "col-xs-3 col-form-label" %>
-                  <%= f.text_field :location, value: event.location, class: 'col-xs-8'%>
+                  <%= f.text_area :location, value: event.location, class: 'col-xs-8'%>
                 </div>
 
               </div>

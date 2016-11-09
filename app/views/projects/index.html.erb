@@ -36,19 +36,19 @@
                 <th class="tableHeaderWidth">Description:</th>
                 <td><%= project.description %></td>
               </tr>
-              <!-- <tr> -->
-                <!-- <th class="tableHeaderWidth">Project Gifs:</th> -->
-                <!-- <td><%= project.project_gifs %></td> -->
-                <!-- <iframe src="//giphy.com/embed/uobEGb3Cl2bcI" width="480" height="309" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/howtogiphygifs-how-to-uobEGb3Cl2bcI">via GIPHY</a></p> -->
-              <!-- </tr> -->
+              <tr>
+                <th class="tableHeaderWidth">Project Gifs:</th>
+                <td><%= project.project_gifs %></td>
+                <!-- <td><iframe src="//giphy.com/embed/uobEGb3Cl2bcI" width="300" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></td> -->
+              </tr>
             </table>
             <div class="container containerSpecial">
 
               <% if project.project_gifs.present? %>
-
-              <iframe src="<%= project.project_gifs %>" width="400" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                <iframe src="<%=project.project_gifs%>" width="300" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                <!-- <iframe src="//giphy.com/embed/2PIjvGv9DKtJ6" width="300" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> -->
               <% else %>
-              <iframe src="//giphy.com/embed/3o7TKDNV8ZqWei6iFq" width="400" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                <iframe src="//giphy.com/embed/3o7TKDNV8ZqWei6iFq" width="300" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
               <% end %>
             </div>
 

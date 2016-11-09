@@ -23,7 +23,8 @@
             <th class="tableHeaderWidth">Languages:</th>
             <td>
               <% @student.languages.each do |language| %>
-                <button type="button" class = "btn buttonTags"><%= language.name %></button>
+              <span class='tag pinkColour tagSpacing'><%= language.name %></span>
+                <!-- <button type="button" class = "btn buttonTags"><%= language.name %></button> -->
               <%end%>
             </td>
           </tr>
