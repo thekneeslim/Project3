@@ -74,60 +74,6 @@
     </div>
 
 
-<!-- GA PROFILE LINK -->
-    <!-- <div class="card">
-      <div class="card-header">
-        GA Profile Link
-      </div>
-      <div class="card-block">
-        <table>
-            <tr>
-              <th class="tableHeaderWidth">Link:</th>
-              <td><%= @student.link %></td>
-            </tr>
-        </table>
-        <button type="button" class="btn pinkColour editButton" data-toggle="modal" data-target="#linkInfoEdit">
-          Edit
-        </button>
-      </div> -->
-
-      <!-- MODAL -->
-      <!-- <div class="modal fade" id="linkInfoEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <h4 class="modal-title" id="myModalLabel">Link</h4>
-            </div> -->
-            <!-- ============ FORM ============ -->
-            <!-- <%= form_for(@student) do |f| %>
-
-              <div class="modal-body">
-                <div class="form-group row field">
-                    <%= f.label :link, class: "col-xs-3 col-form-label" %>
-                    <%= f.text_field :link, value: current_student.link, class: 'col-xs-8'%>
-                </div>
-
-              </div>
-              <div class="modal-footer">
-                <button type="submit" class="btn pinkColour">Save changes</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              </div> -->
-            <!-- ============ FORM END ============ -->
-            <!-- <%end%>
-          </div>
-        </div>
-      </div> -->
-        <!-- ============ MODAL END ============ -->
-    <!-- </div> -->
-
-
-
-
-
-
     <!-- ============ SECOND EDIT BOX ============ -->
     <div class="card">
       <div class="card-header">
@@ -146,10 +92,6 @@
             <tr>
               <th class="tableHeaderWidth">Personal Website:</th>
               <td><%= @student.website %></td>
-            </tr>
-            <tr>
-              <th class="tableHeaderWidth">Video Link:</th>
-              <td><%= @student.video %></td>
             </tr>
           </tbody>
         </table>
@@ -183,10 +125,6 @@
                 <%= f.label :website, class: "col-xs-3 col-form-label" %>
                 <%= f.text_field :website, value: current_student.website, class: 'col-xs-8'%>
               </div>
-              <div class="form-group row field">
-                <%= f.label :video, class: "col-xs-3 col-form-label" %>
-                <%= f.text_field :video, value: current_student.video, class: 'col-xs-8'%>
-              </div>
             </div>
             <div class="modal-footer">
               <button type="submit" class="btn pinkColour">Save changes</button>
@@ -211,10 +149,6 @@
           <tr>
             <th class="tableHeaderWidth">One Liner:</th>
             <td><%= @student.one_liner %></td>
-          </tr>
-          <tr>
-            <th class="tableHeaderWidth">Description:</th>
-            <td><%= @student.description %></td>
           </tr>
         </tbody>
       </table>
@@ -241,11 +175,6 @@
               <%= f.label :one_liner, class: "col-xs-3 col-form-label" %>
               <%= f.text_field :one_liner, value: current_student.one_liner, class: 'col-xs-8'%>
           </div>
-          <div class="form-group row field">
-              <%= f.label :description, class: "col-xs-3 col-form-label" %>
-              <%= f.text_area :description, value: current_student.description, class: 'col-xs-8'%>
-          </div>
-          <p class="smallText">Under 100 words</p>
 
         </div>
         <div class="modal-footer">

@@ -28,9 +28,9 @@
             <%= f.submit "Go Live", class: "btn pinkColour submissionButton"%>
           <% end %>
         <% elsif current_student.status == 1 %>
-          <button class="btn btn-warning submissionButton" type="disabled">Pending Approval</button>
+          <button class="btn btn-warning submissionButton" disabled>Pending Approval</button>
         <% elsif current_student.status == 2 %>
-          <button class="btn btn-success submissionButton" type="disabled">Live</button>
+          <button class="btn btn-success submissionButton" disabled>Live</button>
         <% end %>
       </ul>
     </div>

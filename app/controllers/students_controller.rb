@@ -19,7 +19,7 @@ class StudentsController < ApplicationController
   end
 
   def search
-    @students = Student.where(course_id: params[:id], status: 3)
+    @students = Student.where(course_id: params[:id], status: 2)
 
     respond_to do |format|
       format.json { render :json => @students, :include => [:projects, :languages, :works] }
@@ -113,6 +113,6 @@ class StudentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-      params.require(:student).permit(:first_name, :last_name, :email, :password, :linkedin, :github, :website, :contact, :description, :event_id, :school, :qualification, :degree, :graduation, :profile_pic_url, :course_id, :one_liner, :link, :video, :project_ids => [], :language_ids => [])
+      params.require(:student).permit(:first_name, :last_name, :email, :password, :linkedin, :github, :website, :contact, :description, :event_id, :school, :qualification, :degree, :graduation, :profile_pic_url, :course_id, :one_liner, :link, :video, :status, :project_ids => [], :language_ids => [])
     end
 end

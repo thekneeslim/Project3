@@ -20,7 +20,7 @@
             <td><%= @student.event.name %></td>
           </tr>
           <tr>
-            <th class="tableHeaderWidth">Languages:</th>
+            <th class="tableHeaderWidth">Proficiencies:</th>
             <td>
               <% @student.languages.each do |language| %>
               <span class='tag pinkColour tagSpacing'><%= language.name %></span>
@@ -58,7 +58,7 @@
               <%= f.select :event_id, Event.all.collect {|x| [x.name, x.id]}, {}, class: "col-xs-7 form-control selectForm" %>
             </div>
             <div class="form-group row field">
-              <%= f.label :language, class: "col-xs-3 col-form-label" %>
+              <%= f.label "Proficiencies", class: "col-xs-3 col-form-label" %>
               <%= f.select :language_ids, Language.all.collect {|x| [x.name, x.id]}, {}, :multiple => true, class: "col-xs-7 form-control selectForm" %>
             </div>
           </div>
