@@ -22,9 +22,6 @@ Rails.application.routes.draw do
 
   get "works/all" => "works#works_all"
 
-  # get "events"
-  # get "courses" => "courses#index"
-
   resources :events
   resources :works
   resources :students

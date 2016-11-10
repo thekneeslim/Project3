@@ -9,18 +9,15 @@ $(document).on('turbolinks:load', function() {
     $("#date").css("background-image", "url('/images/backdrop2.png')")
 
     var greetID = $('#selectedMeetGreet').val()
-    console.log("Greet ID:", greetID)
+    // console.log("Greet ID:", greetID)
     // APPEND MEET & GREET DETAILS
     $.ajax({
       url: '/events/search',
       method: 'GET',
       data: {id: greetID}
     }).done(function (data) {
-      console.log("Returned Data:", data)
+      // console.log("Returned Data:", data)
       var start = new Date(data.start)
-      // start = start.getTimezoneOffset();
-      console.log(start);
-      console.log("==============");
       var hoursStart = start.getHours()
       var minStart = start.getMinutes()
       var end = new Date(data.end)
@@ -36,7 +33,8 @@ $(document).on('turbolinks:load', function() {
             "<h6 class='card-subtitle text-muted'>" + data.description + "</h6>" +
             "<hr>" +
             "<p><b>Date:</b> </br>" + moment(data.date).format("DD MMM YYYY") + "</p>" +
-            "<p><b>Time:</b> </br> " + data.start + " to " + data.end + "</p>" +
+            "<p><b>Time:</b> </br>2:00PM to 6:00PM</p>" +
+            // "<p><b>Time:</b> </br> " + data.start + " to " + data.end + "</p>" +
             // "<p><b>Time:</b> </br> " + hoursStart + ":" + minStart + " to " + hoursEnd + ":" + minEnd + "</p> </br>" +
             // "<p><b>Time:</b> </br> " + data.start.format('ha') + " to " + moment(data.end).tz('Asia/Singapore').format('ha') + "</p> </br>" +
             // "<p><b>Time:</b> </br> " + moment(data.start).format('ha') + " to " + moment(data.end).format('ha') + "</p> </br>" +
@@ -52,7 +50,7 @@ $(document).on('turbolinks:load', function() {
       method: 'GET',
       data: {id: greetID}
     }).done(function (data) {
-      console.log("Returned Data:", data)
+      // console.log("Returned Data:", data)
       $("#studentDetails").empty()
       $("#requestSelect").empty()
 
@@ -60,7 +58,6 @@ $(document).on('turbolinks:load', function() {
         $("#studentDetails").append(
           "<div class='card cardShadow media studentCard' id='card" + data[i].id + "'>" +
             "<a class='courseLinks'>" +
-            // "<a class='courseLinks' href='/profile/=" + data[i].link + "'>" +
               "<div class='card-block'>" +
                 "<div class='media-body'>" +
                   "<h4 class='card-title'>" + data[i].first_name + " " + data[i].last_name + "</h4>" +
@@ -143,7 +140,7 @@ $(document).on('turbolinks:load', function() {
 
 $(document).on('click','.studentCard',function(){
    var clickedID = $(this).attr('id');
-   console.log(clickedID);
+  //  console.log(clickedID);
     $('#modal' + clickedID + '').modal('show')
  })
 

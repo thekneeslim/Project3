@@ -19,8 +19,6 @@ class EventsController < ApplicationController
     if @event.end
       @event.end = @event.end.strftime("%I:%M%p")
     end
-    puts "#{@event.start}"
-    puts "==================="
     respond_to do |format|
       format.json { render :json => @event }
     end

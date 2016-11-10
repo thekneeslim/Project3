@@ -51,13 +51,13 @@ $(document).on('turbolinks:load', function() {
       $("#infoProjects").css("visibility", "hidden")
       $("#infoExperiences").css("visibility", "hidden")
       identity--
-      console.log("Prev:", identity);
+      // console.log("Prev:", identity);
 
       if (identity < 0) {
         identity = 3
       }
 
-      console.log("Prev 2:", identity);
+      // console.log("Prev 2:", identity);
       if (identity == 0) {
         $("#infoProfile").css("visibility", "visible")
       } else if (identity == 1 ) {
@@ -77,11 +77,11 @@ $(document).on('turbolinks:load', function() {
       $("#infoExperiences").css("visibility", "hidden")
 
       identity++
-      console.log(identity)
+      // console.log(identity)
       if (identity > 3) {
         identity = 0
       }
-      console.log(identity)
+      // console.log(identity)
       if (identity == 0) {
         $("#infoProfile").css("visibility", "visible")
       } else if (identity == 1 ) {
