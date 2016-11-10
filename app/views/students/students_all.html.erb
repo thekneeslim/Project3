@@ -33,6 +33,7 @@
               <th>Course</th>
               <th>Event</th>
               <th>Status</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -44,27 +45,33 @@
               <td><%= student.event.name if student.event.present?%></td>
               <td>
                 <% if student.status == 0 %>
+                  Draft
+                <% elsif student.status == 1 %>
+                  Pending Approval
+                <% elsif student.status == 2 %>
+                  Live
+                <% end %>
+              </td>
+              <td>
+                <% if student.status == 0 %>
                   <button class="btn editButton mine" disabled>
                     Draft
                   </button>
                 <% elsif student.status == 1 %>
                   <%= form_for(student) do |f| %>
                     <%= f.text_field :status, value: "2", type: "hidden"%>
-                    <%= f.submit "Approve", class: "btn pinkColour editButton mine"%>
+                    <%= f.submit "Approve", class: "btn btn-success editButton mine"%>
                   <% end %>
                 <% elsif student.status == 2 %>
-                  <button class="btn btn-success editButton mine" disabled>
-                    Live
-                  </button>
+                  <%= form_for(student) do |f| %>
+                    <%= f.text_field :status, value: "0", type: "hidden"%>
+                    <%= f.submit "Reject", class: "btn btn-primary editButton mine"%>
+                  <% end %>
                 <% end %>
-              </td>
-              <td>
-                <button type="button" class="btn pinkColour editButton mine" data-toggle="modal" data-target="#studentInfoEdit">
+                <button type="button" class="btn btn-warning editButton mine" data-toggle="modal" data-target="#studentInfoEdit">
                   Edit
                 </button>
-              </td>
-              <td>
-                <%= button_to "Delete", student, :method => :delete, class: "btn pinkColour editButton mine" %>
+                <%= button_to "Delete", student, :method => :delete, class: "btn btn-danger editButton mine" %>
               </td>
             </tr>
           </tbody>

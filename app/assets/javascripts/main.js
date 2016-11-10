@@ -67,6 +67,12 @@ $(document).on('turbolinks:load', function() {
                   "<h6 class='card-subtitle text-muted astheticLine'>" + data[i].one_liner + "</h6></br>" +
                   "<p><img src='/images/job.png'/> " + data[i].works[0].title + " at " + data[i].works[0].company + "</p>" +
                   "<p><img src='/images/education.png'/> " + data[i].qualification + " in " + data[i].degree + " at " + data[i].school + "</p>" +
+                  "<p>" +
+                    "<a class='browseIcons' href='mailto:" + data[i].email + "'><img src='/images/email.png'/></a>" +
+                    "<a class='browseIcons' href='" + data[i].website + "'><img src='/images/website.png'/></a>" +
+                    "<a class='browseIcons' href='" + data[i].github + "'><img src='/images/github.png'/></a>" +
+                    "<a class='browseIcons' href='" + data[i].linkedin + "'><img src='/images/linkedin.png'/></a>" +
+                  "</p>" +
                   "<div id='projectsTag" + data[i].id + "'>Projects:</br> </div>" +
                   "<div id='languageTag" + data[i].id + "'>Proficiencies:</br> </div>" +
                 "</div>" +
