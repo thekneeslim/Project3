@@ -21,6 +21,10 @@ class MainController < ApplicationController
     render layout: false
   end
 
+  def instructions
+    render "/main/instructions"
+  end
+
   def admin
 
   end

@@ -59,7 +59,7 @@
             </div>
             <div class="form-group row field">
               <%= f.label "Proficiencies", class: "col-xs-3 col-form-label" %>
-              <%= f.select :language_ids, Language.all.collect {|x| [x.name, x.id]}, {}, :multiple => true, class: "col-xs-7 form-control selectForm" %>
+              <%= f.select :language_ids, Language.all.collect {|x| [x.name, x.id]}, {}, :multiple => true, size: Language.all.length, class: "col-xs-7 form-control selectForm" %>
             </div>
           </div>
           <div class="modal-footer">

@@ -18,6 +18,10 @@ class WorksController < ApplicationController
     @works = Work.all
   end
 
+  def nicetry
+    render "/main/nicetry"
+  end
+
   # GET /works/1
   # GET /works/1.json
   def show

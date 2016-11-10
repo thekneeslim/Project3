@@ -19,6 +19,10 @@ class ProjectsController < ApplicationController
       @projects = Project.all
   end
 
+  def nicetry
+    render "/main/nicetry"
+  end
+
   # GET /projects/1
   # GET /projects/1.json
   def show

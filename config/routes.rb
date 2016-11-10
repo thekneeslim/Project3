@@ -19,8 +19,12 @@ Rails.application.routes.draw do
   get "admin" => "main#admin"
 
   get "projects/all" => "projects#projects_all"
+  get "projects/new" => "projects#nicetry"
 
   get "works/all" => "works#works_all"
+  get "works/new" => "works#nicetry"
+
+  get "instructions" => "main#instructions"
 
   resources :events
   resources :works
