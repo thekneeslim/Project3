@@ -14,31 +14,32 @@ class StudentsController < ApplicationController
   end
 
   def education
-    @student = Student.find(@current_student.id)
+    @student = Student.find(current_student.id)
     render "/students/education"
   end
 
   def search
-    @students = Student.where(course_id: params[:id])
+    @students = Student.where(course_id: params[:id], status: 3)
 
     respond_to do |format|
       format.json { render :json => @students, :include => [:projects, :languages, :works] }
     end
   end
 
-  def profile
-    current_url = request.original_url
-    split = current_url.split("=")
-    @student = Student.where(link: split.last).take
-    render :profile
-  end
+  # def profile
+  #   current_url = request.original_url
+  #   split = current_url.split("=")
+  #   @student = Student.where(link: split.last).take
+  #   render :profile
+  # end
 
   def profile_pic
-    @student = Student.find(@current_student.id)
+    @student = Student.find(current_student.id)
     render "/students/profile_pic"
   end
 
   def show
+    @student = Student.find(current_student.id)
   end
 
   def new
@@ -51,6 +52,7 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(student_params)
     @student.admin = false;
+    @student.status = 0;
 
     first_name = @student.first_name
     last_name = @student.last_name

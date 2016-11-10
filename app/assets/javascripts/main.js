@@ -33,11 +33,11 @@ $(document).on('turbolinks:load', function() {
             "<h6 class='card-subtitle text-muted'>" + data.description + "</h6>" +
             "<hr>" +
             "<p><b>Date:</b> </br>" + moment(data.date).format("DD MMM YYYY") + "</p>" +
-            "<p><b>Time:</b> </br> " + data.start + " to " + data.end + "</p> </br>" +
+            "<p><b>Time:</b> </br> " + data.start + " to " + data.end + "</p>" +
             // "<p><b>Time:</b> </br> " + hoursStart + ":" + minStart + " to " + hoursEnd + ":" + minEnd + "</p> </br>" +
             // "<p><b>Time:</b> </br> " + data.start.format('ha') + " to " + moment(data.end).tz('Asia/Singapore').format('ha') + "</p> </br>" +
             // "<p><b>Time:</b> </br> " + moment(data.start).format('ha') + " to " + moment(data.end).format('ha') + "</p> </br>" +
-            "<p><b>Venue:</b> </br>" + data.location + "</p>" +
+            "<p><b>Venue:</b> </br>" + data.address_one + "</br>" + data.address_two + "</br>" + data.address_three +"</p>" +
           "</div>" +
         "</div>"
       )

@@ -75,7 +75,7 @@ $(document).on('turbolinks:load', function() {
       $("#infoVideo").css("visibility", "hidden")
       $("#infoProjects").css("visibility", "hidden")
       $("#infoExperiences").css("visibility", "hidden")
-      
+
       identity++
       console.log(identity)
       if (identity > 3) {

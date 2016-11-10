@@ -23,7 +23,6 @@
   <div class="offset-md-1 col-md-8">
     <h3 id="titleHeader">Events</h3>
     <% @events.each do |event| %>
-    <!-- <h3 id="titleHeader">General Information</h3> -->
     <div class="card">
       <div class="card-header">
         <%= event.name %>
@@ -60,7 +59,11 @@
           </tr>
           <tr>
             <th class="tableHeaderWidth">Location:</th>
-            <td><%= event.location %></td>
+            <td>
+              <%= event.address_one %></br>
+              <%= event.address_two %></br>
+              <%= event.address_three %></br>
+            </td>
           </tr>
 
 
@@ -109,8 +112,12 @@
                   <%= f.time_field :end, value: event.end, class: 'col-xs-8'%>
                 </div>
                 <div class="form-group row field">
-                  <%= f.label :location, class: "col-xs-3 col-form-label" %>
-                  <%= f.text_area :location, value: event.location, class: 'col-xs-8'%>
+                  <%= f.label "Address", class: "col-xs-3 col-form-label" %>
+                  <%= f.text_field :address_one, value: event.address_one, class: 'col-xs-8'%>
+                  <div class="col-xs-3"></div>
+                  <%= f.text_field :address_two, value: event.address_two, class: 'col-xs-8'%>
+                  <div class="col-xs-3"></div>
+                  <%= f.text_field :address_three, value: event.address_three, class: 'col-xs-8'%>
                 </div>
 
               </div>
@@ -169,8 +176,12 @@
             <%= f.time_field :end, value: event.end, class: 'col-xs-8'%>
           </div>
           <div class="form-group row field">
-            <%= f.label :location, class: "col-xs-3 col-form-label" %>
-            <%= f.text_field :location, value: event.location, class: 'col-xs-8'%>
+            <%= f.label "Address", class: "col-xs-3 col-form-label" %>
+            <%= f.text_field :address_one, value: event.address_one, class: 'col-xs-8'%>
+            <div class="col-xs-3"></div>
+            <%= f.text_field :address_two, value: event.address_two, class: 'col-xs-8'%>
+            <div class="col-xs-3"></div>
+            <%= f.text_field :address_three, value: event.address_three, class: 'col-xs-8'%>
           </div>
         </div>
         <div class="modal-footer">

@@ -12,10 +12,14 @@ class EventsController < ApplicationController
 
   def search
     @event = Event.find(params[:id])
-    @event.start = @event.start.strftime("%I:%M%p")
+    if @event.start
+      @event.start = @event.start.strftime("%I:%M%p")
+    end
+    if @event.end
+      @event.end = @event.end.strftime("%I:%M%p")
+    end
     puts "#{@event.start}"
     puts "==================="
-    @event.end = @event.end.strftime("%I:%M%p")
     respond_to do |format|
       format.json { render :json => @event }
     end

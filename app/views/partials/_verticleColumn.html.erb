@@ -9,7 +9,6 @@
         <li class="nav-item pink">
           <a class="nav-link" href="/students/<%= current_student.id%>">General Information</a>
         </li>
-        <!-- PROFILE PICCCCC LINKKKKKKK -->
         <li class="nav-item pink">
           <a class="nav-link" href="/students/<%= current_student.id%>/profile_pic">Profile Picture</a>
         </li>
@@ -22,9 +21,17 @@
         <li class="nav-item pink">
           <a class="nav-link" href="/projects">Project</a>
         </li>
-        <li class="nav-item pink">
-          <a class="nav-link" href="/profile/=<%=current_student.link=%>">Live Profile</a>
-        </li>
+        <br>
+        <% if current_student.status == 0 %>
+          <%= form_for(@student) do |f| %>
+            <%= f.text_field :status, value: "1", type: "hidden"%>
+            <%= f.submit "Go Live", class: "btn pinkColour submissionButton"%>
+          <% end %>
+        <% elsif current_student.status == 1 %>
+          <button class="btn btn-warning submissionButton" type="disabled">Pending Approval</button>
+        <% elsif current_student.status == 2 %>
+          <button class="btn btn-success submissionButton" type="disabled">Live</button>
+        <% end %>
       </ul>
     </div>
   </div>

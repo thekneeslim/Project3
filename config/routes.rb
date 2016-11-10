@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'main#index'
   get "browse" => "main#browse"
-  get "/profile/:id" => "students#profile"
+  # get "/profile/:id" => "students#profile"
   # get "profile/graduate=:id" => "main#profile"
 
   get "login" => "sessions#new"
