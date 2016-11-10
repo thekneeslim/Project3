@@ -381,14 +381,18 @@ th {
 #date {
   padding: 70px;
   text-align: center;
-  background-image: url("/images/backdrop2.png");
+  // background-image: url("/images/backdrop2.png");
   background-position: center;
   background-size: cover;
-  text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+  // text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+#browseHeader {
+  text-align: center;
 }
 
 #chooseSessionSelector {
-  color: white;
+  color: black;
   font-size: 40px;
 }
 

@@ -4,6 +4,9 @@ $(document).on('turbolinks:load', function() {
 // BROWSING PAGE
   $('#selectMeetGreet').submit(function(e) {
     e.preventDefault();
+    $("#chooseSessionSelector").css("color", "white")
+    $("#date").css("text-shadow", "-1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black")
+    $("#date").css("background-image", "url('/images/backdrop2.png')")
 
     var greetID = $('#selectedMeetGreet').val()
     console.log("Greet ID:", greetID)
