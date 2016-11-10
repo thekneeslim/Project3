@@ -11,7 +11,12 @@ class ApplicationController < ActionController::Base
   end
 
   def is_admin
-    unless current_student.admin
+    if current_student
+      unless current_student.admin
+        flash[:danger] = "Credentials Invalid!! Admin access only!"
+        redirect_to login_path
+      end
+    else
       flash[:danger] = "Credentials Invalid!! Admin access only!"
       redirect_to login_path
     end
