@@ -40,7 +40,6 @@
           <% @students.each do |student| %>
             <tr>
               <td><%= student.first_name %></td>
-              <!-- .present? checks if what you are calling exists then display, otherwise leave it black -->
               <td><%= student.course.name if student.course.present?%></td>
               <td><%= student.event.name if student.event.present?%></td>
               <td>
