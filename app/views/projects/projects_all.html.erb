@@ -40,21 +40,19 @@
             <tr>
               <td><%= project.name %></td>
               <% project.students.each do |student| %>
-              <td><%= student.name %></td>
+                <td><%= student.name %></td>
               <% end %>
               <td><%= project.site %></td>
               <% if project.project_gifs %>
                 <td>True</td>
               <% else %>
                 <td>False</td>
-                <% end %>
+              <% end %>
               <td>
                 <button type="button" class="btn pinkColour editButton mine" data-toggle="modal" data-target="#projectInfoEdit-<%=project.id%>">
                   Edit
                 </button>
               </br>
-              <!-- </td>
-              <td> -->
                 <%= button_to "Delete", project, :method => :delete, class: "btn pinkColour editButton mine" %>
               </td>
             </tr>
@@ -98,8 +96,8 @@
 
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn pinkColour">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                   </div>
                 <!-- ============ FORM END ============ -->
                 <%end%>
@@ -109,7 +107,7 @@
             <!-- ============ MODAL EDIT END ============ -->
 
 
-            <% end %>
+          <% end %>
 
         </table>
 
