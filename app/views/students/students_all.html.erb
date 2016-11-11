@@ -68,7 +68,7 @@
                     <%= f.submit "Reject", class: "btn btn-primary editButton mine"%>
                   <% end %>
                 <% end %>
-                <button type="button" class="btn btn-warning editButton mine" data-toggle="modal" data-target="#studentInfoEdit">
+                <button type="button" class="btn btn-warning editButton mine" data-toggle="modal" data-target="#studentInfoEdit<%=student.id%>">
                   Edit
                 </button>
                 <%= button_to "Delete", student, :method => :delete, class: "btn btn-danger editButton mine" %>
@@ -77,7 +77,7 @@
           </tbody>
 
           <!-- MODAL FOR EDIT -->
-          <div class="modal fade" id="studentInfoEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal fade" id="studentInfoEdit<%=student.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">

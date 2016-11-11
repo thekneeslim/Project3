@@ -31,6 +31,8 @@
               <th>Name</th>
               <th>Student</th>
               <th>Website</th>
+              <th>Giphy</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -41,12 +43,18 @@
               <td><%= student.name %></td>
               <% end %>
               <td><%= project.site %></td>
+              <% if project.project_gifs %>
+                <td>True</td>
+              <% else %>
+                <td>False</td>
+                <% end %>
               <td>
                 <button type="button" class="btn pinkColour editButton mine" data-toggle="modal" data-target="#projectInfoEdit-<%=project.id%>">
                   Edit
                 </button>
-              </td>
-              <td>
+              </br>
+              <!-- </td>
+              <td> -->
                 <%= button_to "Delete", project, :method => :delete, class: "btn pinkColour editButton mine" %>
               </td>
             </tr>
@@ -79,10 +87,10 @@
                         <%= f.label :website, class: "col-xs-3 col-form-label" %>
                         <%= f.text_field :site, value: project.site, class: 'col-xs-8'%>
                     </div>
-                    <div class="form-group row field">
+                    <!-- <div class="form-group row field">
                         <%= f.label :description, class: "col-xs-3 col-form-label" %>
                         <%= f.text_area :description, value: project.description, class: 'col-xs-8'%>
-                    </div>
+                    </div> -->
                     <div class="form-group row field">
                         <%= f.label :project_gifs, class: "col-xs-3 col-form-label" %>
                         <%= f.text_area :project_gifs, value: project.project_gifs, class: 'col-xs-8'%>
