@@ -13,5 +13,6 @@ Functionality:
   - AJAX
   - Administrator rights
 
+Live Site: http://ga-launchpad.herokuapp.com
 
 ![](https://media.giphy.com/media/5HBrcr6iyV9UQ/giphy.gif)
