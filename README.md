@@ -1,24 +1,17 @@
-# README
+# GA Launch Pad
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+As it stands, General Assembly only has a database of student alumni available for public viewing. Viewers are not able to filter students according to batches nor sift them out through Meet & Greet sessions. Hence, my team decided to create an app to address this gap.
 
-Things you may want to cover:
+Built on:
+  - Rails 5
+  - Full stack
+  
+Functionality:
+  - User validation
+  - User live/authorisation status 
+  - User input of information/giphys
+  - AJAX
+  - Administrator rights
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![](https://media.giphy.com/media/5HBrcr6iyV9UQ/giphy.gif)
